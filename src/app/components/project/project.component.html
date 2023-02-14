@@ -1,0 +1,16 @@
+<div class="app-project">
+  <div
+    class="image"
+    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+  ></div>
+
+  <div class="content">
+    <div class="content-name">
+      {{ project.name }}
+    </div>
+    <div class="content-description">
+      {{ project.description }}
+    </div>
+    <button (click)="openProject()" class="primary">Open</button>
+  </div>
+</div>

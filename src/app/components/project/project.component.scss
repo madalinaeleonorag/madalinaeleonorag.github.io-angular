@@ -1,0 +1,46 @@
+.app-project {
+  position: relative;
+
+  .image {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .content {
+    display: none;
+    flex-flow: column;
+    position: absolute;
+    top: 0;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+    &-name {
+      font-weight: bold;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    &-description {
+      font-size: 10px;
+      font-family: system-ui;
+      text-align: center;
+      padding: 5px 0px;
+    }
+  }
+
+  &:hover {
+    .image {
+      filter: brightness(0.2);
+    }
+
+    .content {
+      display: flex;
+    }
+  }
+}
