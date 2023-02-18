@@ -19,7 +19,6 @@ export class AppComponent {
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
         this.gitHubProjects = res;
-        console.log(res);
       });
   }
 

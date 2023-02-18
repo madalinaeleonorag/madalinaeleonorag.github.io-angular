@@ -1,0 +1,68 @@
+.app-banner {
+  height: 100vh;
+  width: 100%;
+
+  .banner-content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .description {
+      &-title {
+        color: var(--primary);
+        display: grid;
+        place-content: center;
+        font-size: clamp(1.5rem, 1rem + 4vw, 15rem);
+        font-weight: 700;
+        text-transform: uppercase;
+
+        & > div {
+          grid-area: 1/1/-1/-1;
+        }
+
+        &-top {
+          clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+        }
+        &-bottom {
+          clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+          color: var(--secondary);
+          background-clip: text;
+          transform: translateX(-0.03em);
+        }
+      }
+      &-subtitle {
+        color: var(--white);
+      }
+    }
+
+    .social-links {
+      padding: 5vh 0 1vh;
+      display: flex;
+      flex-flow: wrap;
+
+      a {
+        margin-right: 2vw;
+
+        svg {
+          fill: var(--primary);
+
+          &:hover {
+            fill: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+}
+
+#particles-js {
+  height: 100vh;
+}
+
+::ng-deep .particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}

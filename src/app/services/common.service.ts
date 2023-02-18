@@ -16,4 +16,19 @@ export class CommonService {
     const res: any = await fetch(url, { method: 'HEAD' });
     return res.ok ? url : './../../assets/image-not-found.png';
   }
+
+  // TODO
+  public getLogoSVG(logoName: string): string {
+    console.log(logoName);
+    switch (logoName) {
+      case 'email':
+        return ``;
+      case 'linkedin':
+        return ``;
+      case 'medium':
+        return ` `;
+      default:
+        return '';
+    }
+  }
 }
