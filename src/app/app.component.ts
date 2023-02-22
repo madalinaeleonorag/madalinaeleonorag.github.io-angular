@@ -18,7 +18,7 @@ export class AppComponent {
     this.gitHubProjectsSubscription = this.externalService
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
-        this.gitHubProjects = res;
+        this.gitHubProjects = res.slice(0, 15);
       });
   }
 
