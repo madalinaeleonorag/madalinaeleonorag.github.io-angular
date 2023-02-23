@@ -1,0 +1,43 @@
+.app-testimonial {
+  background-color: var(--grey);
+  color: var(--black);
+  width: 25vw;
+  margin: 5px;
+
+  .description {
+    line-height: 2.7vh;
+    place-self: center;
+    padding: 2.5vw 3vw;
+    background-color: var(--white);
+  }
+
+  .author {
+    padding: 2.5vw 3vw;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    &-company {
+      width: 80px;
+      min-width: 80px;
+      height: 80px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+
+    &-details {
+      padding-left: 10px;
+      font-size: 12px;
+
+      &-name {
+        font-weight: bold;
+      }
+
+      &-role {
+        padding-top: 3px;
+        color: var(--primary);
+      }
+    }
+  }
+}

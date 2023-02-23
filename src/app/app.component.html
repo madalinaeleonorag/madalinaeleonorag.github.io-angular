@@ -6,3 +6,9 @@
     [project]="project"
   ></app-project>
 </div>
+<div class="category-wrapper">
+  <app-testimonial
+    *ngFor="let testimonial of TESTIMONIALS"
+    [testimonial]="testimonial"
+  ></app-testimonial>
+</div>

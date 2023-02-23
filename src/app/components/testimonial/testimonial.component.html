@@ -1,0 +1,19 @@
+<div class="app-testimonial">
+  <div class="description">
+    {{ testimonial.text }}
+  </div>
+  <div class="author">
+    <div
+      class="author-company"
+      [ngStyle]="{ 'background-image': mapImageLogo() }"
+    ></div>
+    <div class="author-details">
+      <div class="author-details-name">
+        {{ testimonial.author }}
+      </div>
+      <div class="author-details-role">
+        {{ testimonial.role }}
+      </div>
+    </div>
+  </div>
+</div>

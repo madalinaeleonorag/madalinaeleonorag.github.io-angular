@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { TESTIOMNIALS } from 'src/assets/CONSTANTS';
 import { IGitHubProject } from './interfaces/git-hub-project';
 import { ExternalService } from './services/external.service';
 
@@ -11,6 +12,7 @@ import { ExternalService } from './services/external.service';
 export class AppComponent {
   private gitHubProjectsSubscription: Subscription = new Subscription();
   public gitHubProjects: Array<IGitHubProject> = [];
+  public TESTIMONIALS: any = TESTIOMNIALS;
 
   constructor(private externalService: ExternalService) {}
 
