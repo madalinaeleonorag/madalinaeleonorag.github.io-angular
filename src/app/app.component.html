@@ -1,14 +1,34 @@
 <app-banner></app-banner>
 <app-summary></app-summary>
+<div class="centered-category-title">What I worked with 🌟</div>
+<div class="category-wrapper">
+  <app-skills></app-skills>
+</div>
+<div class="centered-category-title">Companies I worked for 📁</div>
+<div class="category-wrapper">
+  <app-work-experience
+    *ngFor="let work of WORK_EXPERIENCE"
+    [work]="work"
+  ></app-work-experience>
+</div>
+<div class="centered-category-title">Latest projects 💻</div>
 <div class="category-wrapper">
   <app-project
     *ngFor="let project of gitHubProjects"
     [project]="project"
   ></app-project>
 </div>
+<div class="centered-category-title">Testimonials 💬</div>
 <div class="category-wrapper">
   <app-testimonial
-    *ngFor="let testimonial of TESTIMONIALS"
+    *ngFor="let testimonial of filteredTestimonials()"
     [testimonial]="testimonial"
   ></app-testimonial>
+</div>
+<div class="centered-button">
+  <button (click)="switchSeeLessTestimonials()" class="primary">
+    {{
+      isSeeLessTestimonials ? "See more testimonials" : "See less testimonials"
+    }}
+  </button>
 </div>

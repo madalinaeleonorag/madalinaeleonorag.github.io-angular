@@ -1,0 +1,23 @@
+<div class="app-skills">
+  <div class="category">
+    <img
+      *ngFor="let skill of skills.principal"
+      class="principal"
+      [src]="getLogoUrl(skill[0])"
+    />
+  </div>
+  <div class="category">
+    <img
+      *ngFor="let skill of skills.frequent"
+      class="frequent"
+      [src]="getLogoUrl(skill[0])"
+    />
+  </div>
+  <div class="category">
+    <img
+      *ngFor="let skill of skills.others"
+      class="others"
+      [src]="getLogoUrl(skill[0])"
+    />
+  </div>
+</div>

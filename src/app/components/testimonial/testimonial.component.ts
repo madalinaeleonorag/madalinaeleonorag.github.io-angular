@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TestimonialComponent {
   @Input() testimonial: any;
+  public seeMore: boolean = false;
 
   public mapImageLogo(): string {
     const images: any = {
@@ -19,5 +20,22 @@ export class TestimonialComponent {
     return `url(../../../../../assets/icons/companies/${
       images[this.testimonial.from]
     })`;
+  }
+
+  public isSeeMoreVisible(): boolean {
+    return this.testimonial.text.length > 250;
+  }
+
+  public testimonialText(): string {
+    return this.testimonial.text.length > 250 && !this.seeMore
+      ? this.testimonial.text.slice(
+          0,
+          this.testimonial.text.slice(0, 200).lastIndexOf(' ')
+        ) + ' [...]'
+      : this.testimonial.text;
+  }
+
+  public switchSeeMore(): void {
+    this.seeMore = !this.seeMore;
   }
 }

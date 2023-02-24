@@ -1,6 +1,10 @@
 <div class="app-testimonial">
   <div class="description">
-    {{ testimonial.text }}
+    <span class="quotes">"&nbsp;</span>{{ testimonialText()
+    }}<span class="quotes">&nbsp;"</span>
+    <span *ngIf="isSeeMoreVisible()" class="see-more" (click)="switchSeeMore()"
+      >- {{ seeMore ? "See less" : "See more" }}</span
+    >
   </div>
   <div class="author">
     <div

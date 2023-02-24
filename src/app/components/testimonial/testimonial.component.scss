@@ -9,6 +9,20 @@
     place-self: center;
     padding: 2.5vw 3vw;
     background-color: var(--white);
+
+    .quotes {
+      font-size: x-large;
+      color: var(--primary);
+    }
+
+    .see-more {
+      color: var(--secondary);
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
 
   .author {
@@ -18,20 +32,21 @@
     align-items: center;
 
     &-company {
-      width: 80px;
-      min-width: 80px;
-      height: 80px;
+      width: 60px;
+      min-width: 60px;
+      height: 60px;
       background-size: cover;
       background-position: center;
       border-radius: 50%;
     }
 
     &-details {
-      padding-left: 10px;
+      padding-left: 1vw;
       font-size: 12px;
 
       &-name {
         font-weight: bold;
+        font-size: 14px;
       }
 
       &-role {
