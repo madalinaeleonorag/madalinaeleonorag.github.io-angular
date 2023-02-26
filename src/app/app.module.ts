@@ -9,6 +9,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
     TestimonialComponent,
     SkillsComponent,
     WorkExperienceComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

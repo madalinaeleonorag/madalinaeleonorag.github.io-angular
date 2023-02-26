@@ -1,0 +1,47 @@
+.app-header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 2vh 2vw;
+  align-items: center;
+
+  .title {
+    color: var(--primary);
+    display: grid;
+    place-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    & > div {
+      grid-area: 1/1/-1/-1;
+    }
+
+    &-top {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+    }
+    &-bottom {
+      clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+      color: var(--secondary);
+      background-clip: text;
+      transform: translateX(-0.03em);
+    }
+  }
+
+  .right-items {
+    display: flex;
+    flex-flow: wrap;
+
+    a {
+      margin-right: 2vw;
+
+      svg {
+        fill: var(--primary);
+
+        &:hover {
+          fill: var(--secondary);
+        }
+      }
+    }
+  }
+}
