@@ -13,6 +13,15 @@
     [work]="work"
   ></app-work-experience>
 </div>
+<div class="centered-category-title">
+  Certificates, Diplomas, Degrees, Awards 📃
+</div>
+<div class="category-wrapper">
+  <app-certificate
+    *ngFor="let certificate of CERTIFICATIONS"
+    [certificate]="certificate"
+  ></app-certificate>
+</div>
 <div class="centered-category-title">Latest projects 💻</div>
 <div class="category-wrapper">
   <app-project
@@ -20,6 +29,10 @@
     [project]="project"
   ></app-project>
 </div>
+<div class="centered-button">
+  <button (click)="goToGithub()" class="primary">Go to GitHub</button>
+</div>
+
 <div class="centered-category-title">Testimonials 💬</div>
 <div class="category-wrapper">
   <app-testimonial

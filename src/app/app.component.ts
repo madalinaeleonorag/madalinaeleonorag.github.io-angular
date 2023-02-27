@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TESTIOMNIALS, WORK_EXPERIENCE } from 'src/assets/CONSTANTS';
+import {
+  TESTIOMNIALS,
+  WORK_EXPERIENCE,
+  CERTIFICATIONS,
+  GITHUB,
+} from 'src/assets/CONSTANTS';
 import { IGitHubProject } from './interfaces/git-hub-project';
 import { ExternalService } from './services/external.service';
 
@@ -15,6 +20,8 @@ export class AppComponent {
   public gitHubProjects: Array<IGitHubProject> = [];
   public TESTIMONIALS: any;
   public WORK_EXPERIENCE: any = WORK_EXPERIENCE;
+  public CERTIFICATIONS: any = CERTIFICATIONS;
+  public GITHUB: any = GITHUB;
   public isSeeLessTestimonials: boolean = true;
 
   constructor(private externalService: ExternalService) {}
@@ -35,6 +42,10 @@ export class AppComponent {
 
   public switchSeeLessTestimonials(): void {
     this.isSeeLessTestimonials = !this.isSeeLessTestimonials;
+  }
+
+  public goToGithub(): void {
+    window.open(this.GITHUB, '_blank');
   }
 
   ngOnDestroy() {

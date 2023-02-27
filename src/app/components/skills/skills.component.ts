@@ -52,8 +52,6 @@ export class SkillsComponent {
       this.SKILLS_FREQUENT_COUNT + this.SKILLS_PRINCIPAL_COUNT,
       sortedSkills.length
     );
-
-    console.log(this.skills);
   }
 
   public getLogoUrl(skillName: string): string {

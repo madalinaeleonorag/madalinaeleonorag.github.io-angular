@@ -10,6 +10,7 @@ import { TestimonialComponent } from './components/testimonial/testimonial.compo
 import { SkillsComponent } from './components/skills/skills.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CertificateComponent } from './components/certificate/certificate.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HeaderComponent } from './components/header/header.component';
     SkillsComponent,
     WorkExperienceComponent,
     HeaderComponent,
+    CertificateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
