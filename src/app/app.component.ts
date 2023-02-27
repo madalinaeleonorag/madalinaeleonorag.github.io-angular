@@ -63,6 +63,10 @@ export class AppComponent {
     window.open(this.MEDIUM, '_blank');
   }
 
+  public scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+
   ngOnDestroy() {
     this.gitHubProjectsSubscription.unsubscribe();
     this.mediumArticlesSubscription.unsubscribe();

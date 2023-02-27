@@ -14,4 +14,8 @@ export class BannerComponent {
   ngOnInit(): void {
     particlesJS('particles-js', '../../../assets/particles.json', null);
   }
+
+  public openCV(): void {
+    window.open('./../../../assets/CV.pdf');
+  }
 }

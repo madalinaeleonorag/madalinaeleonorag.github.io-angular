@@ -1,19 +1,18 @@
-<app-header></app-header>
 <app-banner></app-banner>
 <div class="centered-category-title">Long story short 🔦</div>
 <app-summary></app-summary>
-<div class="centered-category-title">What I worked with 🌟</div>
+<div class="centered-category-title" #skills>What I worked with 🌟</div>
 <div class="category-wrapper">
   <app-skills></app-skills>
 </div>
-<div class="centered-category-title">Companies I worked for 📁</div>
+<div class="centered-category-title" #work>Companies I worked for 📁</div>
 <div class="category-wrapper">
   <app-work-experience
     *ngFor="let work of WORK_EXPERIENCE"
     [work]="work"
   ></app-work-experience>
 </div>
-<div class="centered-category-title">
+<div class="centered-category-title" #certifications>
   Certificates, Diplomas, Degrees, Awards 📃
 </div>
 <div class="category-wrapper">
@@ -22,7 +21,7 @@
     [certificate]="certificate"
   ></app-certificate>
 </div>
-<div class="centered-category-title">Latest projects 💻</div>
+<div class="centered-category-title" #projects>Latest projects 💻</div>
 <div class="category-wrapper">
   <app-project
     *ngFor="let project of gitHubProjects"
@@ -32,7 +31,9 @@
 <div class="centered-button">
   <button (click)="goToGithub()" class="primary">Go to GitHub</button>
 </div>
-<div class="centered-category-title">I like to write, sometimes ✏️</div>
+<div class="centered-category-title" #publications>
+  I like to write, sometimes ✏️
+</div>
 <div class="category-wrapper">
   <app-article
     *ngFor="let article of mediumArticles"
@@ -42,7 +43,7 @@
 <div class="centered-button">
   <button (click)="goToMedium()" class="primary">Go to Medium</button>
 </div>
-<div class="centered-category-title">Testimonials 💬</div>
+<div class="centered-category-title" #testimonials>Testimonials 💬</div>
 <div class="category-wrapper">
   <app-testimonial
     *ngFor="let testimonial of filteredTestimonials()"
@@ -56,4 +57,8 @@
     }}
   </button>
 </div>
+<div class="centered-category-title" #contact>Contact me 💌</div>
+<app-contact></app-contact>
 <app-copyright></app-copyright>
+
+<app-sidebar (scrollEmit)="scroll($event)"></app-sidebar>
