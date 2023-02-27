@@ -23,14 +23,14 @@ export class TestimonialComponent {
   }
 
   public isSeeMoreVisible(): boolean {
-    return this.testimonial.text.length > 250;
+    return this.testimonial.text.length > 220;
   }
 
   public testimonialText(): string {
-    return this.testimonial.text.length > 250 && !this.seeMore
+    return this.testimonial.text.length > 220 && !this.seeMore
       ? this.testimonial.text.slice(
           0,
-          this.testimonial.text.slice(0, 200).lastIndexOf(' ')
+          this.testimonial.text.slice(0, 180).lastIndexOf(' ')
         ) + ' [...]'
       : this.testimonial.text;
   }
