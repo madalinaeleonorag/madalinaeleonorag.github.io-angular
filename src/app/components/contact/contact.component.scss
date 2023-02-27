@@ -1,0 +1,20 @@
+.app-contact {
+  .social-links {
+    padding: 5vh 0 1vh;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+
+    a {
+      margin-right: 2vw;
+
+      svg {
+        fill: var(--primary);
+
+        &:hover {
+          fill: var(--secondary);
+        }
+      }
+    }
+  }
+}
