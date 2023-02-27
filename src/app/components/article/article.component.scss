@@ -1,9 +1,16 @@
 .app-article {
   color: var(--black);
-  width: 20vw;
   margin: 5px;
+  justify-self: stretch;
+  margin: 5px;
+  max-height: -webkit-fill-available;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
 
   .image {
+    min-height: 15vw;
     height: 15vw;
     background-size: cover;
     background-position: center;
@@ -16,6 +23,8 @@
     flex-flow: column;
     align-items: center;
     font-size: 12px;
+    height: -webkit-fill-available;
+    justify-content: space-between;
 
     &-name {
       font-weight: bold;

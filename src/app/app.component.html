@@ -22,7 +22,7 @@
   ></app-certificate>
 </div>
 <div class="centered-category-title" #projects>Latest projects 💻</div>
-<div class="category-wrapper">
+<div class="category-wrapper grid-4">
   <app-project
     *ngFor="let project of gitHubProjects"
     [project]="project"
@@ -34,7 +34,7 @@
 <div class="centered-category-title" #publications>
   I like to write, sometimes ✏️
 </div>
-<div class="category-wrapper">
+<div class="category-wrapper grid-4">
   <app-article
     *ngFor="let article of mediumArticles"
     [article]="article"
@@ -44,7 +44,7 @@
   <button (click)="goToMedium()" class="primary">Go to Medium</button>
 </div>
 <div class="centered-category-title" #testimonials>Testimonials 💬</div>
-<div class="category-wrapper">
+<div class="category-wrapper grid-3">
   <app-testimonial
     *ngFor="let testimonial of filteredTestimonials()"
     [testimonial]="testimonial"

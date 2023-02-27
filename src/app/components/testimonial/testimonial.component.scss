@@ -1,14 +1,20 @@
 .app-testimonial {
   background-color: var(--grey);
   color: var(--black);
-  width: 25vw;
+  justify-self: stretch;
   margin: 5px;
+  height: 100%;
+  max-height: -webkit-fill-available;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 
   .description {
     line-height: 2.7vh;
     place-self: center;
     padding: 2.5vw 3vw;
     background-color: var(--white);
+    height: -webkit-fill-available;
 
     .quotes {
       font-size: x-large;
