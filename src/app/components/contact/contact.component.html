@@ -1,4 +1,28 @@
 <div class="app-contact">
+  <div class="form-wrapper">
+    <form
+      class="contact"
+      [formGroup]="form"
+      method="post"
+      (ngSubmit)="onSubmit()"
+    >
+      <input [formControl]="name" required placeholder="Your name" />
+      <input [formControl]="email" placeholder="Your email" required />
+      <textarea
+        [formControl]="message"
+        maxlength="500"
+        placeholder="Your message [...]"
+        required
+      ></textarea>
+      <button [disabled]="isLoading" class="primary submit" type="submit">
+        Send
+      </button>
+      <div [ngClass]="!submitted ? 'hidden' : 'visible'" class="center-text">
+        <span>{{ responseMessage }}</span>
+      </div>
+    </form>
+  </div>
+
   <div class="social-links">
     <a [href]="'mailto:' + CONSTANTS.EMAIL"
       ><svg

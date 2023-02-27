@@ -17,4 +17,45 @@
       }
     }
   }
+
+  .form-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .hidden {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    form.contact {
+      display: flex;
+      flex-direction: column;
+      max-width: 80vw;
+      width: 40vw;
+    }
+
+    input,
+    textarea {
+      font-family: "HindMadurai";
+      margin-bottom: 10px;
+      background-color: var(--black);
+      border: none;
+      border-bottom: 1px solid var(--primary);
+      padding: 1vh 0.5vw;
+      color: var(--white);
+    }
+
+    button {
+      margin-top: 2vh;
+      align-self: center;
+      width: fit-content;
+    }
+  }
 }

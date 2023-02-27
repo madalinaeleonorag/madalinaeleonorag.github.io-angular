@@ -15,6 +15,7 @@ import { CopyrightComponent } from './components/copyright/copyright.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,12 @@ import { ViewerComponent } from './components/viewer/viewer.component';
     ContactComponent,
     ViewerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
