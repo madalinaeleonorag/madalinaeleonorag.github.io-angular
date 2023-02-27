@@ -22,4 +22,13 @@ export class ProjectComponent {
   public openProject(): void {
     window.open(this.project.url, '_blank');
   }
+
+  public projectDescription(): string {
+    return this.project.description.length > 90
+      ? this.project.description.slice(
+          0,
+          this.project.description.slice(0, 90).lastIndexOf(' ')
+        ) + ' [...]'
+      : this.project.description;
+  }
 }

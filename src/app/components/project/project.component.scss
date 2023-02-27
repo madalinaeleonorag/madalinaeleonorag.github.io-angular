@@ -24,11 +24,12 @@
       font-weight: bold;
       color: var(--primary);
       text-align: center;
+      font-family: "Esteban";
     }
 
     &-description {
-      font-size: 10px;
-      font-family: system-ui;
+      font-size: 12px;
+      line-height: 1.7vh;
       text-align: center;
       padding: 5px 0px;
     }

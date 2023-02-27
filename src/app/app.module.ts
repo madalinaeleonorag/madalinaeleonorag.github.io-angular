@@ -11,6 +11,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CertificateComponent } from './components/certificate/certificate.component';
+import { ArticleComponent } from './components/article/article.component';
+import { CopyrightComponent } from './components/copyright/copyright.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CertificateComponent } from './components/certificate/certificate.compo
     WorkExperienceComponent,
     HeaderComponent,
     CertificateComponent,
+    ArticleComponent,
+    CopyrightComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

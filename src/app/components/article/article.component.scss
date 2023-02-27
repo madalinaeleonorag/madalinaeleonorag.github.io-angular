@@ -1,0 +1,31 @@
+.app-article {
+  color: var(--black);
+  width: 20vw;
+  margin: 5px;
+
+  .image {
+    height: 15vw;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .description {
+    background-color: var(--grey);
+    padding: 2.5vw 3vw;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-size: 12px;
+
+    &-name {
+      font-weight: bold;
+      font-size: 14px;
+      font-family: "Esteban";
+    }
+
+    button {
+      margin-top: 2.5vw;
+      align-self: end;
+    }
+  }
+}

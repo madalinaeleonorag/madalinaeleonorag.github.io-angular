@@ -10,13 +10,30 @@
   --transparent: transparent;
 }
 
+@font-face {
+  font-family: "Esteban";
+  src: local("Esteban"),
+    url("./assets/fonts/Esteban/esteban-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HindMadurai";
+  src: local("HindMadurai"),
+    url("./assets/fonts/HindMadurai/hindmadurai-regular-webfont.woff")
+      format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "HindMadurai", Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--black);
   font-size: 16px;
 }
@@ -26,7 +43,7 @@ button {
   border: none;
   text-transform: uppercase;
   padding: 0.5vh 1vh;
-  border-radius: 4px;
+  font-family: "HindMadurai";
 }
 
 button.primary {
@@ -37,6 +54,5 @@ button.primary {
   &:hover {
     border-color: var(--secondary);
     color: var(--primary);
-    background-color: var(--black);
   }
 }

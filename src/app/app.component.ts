@@ -5,8 +5,10 @@ import {
   WORK_EXPERIENCE,
   CERTIFICATIONS,
   GITHUB,
+  MEDIUM,
 } from 'src/assets/CONSTANTS';
 import { IGitHubProject } from './interfaces/git-hub-project';
+import { IMediumArticle } from './interfaces/medium-article';
 import { ExternalService } from './services/external.service';
 
 @Component({
@@ -16,12 +18,15 @@ import { ExternalService } from './services/external.service';
 })
 export class AppComponent {
   private gitHubProjectsSubscription: Subscription = new Subscription();
+  private mediumArticlesSubscription: Subscription = new Subscription();
 
   public gitHubProjects: Array<IGitHubProject> = [];
+  public mediumArticles: Array<IMediumArticle> = [];
   public TESTIMONIALS: any;
   public WORK_EXPERIENCE: any = WORK_EXPERIENCE;
   public CERTIFICATIONS: any = CERTIFICATIONS;
   public GITHUB: any = GITHUB;
+  public MEDIUM: any = MEDIUM;
   public isSeeLessTestimonials: boolean = true;
 
   constructor(private externalService: ExternalService) {}
@@ -31,6 +36,12 @@ export class AppComponent {
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
         this.gitHubProjects = res.slice(0, 15);
+      });
+
+    this.mediumArticlesSubscription = this.externalService
+      .getMediumArticles()
+      .subscribe((res: IMediumArticle[]) => {
+        this.mediumArticles = res.slice(0, 8);
       });
   }
 
@@ -48,7 +59,12 @@ export class AppComponent {
     window.open(this.GITHUB, '_blank');
   }
 
+  public goToMedium(): void {
+    window.open(this.MEDIUM, '_blank');
+  }
+
   ngOnDestroy() {
     this.gitHubProjectsSubscription.unsubscribe();
+    this.mediumArticlesSubscription.unsubscribe();
   }
 }

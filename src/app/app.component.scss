@@ -7,14 +7,15 @@
 .centered-category-title {
   display: flex;
   justify-content: center;
-  padding: 3vh 0;
-  font-size: 20px;
-  font-weight: bold;
+  padding: 5vh 0 3vh;
+  font-size: 26px;
   color: var(--white);
+  font-family: "Esteban";
 }
 
 .centered-button {
   display: flex;
   justify-content: center;
   padding: 2vh 0;
+  font-family: "Esteban";
 }

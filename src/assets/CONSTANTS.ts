@@ -7,6 +7,7 @@ const INSTAGRAM = 'https://www.instagram.com/madalinaeleonorag/';
 const FACEBOOK = 'https://www.facebook.com/mdx.madalinaeleonora/';
 const PAYPAL = 'https://www.paypal.com/paypalme/madalinaeleonorag';
 const PX500 = 'https://500px.com/p/madalinaeleonorag?view=galleries';
+const COPYRIGHT = '© Madalina-Eleonora Gheorghe 2023';
 
 // Descriptions
 const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs. 
@@ -507,4 +508,5 @@ export {
   TESTIOMNIALS,
   WORK_EXPERIENCE,
   CERTIFICATIONS,
+  COPYRIGHT,
 };

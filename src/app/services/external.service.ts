@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { IGitHubProject } from '../interfaces/git-hub-project';
+import { IMediumArticle } from '../interfaces/medium-article';
 
 @Injectable({
   providedIn: 'root',
@@ -20,12 +21,11 @@ export class ExternalService {
    */
   public getGitHubProjects(): Observable<IGitHubProject[]> {
     return this.http.get<any>(this.GITHUB_URL).pipe(
-      map((objectItem) =>
+      map((objectItem: any) =>
         objectItem.map(
           (item: any): IGitHubProject => ({
             name: item.name,
-            description:
-              item?.description && item?.description?.slice(0, 75) + '...',
+            description: item.description,
             fullName: item.full_name,
             branch: item.default_branch,
             principalCodingLanguage: item.language,
@@ -39,9 +39,22 @@ export class ExternalService {
 
   /**
    * Get Medium articles
-   * @returns // TODO
+   * @returns an observable with IMediumArticle items
    */
   public getMediumArticles() {
-    return this.http.get(this.MEDIUM_URL);
+    return this.http
+      .get<any>(this.MEDIUM_URL)
+      .pipe(map((response: any) => response.items))
+      .pipe(
+        map((objectItem: any) =>
+          objectItem.map(
+            (item: any): IMediumArticle => ({
+              thumbnail: item.thumbnail,
+              link: item.link,
+              title: item.title,
+            })
+          )
+        )
+      );
   }
 }

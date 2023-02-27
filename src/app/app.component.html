@@ -32,7 +32,16 @@
 <div class="centered-button">
   <button (click)="goToGithub()" class="primary">Go to GitHub</button>
 </div>
-
+<div class="centered-category-title">I like to write, sometimes ✏️</div>
+<div class="category-wrapper">
+  <app-article
+    *ngFor="let article of mediumArticles"
+    [article]="article"
+  ></app-article>
+</div>
+<div class="centered-button">
+  <button (click)="goToMedium()" class="primary">Go to Medium</button>
+</div>
 <div class="centered-category-title">Testimonials 💬</div>
 <div class="category-wrapper">
   <app-testimonial
@@ -47,3 +56,4 @@
     }}
   </button>
 </div>
+<app-copyright></app-copyright>
