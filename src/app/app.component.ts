@@ -28,6 +28,7 @@ export class AppComponent {
   public GITHUB: any = GITHUB;
   public MEDIUM: any = MEDIUM;
   public isSeeLessTestimonials: boolean = true;
+  public isSeeLessProjects: boolean = true;
 
   constructor(private externalService: ExternalService) {}
 
@@ -35,7 +36,7 @@ export class AppComponent {
     this.gitHubProjectsSubscription = this.externalService
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
-        this.gitHubProjects = res.slice(0, 12);
+        this.gitHubProjects = res;
       });
 
     this.mediumArticlesSubscription = this.externalService
@@ -51,8 +52,18 @@ export class AppComponent {
       : TESTIOMNIALS;
   }
 
+  public filteredProjects(): any {
+    return this.isSeeLessProjects
+      ? this.gitHubProjects.slice(0, 12)
+      : this.gitHubProjects;
+  }
+
   public switchSeeLessTestimonials(): void {
     this.isSeeLessTestimonials = !this.isSeeLessTestimonials;
+  }
+
+  public switchSeeLessProjects(): void {
+    this.isSeeLessProjects = !this.isSeeLessProjects;
   }
 
   public goToGithub(): void {

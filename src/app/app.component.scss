@@ -19,6 +19,12 @@
   justify-content: center;
   padding: 2vh 0;
   font-family: "Esteban";
+
+  &.double-button {
+    button {
+      margin: 0 0.5vw;
+    }
+  }
 }
 
 .grid-3 {

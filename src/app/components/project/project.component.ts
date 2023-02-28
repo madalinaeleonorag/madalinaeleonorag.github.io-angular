@@ -24,7 +24,7 @@ export class ProjectComponent {
   }
 
   public projectDescription(): string {
-    return this.project.description.length > 90
+    return this.project?.description?.length > 90
       ? this.project.description.slice(
           0,
           this.project.description.slice(0, 90).lastIndexOf(' ')

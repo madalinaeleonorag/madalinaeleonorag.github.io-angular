@@ -24,11 +24,14 @@
 <div class="centered-category-title" #projects>Latest projects 💻</div>
 <div class="category-wrapper grid-4">
   <app-project
-    *ngFor="let project of gitHubProjects"
+    *ngFor="let project of filteredProjects()"
     [project]="project"
   ></app-project>
 </div>
-<div class="centered-button">
+<div class="centered-button double-button">
+  <button (click)="switchSeeLessProjects()" class="primary">
+    {{ isSeeLessProjects ? "Show all projects" : "See less projects" }}
+  </button>
   <button (click)="goToGithub()" class="primary">Go to GitHub</button>
 </div>
 <div class="centered-category-title" #publications>
@@ -61,4 +64,4 @@
 <app-contact></app-contact>
 <app-copyright></app-copyright>
 
-<app-sidebar (scrollEmit)="scroll($event)"></app-sidebar>
+<!-- <app-sidebar (scrollEmit)="scroll($event)"></app-sidebar> -->
