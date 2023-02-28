@@ -1,25 +1,51 @@
 <div class="app-contact">
   <div class="form-wrapper">
-    <form
-      class="contact"
-      [formGroup]="form"
-      method="post"
-      (ngSubmit)="onSubmit()"
-    >
-      <input [formControl]="name" required placeholder="Your name" />
-      <input [formControl]="email" placeholder="Your email" required />
+    <form class="contact" [formGroup]="form">
+      <input [formControl]="name" required placeholder="* Your name" />
+      <div
+        *ngIf="form?.controls?.['name']?.touched && form?.value?.['name'] === ''"
+        class="error"
+      >
+        Your name is required
+      </div>
+      <input [formControl]="email" placeholder="* Your email" required />
+      <div
+        *ngIf="form?.controls?.['email']?.touched && !isEmailValid()"
+        class="error"
+      >
+        Your email is invalid.
+      </div>
+      <div
+        *ngIf="form?.controls?.['email']?.touched && form?.value?.['email'] === ''"
+        class="error"
+      >
+        Your email is required
+      </div>
       <textarea
         [formControl]="message"
         maxlength="500"
-        placeholder="Your message [...]"
+        placeholder="* Your message [...]"
         required
       ></textarea>
-      <button [disabled]="isLoading" class="primary submit" type="submit">
-        Send
-      </button>
-      <div [ngClass]="!submitted ? 'hidden' : 'visible'" class="center-text">
+      <div
+        *ngIf="form?.controls?.['message']?.touched && form?.value?.['message'] === ''"
+        class="error"
+      >
+        Your message is required
+      </div>
+      <div *ngIf="submitted && isError" class="error-text">
         <span>{{ responseMessage }}</span>
       </div>
+      <div *ngIf="submitted && !isError" class="success-text">
+        <span>{{ responseMessage }}</span>
+      </div>
+      <button
+        [disabled]="isLoading || form.status != 'VALID'"
+        class="primary submit"
+        (click)="onSubmit()"
+      >
+        Send
+      </button>
     </form>
   </div>
 

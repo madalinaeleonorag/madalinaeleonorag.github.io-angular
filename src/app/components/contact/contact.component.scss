@@ -22,18 +22,6 @@
     display: flex;
     justify-content: center;
 
-    .hidden {
-      display: none;
-    }
-
-    .visible {
-      display: block;
-    }
-
-    .center-text {
-      text-align: center;
-    }
-
     form.contact {
       display: flex;
       flex-direction: column;
@@ -56,6 +44,31 @@
       margin-top: 2vh;
       align-self: center;
       width: fit-content;
+
+      &:disabled {
+        cursor: unset;
+        opacity: 0.5;
+
+        &:hover {
+          border-color: unset;
+        }
+      }
+    }
+
+    .error {
+      color: var(--warning);
+      font-size: 12px;
+      margin-bottom: 1vh;
+    }
+
+    .error-text {
+      align-self: center;
+      color: var(--error);
+    }
+
+    .success-text {
+      align-self: center;
+      color: var(--secondary);
     }
   }
 }

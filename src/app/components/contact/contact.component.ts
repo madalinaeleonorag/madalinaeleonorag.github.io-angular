@@ -15,17 +15,17 @@ import * as CONSTANTS from 'src/assets/CONSTANTS';
 })
 export class ContactComponent {
   public CONSTANTS: any = CONSTANTS;
-
-  form: FormGroup;
-  name: FormControl = new FormControl('', [Validators.required]);
-  email: FormControl = new FormControl('', [
+  public isError: boolean = false;
+  public form: FormGroup;
+  public name: FormControl = new FormControl('', [Validators.required]);
+  public email: FormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  message: FormControl = new FormControl('', [Validators.required]);
-  submitted: boolean = false;
-  isLoading: boolean = false;
-  responseMessage: string;
+  public message: FormControl = new FormControl('', [Validators.required]);
+  public submitted: boolean = false;
+  public isLoading: boolean = false;
+  public responseMessage: string;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.form = this.formBuilder.group({
@@ -33,45 +33,58 @@ export class ContactComponent {
       email: this.email,
       message: this.message,
     });
+
+    this.form?.controls?.['message']?.markAsUntouched();
+    this.form?.controls?.['name']?.markAsUntouched();
   }
 
-  onSubmit() {
+  public isEmailValid(): boolean {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+      this.form?.value?.['email']
+    );
+  }
+
+  public onSubmit(): void {
     if (this.form.status == 'VALID') {
-      this.form.disable(); // disable the form if it's valid to disable multiple submissions
+      this.form.disable();
       var formData: any = new FormData();
-      console.log(this.form);
       formData.append('name', this.form.value.name);
       formData.append('email', this.form.value.email);
       formData.append('message', this.form.value.message);
-      this.isLoading = true; // sending the post request async so it's in progress
-      this.submitted = false; // hide the response message on multiple submits
+      this.isLoading = true;
+      this.submitted = false;
       this.http
         .post(
           'https://script.google.com/macros/s/AKfycbyikMoUy6eoWihXh6YL8ruZZ9gmZbiC0z9jp2Nvv0Znxsty2kYVgXwbRcFjCZGC3OFlzw/exec',
-          formData
+          formData,
+          {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
+              'Access-Control-Allow-Headers':
+                'Content-Type, Authorization, X-Requested-With',
+            },
+          }
         )
         .subscribe(
           (response: any) => {
-            // choose the response message
-            if (response && response?.result && response?.result == 'success') {
-              this.responseMessage =
-                "Thanks for the message! I'll get back to you soon!";
+            if (response?.ok) {
+              this.isError = false;
+              this.responseMessage = 'Thank you! ';
             } else {
-              this.responseMessage =
-                'Oops! Something went wrong... Reload the page and try again.';
+              this.isError = true;
+              this.responseMessage = 'Oops! Try again.';
             }
-            this.form.enable(); // re enable the form after a success
-            this.submitted = true; // show the response message
-            this.isLoading = false; // re enable the submit button
-            console.log(response);
+            this.form.enable();
+            this.submitted = true;
+            this.isLoading = false;
           },
           (error) => {
-            this.responseMessage =
-              'Oops! An error occurred... Reload the page and try again.';
-            this.form.enable(); // re enable the form after a success
-            this.submitted = true; // show the response message
-            this.isLoading = false; // re enable the submit button
-            console.log(error);
+            this.responseMessage = 'Oops! Try again.';
+            this.isError = true;
+            this.form.enable();
+            this.submitted = true;
+            this.isLoading = false;
           }
         );
     }
