@@ -1,46 +1,96 @@
 .app-project {
-  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin: 1vh 0;
+  width: 80vw;
+
+  &:hover {
+    .image {
+      filter: none;
+    }
+
+    .content {
+      border-color: var(--secondary) !important;
+
+      &-name {
+        color: var(--secondary);
+      }
+    }
+  }
+
+  &.left {
+    flex-direction: row-reverse;
+
+    .content {
+      border-left: 2px solid var(--primary);
+      border-right: unset;
+      margin: 4vh -7vw 4vh 0;
+    }
+  }
 
   .image {
-    height: 19vw;
+    height: 35vh;
+    width: 60vw;
+    min-width: 60%;
     background-size: cover;
     background-position: center;
+    filter: grayscale(1);
+    z-index: 1;
   }
 
   .content {
-    display: none;
     flex-flow: column;
-    position: absolute;
-    top: 0;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    color: var(--white);
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+    width: 50%;
+    min-width: 50%;
+    color: var(--grey);
+    padding: 3vh 3vw;
+    border-right: 2px solid var(--primary);
+    border-left: unset;
+    margin: 4vh 0 4vh -7vw;
+    text-align-last: start;
+    background-color: var(--black);
+    z-index: 2;
 
     &-name {
       font-weight: bold;
       color: var(--primary);
-      text-align: center;
       font-family: "Esteban";
+      padding-bottom: 2vh;
     }
 
     &-description {
-      font-size: 12px;
       line-height: 1.7vh;
-      text-align: center;
-      padding: 5px 0px;
-    }
-  }
-
-  &:hover {
-    .image {
-      filter: brightness(0.2);
+      padding-bottom: 1vh;
     }
 
-    .content {
+    &-languages {
       display: flex;
+      flex-flow: wrap;
+      padding-bottom: 2vh;
+      font-size: 14px;
+
+      &-language {
+        display: flex;
+        flex-flow: row;
+
+        &-title {
+          color: var(--primary);
+        }
+
+        &-percentage {
+          opacity: 0.5;
+          padding: 0 1vw 0 0.5vw;
+
+          &::before {
+            content: "- ";
+          }
+
+          &::after {
+            content: "%";
+          }
+        }
+      }
     }
   }
 }

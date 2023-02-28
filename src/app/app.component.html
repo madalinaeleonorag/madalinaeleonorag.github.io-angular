@@ -22,10 +22,11 @@
   ></app-certificate>
 </div>
 <div class="centered-category-title" #projects>Latest projects 💻</div>
-<div class="category-wrapper grid-4">
+<div class="category-wrapper">
   <app-project
-    *ngFor="let project of filteredProjects()"
+    *ngFor="let project of filteredProjects(); let i = index"
     [project]="project"
+    [position]="i % 2 === 0 ? 'right' : 'left'"
   ></app-project>
 </div>
 <div class="centered-button double-button">

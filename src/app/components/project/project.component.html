@@ -1,4 +1,4 @@
-<div class="app-project">
+<div class="app-project" [ngClass]="position">
   <div
     class="image"
     [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
@@ -8,8 +8,19 @@
     <div class="content-name">
       {{ project.name }}
     </div>
-    <div class="content-description">
-      {{ projectDescription() }}
+    <div class="content-description">{{ projectDescription() }}</div>
+    <div class="content-languages">
+      <div
+        class="content-languages-language"
+        *ngFor="let item of languagesPercentage | keyvalue"
+      >
+        <div class="content-languages-language-title">
+          {{ item.key }}
+        </div>
+        <div class="content-languages-language-percentage">
+          {{ item.value }}
+        </div>
+      </div>
     </div>
     <button (click)="openProject()" class="primary">Open</button>
   </div>

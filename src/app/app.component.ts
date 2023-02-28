@@ -54,7 +54,7 @@ export class AppComponent {
 
   public filteredProjects(): any {
     return this.isSeeLessProjects
-      ? this.gitHubProjects.slice(0, 12)
+      ? this.gitHubProjects.slice(0, 3)
       : this.gitHubProjects;
   }
 
