@@ -32,7 +32,7 @@ export class AppComponent {
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: false,
+    infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,

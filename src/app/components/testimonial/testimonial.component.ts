@@ -15,6 +15,7 @@ export class TestimonialComponent {
       IBM: 'ibm.png',
       Vodafone: 'vodafone.png',
       'Wooter Apparel': 'wooter-apparel.png',
+      'company-not-found': 'company-not-found.png',
     };
 
     return `url(../../../../../assets/icons/companies/${

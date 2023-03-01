@@ -173,6 +173,14 @@ const TESTIOMNIALS = [
     from: 'IBM',
     featured: false,
   },
+  {
+    text: 'Here can be your testimonial. Send it through the contact form and it will be posted on my website. Lorem ipsum dolor sit amet.',
+    author: 'Your name',
+    role: 'Your role in company',
+    date: 'today',
+    from: 'company-not-found',
+    featured: true,
+  },
 ];
 
 const WORK_EXPERIENCE = [
