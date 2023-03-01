@@ -20,15 +20,6 @@
       font-size: x-large;
       color: var(--primary);
     }
-
-    .see-more {
-      color: var(--secondary);
-
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
   }
 
   .author {

@@ -2,8 +2,8 @@
   <div class="description">
     <span class="quotes">"&nbsp;</span>{{ testimonialText()
     }}<span class="quotes">&nbsp;"</span>
-    <span *ngIf="isSeeMoreVisible()" class="see-more" (click)="switchSeeMore()"
-      >- {{ seeMore ? "See less" : "See more" }}</span
+    <a *ngIf="isSeeMoreVisible()" (click)="switchSeeMore()"
+      >- {{ seeMore ? "See less" : "See more" }}</a
     >
   </div>
   <div class="author">
