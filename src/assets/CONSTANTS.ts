@@ -174,7 +174,7 @@ const TESTIOMNIALS = [
     featured: false,
   },
   {
-    text: 'Here can be your testimonial. Send it through the contact form and it will be posted on my website. Lorem ipsum dolor sit amet.',
+    text: 'If you have had the opportunity to work with me or know me, you can leave a testimonial. Lorem ipsum dolor sit amet.',
     author: 'Your name',
     role: 'Your role in company',
     date: 'today',
