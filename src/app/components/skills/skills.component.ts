@@ -35,26 +35,43 @@ export class SkillsComponent {
       return prev;
     }, {});
 
-    for (var vehicle in reduced) {
-      sortedSkills.push([vehicle, reduced[vehicle]]);
+    for (var skill in reduced) {
+      sortedSkills.push([skill, reduced[skill]]);
     }
 
-    sortedSkills.sort((a: any, b: any) => {
-      return b[1] - a[1];
-    });
+    // sortedSkills.sort((a: any, b: any) => {
+    //   return b[1] - a[1];
+    // });
 
-    this.skills.principal = sortedSkills.slice(0, this.SKILLS_PRINCIPAL_COUNT);
-    this.skills.frequent = sortedSkills.slice(
-      this.SKILLS_PRINCIPAL_COUNT,
-      this.SKILLS_FREQUENT_COUNT + this.SKILLS_PRINCIPAL_COUNT
+    // this.skills.principal = sortedSkills.slice(0, this.SKILLS_PRINCIPAL_COUNT);
+    // this.skills.frequent = sortedSkills.slice(
+    //   this.SKILLS_PRINCIPAL_COUNT,
+    //   this.SKILLS_FREQUENT_COUNT + this.SKILLS_PRINCIPAL_COUNT
+    // );
+    // this.skills.others = sortedSkills.slice(
+    //   this.SKILLS_FREQUENT_COUNT + this.SKILLS_PRINCIPAL_COUNT,
+    //   sortedSkills.length
+    // );
+    const shuffledArray = sortedSkills.sort(
+      (a: any, b: any) => 0.5 - Math.random()
     );
-    this.skills.others = sortedSkills.slice(
-      this.SKILLS_FREQUENT_COUNT + this.SKILLS_PRINCIPAL_COUNT,
-      sortedSkills.length
-    );
+    this.skills = shuffledArray;
   }
 
   public getLogoUrl(skillName: string): string {
     return `../../../assets/icons/${skillName}.png`;
+  }
+
+  public switchClases(skill: any): string {
+    switch (true) {
+      case skill[1] === 1:
+        return 'small';
+      case skill[1] > 1 && skill[1] <= 4:
+        return 'medium';
+      case skill[1] > 4:
+        return 'big';
+      default:
+        return 'small';
+    }
   }
 }
