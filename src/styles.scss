@@ -39,11 +39,31 @@ body {
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
   padding: 0.5vh 1vh;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   font-family: "HindMadurai";
+  cursor: pointer;
+}
+
+button:before {
+  content: " ";
+  display: block;
+  width: 200px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: -10px;
+  left: -200px;
+  transform: rotate(-45deg);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover:before {
+  margin-left: 300%;
 }
 
 button.primary {
@@ -53,6 +73,5 @@ button.primary {
 
   &:hover {
     border-color: var(--secondary);
-    color: var(--primary);
   }
 }
