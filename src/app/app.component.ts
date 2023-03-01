@@ -29,6 +29,14 @@ export class AppComponent {
   public MEDIUM: any = MEDIUM;
   public isSeeLessTestimonials: boolean = true;
   public isSeeLessProjects: boolean = true;
+  slideConfig = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: true,
+  };
 
   constructor(private externalService: ExternalService) {}
 

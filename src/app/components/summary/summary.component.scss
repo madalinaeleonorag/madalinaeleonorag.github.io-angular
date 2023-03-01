@@ -10,3 +10,9 @@
     place-self: center;
   }
 }
+
+::ng-deep .app-summary {
+  img {
+    height: 15px;
+  }
+}

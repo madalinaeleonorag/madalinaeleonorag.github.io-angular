@@ -16,6 +16,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    PdfViewerModule,
+    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

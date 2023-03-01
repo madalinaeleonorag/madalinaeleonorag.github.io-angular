@@ -48,7 +48,19 @@
   <button (click)="goToMedium()" class="primary">Go to Medium</button>
 </div>
 <div class="centered-category-title" #testimonials>Testimonials 💬</div>
-<div class="category-wrapper grid-3">
+<ngx-slick-carousel
+  class="carousel category-wrapper"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+  *ngIf="isSeeLessTestimonials"
+>
+  <app-testimonial
+    ngxSlickItem
+    *ngFor="let testimonial of filteredTestimonials()"
+    [testimonial]="testimonial"
+  ></app-testimonial>
+</ngx-slick-carousel>
+<div class="category-wrapper grid-3" *ngIf="!isSeeLessTestimonials">
   <app-testimonial
     *ngFor="let testimonial of filteredTestimonials()"
     [testimonial]="testimonial"
