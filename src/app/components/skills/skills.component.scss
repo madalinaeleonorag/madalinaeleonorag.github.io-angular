@@ -48,3 +48,21 @@
     }
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .app-skills {
+    grid-template-columns: repeat(15, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .app-skills {
+    grid-template-columns: repeat(20, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .app-skills {
+    grid-template-columns: repeat(25, 1fr);
+  }
+}

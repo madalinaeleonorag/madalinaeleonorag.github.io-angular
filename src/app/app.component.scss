@@ -33,11 +33,6 @@
       margin: 1vh 0;
     }
   }
-  // &.double-button {
-  //   button {
-  //     margin: 0 0.5vw;
-  //   }
-  // }
 }
 
 .grid-3 {
@@ -48,5 +43,30 @@
 .grid-4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media only screen and (min-width: 768px) {
+  .centered-button {
+    flex-flow: row;
+
+    &.double-button {
+      button {
+        margin: 0 2vw;
+      }
+    }
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .centered-button {
+    &.double-button {
+      button {
+        margin: 0 1vw;
+      }
+    }
+  }
 }

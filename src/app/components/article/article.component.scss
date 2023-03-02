@@ -12,8 +12,6 @@
   .image {
     min-height: 30vw;
     height: 30vw;
-    // min-height: 15vw;
-    // height: 15vw;
     background-size: cover;
     background-position: center;
   }
@@ -37,6 +35,15 @@
     button {
       margin-top: 1.5vh;
       align-self: end;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .app-article {
+    .image {
+      min-height: 15vw;
+      height: 15vw;
     }
   }
 }

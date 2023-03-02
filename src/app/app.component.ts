@@ -40,7 +40,7 @@ export class AppComponent {
     mobileFirst: true,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,

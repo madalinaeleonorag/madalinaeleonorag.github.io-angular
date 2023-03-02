@@ -7,3 +7,19 @@
     cursor: pointer;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .app-certificate {
+    img {
+      width: 13vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .app-certificate {
+    img {
+      width: 9vw;
+    }
+  }
+}
