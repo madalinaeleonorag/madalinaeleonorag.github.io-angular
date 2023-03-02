@@ -27,24 +27,16 @@
   font-style: normal;
 }
 
-:host {
-  height: 100%;
-  width: 100%;
-}
-
 html,
 body {
-  height: 100%;
+  overflow-x: hidden;
 }
+
 body {
   margin: 0;
   font-family: "HindMadurai", Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--black);
   font-size: 16px;
-}
-
-app-root {
-  display: unset;
 }
 
 button {
