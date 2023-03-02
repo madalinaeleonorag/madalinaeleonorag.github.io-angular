@@ -1,6 +1,6 @@
 .app-contact {
   .social-links {
-    padding: 5vh 0 1vh;
+    padding: 5vh 2vw 1vh;
     display: flex;
     flex-flow: wrap;
     justify-content: center;
@@ -25,8 +25,11 @@
     form.contact {
       display: flex;
       flex-direction: column;
-      max-width: 80vw;
-      width: 40vw;
+      // max-width: 80vw;
+      // width: 40vw;
+      max-width: 90vw;
+      width: 80vw;
+      margin: 0 4vw;
     }
 
     input,

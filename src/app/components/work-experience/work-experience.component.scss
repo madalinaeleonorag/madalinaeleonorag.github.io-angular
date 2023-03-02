@@ -1,8 +1,12 @@
 .app-work-experience {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  justify-content: center;
+  margin: 1vw;
+
   .image {
-    width: 19vw;
-    height: 19vw;
-    background-size: cover;
-    background-position: center;
+    width: 40vw;
+    height: auto;
   }
 }

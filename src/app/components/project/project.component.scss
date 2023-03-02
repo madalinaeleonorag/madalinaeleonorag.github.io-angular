@@ -1,17 +1,18 @@
 .app-project {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: center;
-  margin: 1vh 0;
-  width: 80vw;
+  margin: 1vh 0 12vh;
+  width: 100vw;
 
   &:hover {
-    .image {
-      filter: none;
-    }
+    // .image {
+    //   filter: none;
+    // }
 
     .content {
       border-color: var(--secondary) !important;
+      box-shadow: 0px 0px 13px -8px var(--secondary);
 
       &-name {
         color: var(--secondary);
@@ -20,37 +21,32 @@
   }
 
   &.left {
-    flex-direction: row-reverse;
-
     .content {
       border-left: 2px solid var(--primary);
       border-right: unset;
-      margin: 4vh -7vw 4vh 0;
     }
   }
 
   .image {
     height: 35vh;
-    width: 60vw;
+    width: 100vw;
     min-width: 60%;
     background-size: cover;
     background-position: center;
-    filter: grayscale(1);
+    // filter: grayscale(1);
     z-index: 1;
   }
 
   .content {
-    flex-flow: column;
-    width: 50%;
-    min-width: 50%;
     color: var(--grey);
     padding: 3vh 3vw;
     border-right: 2px solid var(--primary);
     border-left: unset;
-    margin: 4vh 0 4vh -7vw;
+    margin: -7vh 5vh;
     text-align-last: start;
     background-color: var(--black);
     z-index: 2;
+    box-shadow: 0px 0px 13px -8px var(--primary);
 
     &-name {
       font-weight: bold;
@@ -60,7 +56,7 @@
     }
 
     &-description {
-      line-height: 1.7vh;
+      line-height: 2.5vh;
       padding-bottom: 1vh;
     }
 
@@ -94,3 +90,37 @@
     }
   }
 }
+
+// .app-project {
+// display: flex;
+// flex-flow: row;
+// justify-content: center;
+// margin: 1vh 0;
+// width: 80vw;
+
+// .image {
+//   height: 35vh;
+//   width: 60vw;
+
+// .content {
+//   flex-flow: column;
+//   width: 50%;
+//   min-width: 50%;
+//   color: var(--grey);
+//   padding: 3vh 3vw;
+//   border-right: 2px solid var(--primary);
+//   border-left: unset;
+//   margin: 4vh 0 4vh -7vw;
+//   text-align-last: start;
+//   background-color: var(--black);
+//   z-index: 2;
+
+// &.left {
+//   flex-direction: row-reverse;
+
+//   .content {
+//     border-left: 2px solid var(--primary);
+//     border-right: unset;
+//     margin: 4vh -7vw 4vh 0;
+//   }
+// }

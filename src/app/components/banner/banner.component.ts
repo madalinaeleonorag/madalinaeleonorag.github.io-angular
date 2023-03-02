@@ -16,6 +16,6 @@ export class BannerComponent {
   }
 
   public openCV(): void {
-    window.open('./../../../assets/CV.pdf');
+    window.open('./../../../assets/CV.pdf', '_blank');
   }
 }

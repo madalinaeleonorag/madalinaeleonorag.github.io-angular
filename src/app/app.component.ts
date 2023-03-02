@@ -89,7 +89,7 @@ export class AppComponent {
     this.mediumArticlesSubscription = this.externalService
       .getMediumArticles()
       .subscribe((res: IMediumArticle[]) => {
-        this.mediumArticles = res.slice(0, 8);
+        this.mediumArticles = res.slice(0, 4);
       });
   }
 
