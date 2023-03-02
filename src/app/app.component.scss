@@ -8,10 +8,11 @@
 .centered-category-title {
   display: flex;
   justify-content: center;
-  padding: 5vh 0 3vh;
+  padding: 5vh 4vw 3vh 4vw;
   font-size: 26px;
   color: var(--white);
   font-family: "Esteban";
+  text-align: center;
 }
 
 .centered-button {
