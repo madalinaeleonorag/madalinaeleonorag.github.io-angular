@@ -12,12 +12,12 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
 import { CertificateComponent } from './components/certificate/certificate.component';
 import { ArticleComponent } from './components/article/article.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     CertificateComponent,
     ArticleComponent,
     CopyrightComponent,
-    SidebarComponent,
     ContactComponent,
     ViewerComponent,
   ],
@@ -42,6 +41,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ReactiveFormsModule,
     PdfViewerModule,
     SlickCarouselModule,
+    AngularFullpageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

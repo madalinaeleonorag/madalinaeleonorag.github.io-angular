@@ -1,80 +1,109 @@
-<app-banner></app-banner>
-<div class="centered-category-title">Long story short 🔦</div>
-<app-summary></app-summary>
-<div class="centered-category-title" #skills>What I worked with 🌟</div>
-<div class="category-wrapper">
-  <app-skills></app-skills>
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+  <div class="section">
+    <app-banner></app-banner>
+  </div>
+  <div class="section" id="summary">
+    <div class="centered-category-title">Long story short 🔦</div>
+    <app-summary></app-summary>
+  </div>
+  <div class="section" id="skills">
+    <div class="centered-category-title">What I worked with 🌟</div>
+    <div class="category-wrapper">
+      <app-skills></app-skills>
+    </div>
+  </div>
+  <div class="section" id="companies">
+    <div class="centered-category-title">Companies I worked for 📁</div>
+    <div class="category-wrapper">
+      <app-work-experience
+        *ngFor="let work of WORK_EXPERIENCE"
+        [work]="work"
+      ></app-work-experience>
+    </div>
+  </div>
+  <div class="section" id="certifications">
+    <div class="centered-category-title">
+      Certificates, Diplomas, Degrees, Awards 📃
+    </div>
+    <div class="category-wrapper">
+      <app-certificate
+        *ngFor="let certificate of CERTIFICATIONS"
+        [certificate]="certificate"
+      ></app-certificate>
+    </div>
+  </div>
+  <div class="section" id="projects">
+    <div class="centered-category-title">Latest projects 💻</div>
+    <div class="category-wrapper">
+      <app-project
+        *ngFor="let project of gitHubProjects; let i = index"
+        [project]="project"
+        [position]="i % 2 === 0 ? 'right' : 'left'"
+      ></app-project>
+    </div>
+    <div class="centered-button">
+      <button (click)="goToGithub()" class="primary">Go to GitHub</button>
+    </div>
+  </div>
+  <div class="section" id="publications">
+    <div class="centered-category-title" #publications>I like to write ✏️</div>
+    <div class="category-wrapper articles-wrapper">
+      <app-article
+        *ngFor="let article of mediumArticles"
+        [article]="article"
+      ></app-article>
+    </div>
+    <div class="centered-button">
+      <button (click)="goToMedium()" class="primary">Go to Medium</button>
+    </div>
+  </div>
+  <div class="section" id="testimonials">
+    <div class="centered-category-title">Testimonials 💬</div>
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <app-testimonial
+        ngxSlickItem
+        *ngFor="let testimonial of filteredTestimonials()"
+        [testimonial]="testimonial"
+      ></app-testimonial>
+    </ngx-slick-carousel>
+  </div>
+  <div class="section" id="contact">
+    <div class="centered-category-title">Contact me 💌</div>
+    <app-contact></app-contact>
+    <app-copyright></app-copyright>
+  </div>
 </div>
-<div class="centered-category-title" #work>Companies I worked for 📁</div>
-<div class="category-wrapper">
-  <app-work-experience
-    *ngFor="let work of WORK_EXPERIENCE"
-    [work]="work"
-  ></app-work-experience>
-</div>
-<div class="centered-category-title" #certifications>
-  Certificates, Diplomas, Degrees, Awards 📃
-</div>
-<div class="category-wrapper">
-  <app-certificate
-    *ngFor="let certificate of CERTIFICATIONS"
-    [certificate]="certificate"
-  ></app-certificate>
-</div>
-<div class="centered-category-title" #projects>Latest projects 💻</div>
-<div class="category-wrapper">
-  <app-project
-    *ngFor="let project of filteredProjects(); let i = index"
-    [project]="project"
-    [position]="i % 2 === 0 ? 'right' : 'left'"
-  ></app-project>
-</div>
-<div class="centered-button double-button">
-  <button (click)="switchSeeLessProjects()" class="primary">
-    {{ isSeeLessProjects ? "Show all projects" : "See less projects" }}
-  </button>
-  <button (click)="goToGithub()" class="primary">Go to GitHub</button>
-</div>
-<div class="centered-category-title" #publications>
-  I like to write, sometimes ✏️
-</div>
-<div class="category-wrapper grid-4">
-  <app-article
-    *ngFor="let article of mediumArticles"
-    [article]="article"
-  ></app-article>
-</div>
-<div class="centered-button">
-  <button (click)="goToMedium()" class="primary">Go to Medium</button>
-</div>
-<div class="centered-category-title" #testimonials>Testimonials 💬</div>
-<ngx-slick-carousel
-  class="carousel category-wrapper"
-  #slickModal="slick-carousel"
-  [config]="slideConfig"
-  *ngIf="isSeeLessTestimonials"
->
-  <app-testimonial
-    ngxSlickItem
-    *ngFor="let testimonial of filteredTestimonials()"
-    [testimonial]="testimonial"
-  ></app-testimonial>
-</ngx-slick-carousel>
-<div class="category-wrapper grid-3" *ngIf="!isSeeLessTestimonials">
-  <app-testimonial
-    *ngFor="let testimonial of filteredTestimonials()"
-    [testimonial]="testimonial"
-  ></app-testimonial>
-</div>
-<div class="centered-button">
-  <button (click)="switchSeeLessTestimonials()" class="primary">
-    {{
-      isSeeLessTestimonials ? "See more testimonials" : "See less testimonials"
-    }}
-  </button>
-</div>
-<div class="centered-category-title" #contact>Contact me 💌</div>
-<app-contact></app-contact>
-<app-copyright></app-copyright>
 
-<!-- <app-sidebar (scrollEmit)="scroll($event)"></app-sidebar> -->
+<div id="fp-nav" class="fp-right">
+  <div [ngClass]="isActiveClass('banner') ? 'active' : null">
+    <span class="fp-sr-only">banner</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('summary') ? 'active' : null">
+    <span class="fp-sr-only">summary</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('skills') ? 'active' : null">
+    <span class="fp-sr-only">skills</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('companies') ? 'active' : null">
+    <span class="fp-sr-only">companies</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('certifications') ? 'active' : null">
+    <span class="fp-sr-only">certifications</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('projects') ? 'active' : null">
+    <span class="fp-sr-only">projects</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('publications') ? 'active' : null">
+    <span class="fp-sr-only">publications</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('testimonials') ? 'active' : null">
+    <span class="fp-sr-only">testimonials</span>•<span></span>
+  </div>
+  <div [ngClass]="isActiveClass('contact') ? 'active' : null">
+    <span class="fp-sr-only">contact</span>•<span></span>
+  </div>
+</div>

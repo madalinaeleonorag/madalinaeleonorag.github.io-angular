@@ -1,6 +1,6 @@
 .app-skills {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   grid-auto-flow: dense;
   grid-gap: 10px;
 
@@ -49,20 +49,38 @@
   }
 }
 
+@media only screen and (min-width: 470px) {
+  .app-skills {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
+
+@media only screen and (min-width: 560px) {
+  .app-skills {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .app-skills {
+    grid-template-columns: repeat(11, 1fr);
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .app-skills {
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(13, 1fr);
   }
 }
 
 @media only screen and (min-width: 992px) {
   .app-skills {
-    grid-template-columns: repeat(20, 1fr);
+    grid-template-columns: repeat(14, 1fr);
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .app-skills {
-    grid-template-columns: repeat(25, 1fr);
+    grid-template-columns: repeat(18, 1fr);
   }
 }

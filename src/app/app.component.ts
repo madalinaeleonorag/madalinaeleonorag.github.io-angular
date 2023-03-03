@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {
   TESTIOMNIALS,
@@ -27,9 +28,7 @@ export class AppComponent {
   public CERTIFICATIONS: any = CERTIFICATIONS;
   public GITHUB: any = GITHUB;
   public MEDIUM: any = MEDIUM;
-  public isSeeLessTestimonials: boolean = true;
-  public isSeeLessProjects: boolean = true;
-  slideConfig = {
+  public slideConfig: any = {
     lazyLoad: 'ondemand',
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -47,7 +46,7 @@ export class AppComponent {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 900,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -76,14 +75,56 @@ export class AppComponent {
       },
     ],
   };
+  public activeRoute: string = 'banner';
+  public anchors: string[] = [
+    'page1',
+    'page2',
+    'page3',
+    'page4',
+    'page5',
+    'page6',
+    'page7',
+    'page8',
+    'page9',
+  ];
+  public idAnchors: any = {
+    banner: 'page1',
+    summary: 'page2',
+    skills: 'page3',
+    companies: 'page4',
+    certifications: 'page5',
+    projects: 'page6',
+    publications: 'page7',
+    testimonials: 'page8',
+    contact: 'page9',
+  };
 
-  constructor(private externalService: ExternalService) {}
+  config: any;
+  fullpage_api: any;
+
+  constructor(
+    private externalService: ExternalService,
+    private router: Router
+  ) {
+    // for more details on config options please visit fullPage.js docs
+    this.config = {
+      // fullpage options
+      licenseKey: 'gplv3-license',
+      anchors: this.anchors,
+    };
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.activeRoute = event?.url;
+      }
+    });
+  }
 
   ngOnInit() {
     this.gitHubProjectsSubscription = this.externalService
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
-        this.gitHubProjects = res;
+        this.gitHubProjects = res.slice(0, 2);
       });
 
     this.mediumArticlesSubscription = this.externalService
@@ -93,24 +134,16 @@ export class AppComponent {
       });
   }
 
+  public getRef(fullPageRef: any) {
+    this.fullpage_api = fullPageRef;
+  }
+
+  public isActiveClass(id: string): boolean {
+    return this.activeRoute.includes(this.idAnchors[id]);
+  }
+
   public filteredTestimonials(): any {
-    return this.isSeeLessTestimonials
-      ? TESTIOMNIALS.filter((testimonial: any) => testimonial.featured)
-      : TESTIOMNIALS;
-  }
-
-  public filteredProjects(): any {
-    return this.isSeeLessProjects
-      ? this.gitHubProjects.slice(0, 3)
-      : this.gitHubProjects;
-  }
-
-  public switchSeeLessTestimonials(): void {
-    this.isSeeLessTestimonials = !this.isSeeLessTestimonials;
-  }
-
-  public switchSeeLessProjects(): void {
-    this.isSeeLessProjects = !this.isSeeLessProjects;
+    return TESTIOMNIALS.filter((testimonial: any) => testimonial.featured);
   }
 
   public goToGithub(): void {

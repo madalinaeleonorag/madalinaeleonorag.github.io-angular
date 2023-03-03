@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  margin: 1vh 0 12vh;
+  margin: 1vh 0 10vh;
   width: 100vw;
 
   &:hover {
@@ -24,7 +24,7 @@
   }
 
   .image {
-    height: 35vh;
+    height: 20vh;
     width: 100vw;
     min-width: 60%;
     background-size: cover;
@@ -34,7 +34,7 @@
 
   .content {
     color: var(--grey);
-    padding: 3vh 3vw;
+    padding: 3vw;
     border-right: 2px solid var(--primary);
     border-left: unset;
     margin: -7vh 5vh;
@@ -47,19 +47,21 @@
       font-weight: bold;
       color: var(--primary);
       font-family: "Esteban";
-      padding-bottom: 2vh;
+      padding-bottom: 1vh;
     }
 
     &-description {
       line-height: 2.5vh;
       padding-bottom: 1vh;
+      font-size: 12px;
     }
 
     &-languages {
       display: flex;
       flex-flow: wrap;
       padding-bottom: 2vh;
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 2.2vh;
 
       &-language {
         display: flex;
@@ -128,11 +130,20 @@
 
 @media only screen and (min-width: 992px) {
   .app-project {
-    margin: 3vh 0;
-
     &:hover {
       .image {
         filter: none;
+      }
+    }
+
+    .content {
+      &-name {
+        font-size: 18px;
+      }
+
+      &-description,
+      &-languages {
+        font-size: 14px;
       }
     }
   }

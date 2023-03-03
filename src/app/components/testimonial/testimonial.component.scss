@@ -12,7 +12,7 @@
   .description {
     line-height: 2.7vh;
     place-self: center;
-    padding: 2.5vw 3vw;
+    padding: 5vw;
     background-color: var(--white);
     height: -webkit-fill-available;
 
@@ -23,7 +23,7 @@
   }
 
   .author {
-    padding: 2.5vw 3vw;
+    padding: 5vw;
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -38,7 +38,7 @@
     }
 
     &-details {
-      padding-left: 1vw;
+      padding-left: 5vw;
       font-size: 12px;
 
       &-name {
@@ -48,8 +48,40 @@
       }
 
       &-role {
-        padding-top: 3px;
         color: var(--primary);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .app-testimonial {
+    .description {
+      padding: 3vw;
+    }
+
+    .author {
+      padding: 3vw;
+      min-height: 10vh;
+
+      &-details {
+        padding-left: 3vw;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .app-testimonial {
+    .description {
+      padding: 2vw;
+    }
+
+    .author {
+      padding: 2vw;
+
+      &-details {
+        padding-left: 2vw;
       }
     }
   }
