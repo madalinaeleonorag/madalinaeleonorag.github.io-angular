@@ -91,7 +91,7 @@ const TESTIOMNIALS = [
     role: 'Project Manager',
     date: 'Feb 7, 2022',
     from: 'Deloitte Digital',
-    featured: false,
+    featured: true,
   },
   {
     text: `She gave a huge boost to our Web app development, she came with a very long list of improvements to our existing app and managed to implement a lot of those items in just a couple of weeks. The quality of the code she has been writing and the overall work quality has been impressive. I would always want her in my team, given the opportunity.`,
