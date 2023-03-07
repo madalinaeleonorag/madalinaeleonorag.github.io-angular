@@ -1,28 +1,9 @@
 <div class="app-skills">
   <img
+    loading="lazy"
     *ngFor="let skill of skills"
     [src]="getLogoUrl(skill[0])"
     [ngClass]="switchClases(skill)"
+    [alt]="'Skill ' + skill[0]"
   />
-  <!-- <div class="category">
-    <img
-      *ngFor="let skill of skills.principal"
-      class="principal"
-      [src]="getLogoUrl(skill[0])"
-    />
-  </div>
-  <div class="category">
-    <img
-      *ngFor="let skill of skills.frequent"
-      class="frequent"
-      [src]="getLogoUrl(skill[0])"
-    />
-  </div>
-  <div class="category">
-    <img
-      *ngFor="let skill of skills.others"
-      class="others"
-      [src]="getLogoUrl(skill[0])"
-    />
-  </div> -->
 </div>

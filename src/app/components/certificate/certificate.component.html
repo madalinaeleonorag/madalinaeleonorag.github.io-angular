@@ -1,7 +1,8 @@
 <div class="app-certificate">
   <img
+    loading="lazy"
     [src]="'../../../assets/icons/certifications/' + certificate.logo + '.png'"
-    [alt]="certificate.name"
+    [alt]="'Logo for certification ' + certificate.name"
     (click)="open()"
   />
 </div>

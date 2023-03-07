@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+import { SocialLinksComponent } from './components/social-links/social-links.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
     CopyrightComponent,
     ContactComponent,
     ViewerComponent,
+    SocialLinksComponent,
   ],
   imports: [
     BrowserModule,

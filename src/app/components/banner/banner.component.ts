@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as CONSTANTS from 'src/assets/CONSTANTS';
 
 declare let particlesJS: any;
 
@@ -9,8 +8,6 @@ declare let particlesJS: any;
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
-  public CONSTANTS: any = CONSTANTS;
-
   ngOnInit(): void {
     particlesJS('particles-js', '../../../assets/particles.json', null);
   }
