@@ -15,7 +15,7 @@ import { CopyrightComponent } from './components/copyright/copyright.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ViewerComponent } from './components/viewer/viewer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+// import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
@@ -41,7 +41,7 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    PdfViewerModule,
+    // PdfViewerModule,
     SlickCarouselModule,
     AngularFullpageModule,
   ],
