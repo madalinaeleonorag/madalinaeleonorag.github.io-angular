@@ -11,8 +11,8 @@ const SHUTTERSTOCK = 'https://www.shutterstock.com/g/Madalina-Eleonora';
 const COPYRIGHT = '© Madalina-Eleonora Gheorghe 2023';
 
 // Descriptions
-const SUMMARY = `I am a senior Frontend Developer with a long experience working with <img src="../assets/icons/Angular.png" alt="Angular logo"> Angular and <img src="../assets/icons/RxJs.png" alt="RxJs logo"> RxJs. 
-  Additional, I have experience working with <img src="../assets/icons/React.js.png" alt="React.js logo"> React.js, <img src="../assets/icons/Sass.png" alt="Sass logo"> Sass, <img src="../assets/icons/AWS Services.png" alt="Amazon sercives logo"> AWS Services and <img src="../assets/icons/Azure.png" alt="Azure logo"> Azure. 
+const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs. 
+  Additional, I have experience working with React.js, Sass, AWS Services and Azure. 
   Currently working for <a target="_blank" href="https://www.cognizantsoftvision.com/">Cognizant Softvision</a>, former Frontend Application Developer at <a target="_blank" href="https://ro.deloittedigital.com/">Deloitte Digital</a>, Frontend Developer at <a target="_blank" href="https://www.ibm.com/services/ibmix">IBM iX</a> and Database Administrator ar <a target="_blank" href="https://www.renaultgroup.com/en/">Groupe Renault</a>.
   I delivered unique features in the past projects, improving user experience, contributing actively in meetings with suggestions and helping other colleagues, maintaining a good communication with the client. 
   I worked with large companies, in industries like banking, insurance, retail and e-commerce.

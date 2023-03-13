@@ -2,25 +2,24 @@
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  padding: 0 9vw;
+  padding: 0 5vw;
 }
 
 .centered-category-title {
   display: flex;
   justify-content: center;
-  padding: 6vh 12vw 3vh;
+  padding: 3vh 12vw;
   font-size: 24px;
   color: var(--white);
-  font-family: "Esteban";
   text-align: center;
   line-height: initial;
+  text-transform: uppercase;
 }
 
 .centered-button {
   display: flex;
   justify-content: center;
   padding: 2vh 12vw 0;
-  font-family: "Esteban";
   flex-flow: column;
   align-items: center;
 
@@ -35,24 +34,35 @@
   }
 }
 
-.articles-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.wrapper {
+  padding: 3vh 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  &-articles {
+    .articles {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &-testimonials {
+    .testimonials {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
-.testimonials-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-@media only screen and (min-width: 650px) {
+@media screen and (min-width: 650px) {
   .articles-wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0 5vw;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .centered-button {
     flex-flow: row;
 
@@ -62,13 +72,9 @@
       }
     }
   }
-
-  .grid-4 {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
 
-@media only screen and (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .centered-button {
     &.double-button {
       button {

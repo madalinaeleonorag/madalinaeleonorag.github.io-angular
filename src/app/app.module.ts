@@ -13,7 +13,6 @@ import { CertificateComponent } from './components/certificate/certificate.compo
 import { ArticleComponent } from './components/article/article.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { ViewerComponent } from './components/viewer/viewer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
@@ -31,7 +30,6 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
     ArticleComponent,
     CopyrightComponent,
     ContactComponent,
-    ViewerComponent,
     SocialLinksComponent,
   ],
   imports: [

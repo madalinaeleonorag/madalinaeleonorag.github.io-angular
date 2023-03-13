@@ -83,7 +83,16 @@ export class AppComponent {
     this.gitHubProjectsSubscription = this.externalService
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
-        this.gitHubProjects = res.slice(0, 3);
+        this.gitHubProjects = res
+          .filter(
+            (item: IGitHubProject) =>
+              item.name !== 'madalinaeleonorag.github.io'
+          )
+          .sort(
+            (a: IGitHubProject, b: IGitHubProject) =>
+              b.created.getTime() - a.created.getTime()
+          )
+          .slice(0, 3);
       });
 
     this.mediumArticlesSubscription = this.externalService

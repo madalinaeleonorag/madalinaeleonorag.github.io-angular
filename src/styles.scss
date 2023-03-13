@@ -1,6 +1,8 @@
 :root {
   --primary: #b92849;
+  --primary-opacity-50: #b92849d6;
   --secondary: #26bc99;
+  --secondary-opacity-50: #26bc99d6;
   --white: #feffff;
   --black: #0e0f14;
   --grey: #f6f6f6;
@@ -8,14 +10,6 @@
   --warning: #ff5733;
   --info: #ffc300;
   --transparent: transparent;
-}
-
-@font-face {
-  font-family: "Esteban";
-  src: local("Esteban"),
-    url("./assets/fonts/Esteban/esteban-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
@@ -39,6 +33,8 @@ body {
   font-size: 16px;
   letter-spacing: 0.2vw;
   line-height: 2.9vh;
+  padding: 1vw;
+  color: var(--white);
 }
 
 button {
@@ -206,7 +202,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   body {
     font-size: 16px;
     letter-spacing: unset;

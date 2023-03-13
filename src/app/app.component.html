@@ -1,79 +1,93 @@
 <app-banner></app-banner>
 
-<div class="centered-category-title">Long story short 🔦</div>
-<app-summary></app-summary>
-
-<div class="centered-category-title">What I worked with 🌟</div>
-<div class="category-wrapper">
-  <app-skills></app-skills>
+<div class="wrapper wrapper-summary">
+  <div class="centered-category-title">Long story short</div>
+  <app-summary></app-summary>
 </div>
 
-<div class="centered-category-title">Companies I worked for 📁</div>
-<div class="category-wrapper">
-  <app-work-experience
-    *ngFor="let work of WORK_EXPERIENCE"
-    [work]="work"
-  ></app-work-experience>
+<div class="wrapper wrapper-experiences">
+  <div class="centered-category-title">Companies I worked for</div>
+  <div class="category-wrapper">
+    <app-work-experience
+      *ngFor="let work of WORK_EXPERIENCE"
+      [work]="work"
+    ></app-work-experience>
+  </div>
 </div>
-<div class="centered-category-title">
-  Certificates, Diplomas, Degrees, Awards 📃
+
+<div class="wrapper wrapper-certifications">
+  <div class="centered-category-title">
+    Certificates, Diplomas, Degrees, Awards
+  </div>
+  <div class="category-wrapper">
+    <app-certificate
+      *ngFor="let certificate of CERTIFICATIONS"
+      [certificate]="certificate"
+    ></app-certificate>
+  </div>
 </div>
-<div class="category-wrapper">
-  <app-certificate
-    *ngFor="let certificate of CERTIFICATIONS"
-    [certificate]="certificate"
-  ></app-certificate>
+
+<div class="wrapper wrapper-projects">
+  <div class="centered-category-title">Latest projects</div>
+  <div class="category-wrapper">
+    <app-project
+      *ngFor="let project of gitHubProjects; let i = index"
+      [project]="project"
+      [position]="i % 2 === 0 ? 'right' : 'left'"
+    ></app-project>
+  </div>
+  <div class="centered-button">
+    <button (click)="goToGithub()" class="primary">Go to GitHub</button>
+  </div>
 </div>
-<div class="centered-category-title">Latest projects 💻</div>
-<div class="category-wrapper">
-  <app-project
-    *ngFor="let project of gitHubProjects; let i = index"
-    [project]="project"
-    [position]="i % 2 === 0 ? 'right' : 'left'"
-  ></app-project>
+
+<div class="wrapper wrapper-articles">
+  <div class="centered-category-title" #publications>I like to write</div>
+  <div class="category-wrapper articles">
+    <app-article
+      *ngFor="let article of mediumArticles"
+      [article]="article"
+    ></app-article>
+  </div>
+  <div class="centered-button">
+    <button (click)="goToMedium()" class="primary">Go to Medium</button>
+  </div>
 </div>
-<div class="centered-button">
-  <button (click)="goToGithub()" class="primary">Go to GitHub</button>
+
+<div class="wrapper wrapper-testimonials">
+  <div class="centered-category-title">Testimonials</div>
+  <ngx-slick-carousel
+    class="carousel category-wrapper"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    *ngIf="isSeeLessTestimonials"
+  >
+    <app-testimonial
+      ngxSlickItem
+      *ngFor="let testimonial of filteredTestimonials()"
+      [testimonial]="testimonial"
+    ></app-testimonial>
+  </ngx-slick-carousel>
+  <div class="category-wrapper testimonials" *ngIf="!isSeeLessTestimonials">
+    <app-testimonial
+      *ngFor="let testimonial of filteredTestimonials()"
+      [testimonial]="testimonial"
+    ></app-testimonial>
+  </div>
+  <div class="centered-button">
+    <button (click)="switchSeeLessTestimonials()" class="primary">
+      {{
+        isSeeLessTestimonials
+          ? "See more testimonials"
+          : "See less testimonials"
+      }}
+    </button>
+  </div>
 </div>
-<div class="centered-category-title" #publications>I like to write ✏️</div>
-<div class="category-wrapper articles-wrapper">
-  <app-article
-    *ngFor="let article of mediumArticles"
-    [article]="article"
-  ></app-article>
+
+<div class="wrapper wrapper-contact">
+  <div class="centered-category-title">Contact me</div>
+  <app-contact></app-contact>
 </div>
-<div class="centered-button">
-  <button (click)="goToMedium()" class="primary">Go to Medium</button>
-</div>
-<div class="centered-category-title">Testimonials 💬</div>
-<ngx-slick-carousel
-  class="carousel category-wrapper"
-  #slickModal="slick-carousel"
-  [config]="slideConfig"
-  *ngIf="isSeeLessTestimonials"
->
-  <app-testimonial
-    ngxSlickItem
-    *ngFor="let testimonial of filteredTestimonials()"
-    [testimonial]="testimonial"
-  ></app-testimonial>
-</ngx-slick-carousel>
-<div
-  class="category-wrapper testimonials-wrapper"
-  *ngIf="!isSeeLessTestimonials"
->
-  <app-testimonial
-    *ngFor="let testimonial of filteredTestimonials()"
-    [testimonial]="testimonial"
-  ></app-testimonial>
-</div>
-<div class="centered-button">
-  <button (click)="switchSeeLessTestimonials()" class="primary">
-    {{
-      isSeeLessTestimonials ? "See more testimonials" : "See less testimonials"
-    }}
-  </button>
-</div>
-<div class="centered-category-title">Contact me 💌</div>
-<app-contact></app-contact>
+
 <app-copyright></app-copyright>

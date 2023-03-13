@@ -29,7 +29,6 @@
     &-name {
       font-weight: bold;
       font-size: 14px;
-      font-family: "Esteban";
     }
 
     button {
@@ -39,7 +38,7 @@
   }
 }
 
-@media only screen and (min-width: 650px) {
+@media screen and (min-width: 650px) {
   .app-article {
     .image {
       min-height: 20vw;
@@ -52,7 +51,7 @@
   }
 }
 
-@media only screen and (min-width: 840px) {
+@media screen and (min-width: 840px) {
   .app-article {
     .image {
       min-height: 15vw;

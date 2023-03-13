@@ -6,4 +6,5 @@ export interface IGitHubProject {
   principalCodingLanguage: string;
   imageUrl: string;
   url: string;
+  created: Date;
 }

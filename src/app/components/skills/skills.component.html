@@ -2,8 +2,8 @@
   <img
     loading="lazy"
     *ngFor="let skill of skills"
-    [src]="getLogoUrl(skill[0])"
+    [src]="getLogoUrl(skill.name)"
     [ngClass]="switchClases(skill)"
-    [alt]="'Skill ' + skill[0]"
+    [alt]="'Skill ' + skill.name"
   />
 </div>

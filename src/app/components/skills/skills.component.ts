@@ -1,27 +1,25 @@
 import { Component } from '@angular/core';
 import { WORK_EXPERIENCE } from 'src/assets/CONSTANTS';
 
+export class Skill {
+  name: string;
+  count: number;
+}
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent {
-  private SKILLS_PRINCIPAL_COUNT = 5;
-  private SKILLS_FREQUENT_COUNT = 10;
-
-  public skills: any = {
-    principal: [],
-    frequent: [],
-    others: [],
-  };
+  public skills: Skill[] = [];
 
   constructor() {
     this.sortSkills();
   }
 
-  private sortSkills() {
-    let sortedSkills: any = [];
+  public sortSkills() {
+    let sortedSkills: Skill[] = [];
     let allSkills: any[] = [];
 
     WORK_EXPERIENCE.forEach((experience) => {
@@ -30,18 +28,21 @@ export class SkillsComponent {
       );
     });
 
-    const reduced: any = allSkills.reduce((prev, cur) => {
+    const reduced: any[] = allSkills.reduce((prev, cur) => {
       prev[cur] = (prev[cur] || 0) + 1;
       return prev;
     }, {});
 
     for (var skill in reduced) {
-      sortedSkills.push([skill, reduced[skill]]);
+      if (reduced[skill] > 1) {
+        sortedSkills.push({ name: skill, count: reduced[skill] });
+      }
     }
 
     const shuffledArray = sortedSkills.sort(
-      (a: any, b: any) => 0.5 - Math.random()
+      (a: Skill, b: Skill) => 0.5 - Math.random()
     );
+
     this.skills = shuffledArray;
   }
 
@@ -49,13 +50,13 @@ export class SkillsComponent {
     return `../../../assets/icons/${skillName}.png`;
   }
 
-  public switchClases(skill: any): string {
+  public switchClases(skill: Skill): string {
     switch (true) {
-      case skill[1] === 1:
+      case skill.count === 2:
         return 'small';
-      case skill[1] > 1 && skill[1] <= 4:
+      case skill.count > 2 && skill.count <= 4:
         return 'medium';
-      case skill[1] > 4:
+      case skill.count > 4:
         return 'big';
       default:
         return 'small';

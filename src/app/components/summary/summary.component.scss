@@ -1,23 +1,22 @@
 .app-summary {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   text-align: center;
-  padding: 0 9vw;
+  padding: 5vw;
 
   .description {
-    color: var(--secondary);
     line-height: 3vh;
     place-self: center;
+    flex: 1 1 50%;
+  }
+
+  app-skills {
+    flex: 1 1 50%;
+    align-self: center;
   }
 }
 
-::ng-deep .app-summary {
-  img {
-    height: 15px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .app-summary {
     .description {
       font-size: 18px;
@@ -25,10 +24,12 @@
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .app-summary {
+    flex-flow: row;
+
     .description {
-      line-height: 3.5vh;
+      line-height: 3vh;
     }
   }
 }

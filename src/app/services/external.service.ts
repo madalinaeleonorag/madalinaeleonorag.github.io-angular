@@ -31,6 +31,7 @@ export class ExternalService {
             principalCodingLanguage: item.language,
             url: item.html_url,
             imageUrl: `https://raw.githubusercontent.com/${item.full_name}/${item.default_branch}/demo.png`,
+            created: new Date(item.created_at),
           })
         )
       )
