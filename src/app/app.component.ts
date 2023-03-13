@@ -24,6 +24,7 @@ export class AppComponent {
   public gitHubProjects: Array<IGitHubProject> = [];
   public mediumArticles: Array<IMediumArticle> = [];
   public TESTIMONIALS: any;
+  public isSeeLessTestimonials: boolean = true;
   public WORK_EXPERIENCE: any = WORK_EXPERIENCE;
   public CERTIFICATIONS: any = CERTIFICATIONS;
   public GITHUB: any = GITHUB;
@@ -75,56 +76,14 @@ export class AppComponent {
       },
     ],
   };
-  public activeRoute: string = 'banner';
-  public anchors: string[] = [
-    'page1',
-    'page2',
-    'page3',
-    'page4',
-    'page5',
-    'page6',
-    'page7',
-    'page8',
-    'page9',
-  ];
-  public idAnchors: any = {
-    banner: 'page1',
-    summary: 'page2',
-    skills: 'page3',
-    companies: 'page4',
-    certifications: 'page5',
-    projects: 'page6',
-    publications: 'page7',
-    testimonials: 'page8',
-    contact: 'page9',
-  };
 
-  config: any;
-  fullpage_api: any;
-
-  constructor(
-    private externalService: ExternalService,
-    private router: Router
-  ) {
-    // for more details on config options please visit fullPage.js docs
-    this.config = {
-      // fullpage options
-      licenseKey: 'gplv3-license',
-      anchors: this.anchors,
-    };
-
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.activeRoute = event?.url;
-      }
-    });
-  }
+  constructor(private externalService: ExternalService) {}
 
   ngOnInit() {
     this.gitHubProjectsSubscription = this.externalService
       .getGitHubProjects()
       .subscribe((res: IGitHubProject[]) => {
-        this.gitHubProjects = res.slice(0, 2);
+        this.gitHubProjects = res.slice(0, 3);
       });
 
     this.mediumArticlesSubscription = this.externalService
@@ -134,16 +93,14 @@ export class AppComponent {
       });
   }
 
-  public getRef(fullPageRef: any) {
-    this.fullpage_api = fullPageRef;
-  }
-
-  public isActiveClass(id: string): boolean {
-    return this.activeRoute.includes(this.idAnchors[id]);
-  }
-
   public filteredTestimonials(): any {
-    return TESTIOMNIALS.filter((testimonial: any) => testimonial.featured);
+    return this.isSeeLessTestimonials
+      ? TESTIOMNIALS.filter((testimonial: any) => testimonial.featured)
+      : TESTIOMNIALS;
+  }
+
+  public switchSeeLessTestimonials(): void {
+    this.isSeeLessTestimonials = !this.isSeeLessTestimonials;
   }
 
   public goToGithub(): void {

@@ -39,12 +39,14 @@
 
     &-details {
       padding-left: 5vw;
+      line-height: normal;
       font-size: 12px;
 
       &-name {
         font-weight: bold;
         font-size: 14px;
         font-family: "Esteban";
+        padding-bottom: 0.7vh;
       }
 
       &-role {
