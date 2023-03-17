@@ -1,27 +1,25 @@
-<div class="app-project" [ngClass]="position">
+<div class="app-project shine">
   <div
     class="image"
-    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+    [ngStyle]="{ 'background-image': 'url(' + project.imageUrl + ')' }"
   ></div>
-
-  <div class="content">
-    <div class="content-name">
+  <div class="description">
+    <div class="desctiption-name">
       {{ project.name }}
     </div>
-    <div class="content-description">{{ projectDescription() }}</div>
-    <div class="content-languages">
+    <div class="description-languages">
       <div
-        class="content-languages-language"
+        class="description-languages-language"
         *ngFor="let item of languagesPercentage | keyvalue"
       >
-        <div class="content-languages-language-title">
+        <div class="description-languages-language-title">
           {{ item.key }}
         </div>
-        <div class="content-languages-language-percentage">
+        <div class="description-languages-language-percentage">
           {{ item.value }}
         </div>
       </div>
     </div>
-    <button (click)="openProject()" class="primary">Open</button>
+    <a target="_blank" [href]="project.url">See code</a>
   </div>
 </div>

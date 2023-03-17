@@ -2,10 +2,12 @@
 
 <div class="wrapper wrapper-summary">
   <div class="centered-category-title">Long story short</div>
-  <app-summary></app-summary>
+  <div class="category-wrapper">
+    <app-summary></app-summary>
+  </div>
 </div>
 
-<div class="wrapper wrapper-experiences">
+<!-- <div class="wrapper wrapper-experiences">
   <div class="centered-category-title">Companies I worked for</div>
   <div class="category-wrapper">
     <app-work-experience
@@ -13,12 +15,12 @@
       [work]="work"
     ></app-work-experience>
   </div>
-</div>
+</div> -->
 
 <div class="wrapper wrapper-certifications">
-  <div class="centered-category-title">
+  <!-- <div class="centered-category-title">
     Certificates, Diplomas, Degrees, Awards
-  </div>
+  </div> -->
   <div class="category-wrapper">
     <app-certificate
       *ngFor="let certificate of CERTIFICATIONS"
@@ -29,7 +31,7 @@
 
 <div class="wrapper wrapper-projects">
   <div class="centered-category-title">Latest projects</div>
-  <div class="category-wrapper">
+  <div class="category-wrapper projects">
     <app-project
       *ngFor="let project of gitHubProjects; let i = index"
       [project]="project"
@@ -37,7 +39,7 @@
     ></app-project>
   </div>
   <div class="centered-button">
-    <button (click)="goToGithub()" class="primary">Go to GitHub</button>
+    <button (click)="goToGithub()" class="dark">Go to GitHub</button>
   </div>
 </div>
 
@@ -50,7 +52,7 @@
     ></app-article>
   </div>
   <div class="centered-button">
-    <button (click)="goToMedium()" class="primary">Go to Medium</button>
+    <button (click)="goToMedium()" class="dark">Go to Medium</button>
   </div>
 </div>
 
@@ -75,7 +77,7 @@
     ></app-testimonial>
   </div>
   <div class="centered-button">
-    <button (click)="switchSeeLessTestimonials()" class="primary">
+    <button (click)="switchSeeLessTestimonials()" class="dark">
       {{
         isSeeLessTestimonials
           ? "See more testimonials"

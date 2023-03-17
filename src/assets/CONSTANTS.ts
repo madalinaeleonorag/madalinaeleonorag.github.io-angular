@@ -13,7 +13,7 @@ const COPYRIGHT = '© Madalina-Eleonora Gheorghe 2023';
 // Descriptions
 const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs. 
   Additional, I have experience working with React.js, Sass, AWS Services and Azure. 
-  Currently working for <a target="_blank" href="https://www.cognizantsoftvision.com/">Cognizant Softvision</a>, former Frontend Application Developer at <a target="_blank" href="https://ro.deloittedigital.com/">Deloitte Digital</a>, Frontend Developer at <a target="_blank" href="https://www.ibm.com/services/ibmix">IBM iX</a> and Database Administrator ar <a target="_blank" href="https://www.renaultgroup.com/en/">Groupe Renault</a>.
+  Currently working for <a target="_blank" href="https://www.cognizantsoftvision.com/">Cognizant Softvision</a>, former Frontend Application Developer at <a target="_blank" href="https://ro.deloittedigital.com/">Deloitte Digital</a>, Frontend Developer at <a target="_blank" href="https://www.ibm.com/services/ibmix">IBM iX</a> and Database Administrator at <a target="_blank" href="https://www.renaultgroup.com/en/">Groupe Renault</a>.
   I delivered unique features in the past projects, improving user experience, contributing actively in meetings with suggestions and helping other colleagues, maintaining a good communication with the client. 
   I worked with large companies, in industries like banking, insurance, retail and e-commerce.
   My studies were based in Information Technology Administration and Management, having a bachelor and a master degree from <a target="_blank" href="https://www.rau.ro/">Romanian-American University</a>.`;
@@ -192,6 +192,31 @@ const WORK_EXPERIENCE = [
     dateEnd: 'present',
     location: 'Bucharest',
     companyLogo: 'cognizant',
+    projects: [
+      {
+        name: 'Client 1',
+        country: 'Belgium',
+        startDate: 'Mar 2023',
+        endDate: 'present',
+        industry: ['Banking'],
+        technologies: [
+          'HTML',
+          'CSS',
+          'JavaScript',
+          'Angular',
+          'Sass',
+          'TypeScript',
+          'REST',
+          'RxJs',
+          'Mocha',
+          'Postman',
+          'Chai.js',
+        ],
+        contribution: [
+          'Internal web application for fraud monitoring, implemented using an internal component framework.',
+        ],
+      },
+    ],
   },
   {
     company: 'Deloitte Digital',
@@ -217,17 +242,10 @@ const WORK_EXPERIENCE = [
           'moment.js',
           'Postman',
           'Sass',
-          'Slack',
         ],
         contribution: [
-          'Wrote a tutorial about how to write clean code when working on the frontend side for Alpha Team',
-          'Feature that show to the user the active policies into a responsive and interactive design',
-          'Upgraded from Angular 8 to Angular 13',
-          'Added consistency to the CSS and HTML code maintaining a good collaboration with the designer',
-          'Added possibility to use a vocabulary for an easier translation',
-          'Improved the user authentication flow and added more layers of security for the confidential information',
-          'Adding the possibility of a Mid Term Adjustment to a policy',
-          'Mentoring frontend colleagues',
+          'Internal banking application used by agents which helps them to check a client insurance policies.',
+          'Delivered different features: feature that show to the user the active policies into a responsive and interactive design, the possibility of a Mid Term Adjustment to a policy.',
         ],
       },
       {
@@ -250,13 +268,11 @@ const WORK_EXPERIENCE = [
           'Docker',
           'Postman',
           'Sass',
-          'Teams',
-          'Zoom',
           'Next.js',
         ],
         contribution: [
-          'Create new React components and upload them into Mambu',
-          'Modify Java functions accordingly to Thymeleaf templates to create custom PDF files',
+          'Internal banking application used by agents which helps them to check a client profile, create loan accounts, refinance loans, update details and create new client accounts.',
+          'Modified Java code accordingly to Thymeleaf templates to create custom PDF files and uploaded custom applications as modules in a Mambu interface.',
         ],
       },
     ],
@@ -288,10 +304,9 @@ const WORK_EXPERIENCE = [
           'Photoshop',
           'Postman',
           'Sass',
-          'Slack',
         ],
         contribution: [
-          'Designing mobile-based features using Ionic, working in an agile team.',
+          'Designing mobile-based features, working in an agile team.',
         ],
       },
       {
@@ -316,10 +331,7 @@ const WORK_EXPERIENCE = [
           'Slack',
         ],
         contribution: [
-          'Delivered a good quality presentation website for our client in order to present our projects to their customers, in a small amount of time so the client was able to see the results and to use it',
-          'Investigated and solved some vulnerabilities from the applications',
-          'Contributed actively on a project from March and until the end of November, by helping other colleagues with code review and implementing reusable components. I also helped taking decisions in business rules and in development process',
-          'Participated in every meeting and decision in a proactive way in order to deliver a quality and clean code which meets the client requirements',
+          "Development of internal applications both locally and at the client's premises: application for monitoring the security of devices used within the company, application for synthesizing information held by the company and used by its staff, application used by staff performing repairs at the client's premises according to the insurance held.",
         ],
       },
       {
@@ -337,10 +349,7 @@ const WORK_EXPERIENCE = [
           'Slack',
         ],
         contribution: [
-          'Redesigning the on-boarding process for non plastic material and packaging suppliers onto the materials library and imagining the presentation and navigation of the library in parallel',
-          'Participated in discussions with the design and front-end team in order to clarify and suggest edits so the user can have a better experience using the website',
-          'Created reusable pages using React.js which corresponds to the design',
-          'Created dynamic forms using Formik framework for the registration of new plastic free materials',
+          'Redesigned flow for buying recyclable materials for a retailer.',
         ],
       },
       {
@@ -369,13 +378,10 @@ const WORK_EXPERIENCE = [
           'AWS Services',
           'GitHub',
           'Bash',
-          'Teams',
         ],
         contribution: [
-          'Created new components and features for the application in a way that we can reuse them when it is need',
-          'Helped both design and development departments to take decisions in order to deliver the best features',
-          'Learned better ways to solve the problems that appears during the development',
-          'Delivered WYSIWYG (What You See Is What You Get), a feature that wants to improve the customer experience regarding the promotional codes.The first phase included changing the design of both coupons and product promotions, including more descriptive text and a user-friendly design, changes made throughout the application, on all banners. In the same phase was included the creation of the right drawer, which replaces the pop-up with the description of the promotion or the description page for it, being available by clicking on the link with the coupon / promotion details. If there are multiple promotions for a single product, they are displayed as a total, and will be described accordingly in the right drawer. The second phase includes the implementation of the new API response, which includes a new possibility to process the offers, displaying the requirement quantity, following that on the stores where the feature is activated, to display and if the offer has been completed and benefit from it. The new treatment system is visible both in the coupon design, in the mini-cart or in the top menu, in the right drawer and in the product page',
+          'Being part of the team in a micro frontend team, delivering shopping list, product pages and cart functionalities.',
+          'Delivered multiple features, including: feature to improve the customer experience regarding the promotional codes and feature to help customers to find easier the products already bought in the past.',
         ],
       },
     ],
@@ -396,8 +402,7 @@ const WORK_EXPERIENCE = [
         industry: ['Automotive'],
         technologies: ['Matlab', 'SQL', 'Excel', 'PowerPoint', 'SharePoint'],
         contribution: [
-          'Generating reports using large amounts of data from company clients around the globe',
-          'Database maintenance using my own Matlab scripts',
+          'Generating statistics on the use of their machines, according to data received from the research team.',
         ],
       },
     ],
@@ -405,6 +410,13 @@ const WORK_EXPERIENCE = [
 ];
 
 const CERTIFICATIONS = [
+  {
+    logo: 'Udemy',
+    name: 'Agile Fundamentals: Including Scrum & Kanban',
+    organization: 'Udemy',
+    issueDate: 'Oct 2022',
+    url: 'https://www.udemy.com/certificate/UC-e30408dc-436b-467e-9d31-daa12d98ea06/',
+  },
   {
     logo: 'HackerRank',
     name: 'Angular Certificate',
@@ -419,34 +431,34 @@ const CERTIFICATIONS = [
     issueDate: 'Mar 2022',
     url: 'https://www.efset.org/cert/V3b9C2',
   },
-  {
-    logo: 'Think-like-a-hacker',
-    name: 'Think like a hacker',
-    organization: 'IBM',
-    issueDate: 'Sep 2021',
-    url: 'https://www.credly.com/badges/2b0b25bd-328e-45c3-8248-85e09c380ef2',
-  },
-  {
-    logo: 'IBM_Cloud_Essentials',
-    name: 'IBM Cloud Essentials',
-    organization: 'IBM',
-    issueDate: 'Jan 2021',
-    url: 'https://www.youracclaim.com/badges/26b0884f-9c3a-42f1-be74-6b23c4f6a743',
-  },
-  {
-    logo: 'Security-_-Privacy-by-Design-Foundational',
-    name: 'Security and Privacy by Design Foundations',
-    organization: 'IBM',
-    issueDate: 'Jan 2021',
-    url: 'https://www.youracclaim.com/badges/84998ca5-487f-4c61-b1e5-298ec991bb20',
-  },
-  {
-    logo: 'Watson_and_Cloud_Foundations',
-    name: 'Watson and Cloud Foundations',
-    organization: 'IBM',
-    issueDate: 'Jan 2021',
-    url: 'https://www.youracclaim.com/badges/11c2db76-b461-4bf9-8a12-9a42663d404f',
-  },
+  // {
+  //   logo: 'Think-like-a-hacker',
+  //   name: 'Think like a hacker',
+  //   organization: 'IBM',
+  //   issueDate: 'Sep 2021',
+  //   url: 'https://www.credly.com/badges/2b0b25bd-328e-45c3-8248-85e09c380ef2',
+  // },
+  // {
+  //   logo: 'IBM_Cloud_Essentials',
+  //   name: 'IBM Cloud Essentials',
+  //   organization: 'IBM',
+  //   issueDate: 'Jan 2021',
+  //   url: 'https://www.youracclaim.com/badges/26b0884f-9c3a-42f1-be74-6b23c4f6a743',
+  // },
+  // {
+  //   logo: 'Security-_-Privacy-by-Design-Foundational',
+  //   name: 'Security and Privacy by Design Foundations',
+  //   organization: 'IBM',
+  //   issueDate: 'Jan 2021',
+  //   url: 'https://www.youracclaim.com/badges/84998ca5-487f-4c61-b1e5-298ec991bb20',
+  // },
+  // {
+  //   logo: 'Watson_and_Cloud_Foundations',
+  //   name: 'Watson and Cloud Foundations',
+  //   organization: 'IBM',
+  //   issueDate: 'Jan 2021',
+  //   url: 'https://www.youracclaim.com/badges/11c2db76-b461-4bf9-8a12-9a42663d404f',
+  // },
   {
     logo: 'IBM-Mentor',
     name: 'IBM Mentor',
@@ -462,26 +474,26 @@ const CERTIFICATIONS = [
     url: 'https://www.youracclaim.com/badges/b6792b26-e919-4de1-bc24-d4192439aa50',
   },
   {
-    logo: 'RAU',
-    name: 'Master in Computer/Information Technology Administration and Management',
+    logo: 'URA',
+    name: 'Licentiate & Master in Computer Science for Business Management',
     organization: 'Romanian-American University',
-    issueDate: '2018-2020',
+    issueDate: '2015-2020',
     url: 'https://www.rau.ro',
   },
-  {
-    logo: 'Badges_v8-07_Practitioner',
-    name: 'Enterprise Design Thinking Practitioner',
-    organization: 'IBM',
-    issueDate: 'Mar 2020',
-    url: 'https://www.youracclaim.com/badges/f28084ab-7407-4d30-8f84-e612adc40402',
-  },
-  {
-    logo: 'IBM-Agile-Explorer',
-    name: 'IBM Agile Explorer',
-    organization: 'IBM',
-    issueDate: 'Mar 2020',
-    url: 'https://www.youracclaim.com/badges/8ed472e8-38c5-42c0-aee7-c1993e9f737f',
-  },
+  // {
+  //   logo: 'Badges_v8-07_Practitioner',
+  //   name: 'Enterprise Design Thinking Practitioner',
+  //   organization: 'IBM',
+  //   issueDate: 'Mar 2020',
+  //   url: 'https://www.youracclaim.com/badges/f28084ab-7407-4d30-8f84-e612adc40402',
+  // },
+  // {
+  //   logo: 'IBM-Agile-Explorer',
+  //   name: 'IBM Agile Explorer',
+  //   organization: 'IBM',
+  //   issueDate: 'Mar 2020',
+  //   url: 'https://www.youracclaim.com/badges/8ed472e8-38c5-42c0-aee7-c1993e9f737f',
+  // },
   {
     logo: 'Rau-DevHack',
     name: 'Second place at Rau-DevHack Hackathon',
@@ -496,13 +508,13 @@ const CERTIFICATIONS = [
     issueDate: 'Nov 2018',
     url: 'https://www.facebook.com/DevTalksRomania/videos/1896310230465604/',
   },
-  {
-    logo: 'URA',
-    name: 'Licentiate in Computer/Information Technology Administration and Management',
-    organization: 'Romanian-American University',
-    issueDate: '2015-2018',
-    url: 'https://www.rau.ro',
-  },
+  // {
+  //   logo: 'URA',
+  //   name: 'Licentiate in Computer/Information Technology Administration and Management',
+  //   organization: 'Romanian-American University',
+  //   issueDate: '2015-2018',
+  //   url: 'https://www.rau.ro',
+  // },
 ];
 
 export {

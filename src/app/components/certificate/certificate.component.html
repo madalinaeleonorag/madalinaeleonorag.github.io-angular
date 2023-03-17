@@ -1,8 +1,9 @@
-<div class="app-certificate">
+<div class="app-certificate shine button light" (click)="open()">
   <img
     loading="lazy"
     [src]="'../../../assets/icons/certifications/' + certificate.logo + '.png'"
     [alt]="'Logo for certification ' + certificate.name"
-    (click)="open()"
   />
+  <div class="name">{{ certificate.name }}</div>
+  <div class="date">{{ certificate.issueDate }}</div>
 </div>

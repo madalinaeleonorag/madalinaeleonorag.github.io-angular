@@ -6,14 +6,15 @@
 }
 
 .centered-category-title {
-  display: flex;
-  justify-content: center;
-  padding: 3vh 12vw;
-  font-size: 24px;
-  color: var(--white);
-  text-align: center;
-  line-height: initial;
+  margin: 5vh 12vw;
+  font-size: 3rem;
   text-transform: uppercase;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  width: max-content;
+  align-self: center;
 }
 
 .centered-button {
@@ -35,34 +36,74 @@
 }
 
 .wrapper {
-  padding: 3vh 0;
+  padding: 4vh 0;
   display: flex;
   flex-flow: column;
   justify-content: center;
 
+  &-summary {
+    padding: 7vh 0;
+  }
+
+  &-certifications {
+    background-image: var(--gradient-opacity-50), url(../assets/background.png);
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    position: relative;
+    padding: 20vh 0;
+
+    .category-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   &-articles {
     .articles {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-projects {
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   &-testimonials {
     .testimonials {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
 
 @media screen and (min-width: 650px) {
-  .articles-wrapper {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0 5vw;
+  .wrapper {
+    &-certifications {
+      .category-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .articles,
+    .projects {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 0 5vw;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
+  .wrapper-certifications {
+    .category-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   .centered-button {
     flex-flow: row;
 

@@ -1,12 +1,10 @@
-<div class="app-article">
+<div class="app-article shine">
   <div
     class="image"
     [ngStyle]="{ 'background-image': 'url(' + article.thumbnail + ')' }"
   ></div>
   <div class="description">
-    <div class="description-name">
-      {{ article.title }}
-    </div>
-    <button (click)="openArticle()" class="primary">Read</button>
+    {{ article.title }}
+    <a target="_blank" [href]="article.link">Read</a>
   </div>
 </div>

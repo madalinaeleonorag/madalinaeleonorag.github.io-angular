@@ -8,8 +8,4 @@ import { IMediumArticle } from 'src/app/interfaces/medium-article';
 })
 export class ArticleComponent {
   @Input() article: IMediumArticle;
-
-  public openArticle(): void {
-    window.open(this.article.link, '_blank');
-  }
 }

@@ -1,58 +1,35 @@
 .app-project {
+  color: var(--theme-black);
+  margin: 5px;
+  justify-self: stretch;
+  margin: 5px;
+  max-height: -webkit-fill-available;
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  margin: 1vh 0 10vh;
-  width: 100vw;
-
-  &:hover {
-    .content {
-      border-color: var(--secondary) !important;
-      box-shadow: 0px 0px 13px -8px var(--secondary);
-
-      &-name {
-        color: var(--secondary);
-      }
-    }
-  }
-
-  &.left {
-    .content {
-      border-left: 2px solid var(--primary);
-      border-right: unset;
-    }
-  }
+  justify-content: space-between;
+  height: 100%;
 
   .image {
-    height: 20vh;
-    width: 100vw;
-    min-width: 60%;
+    min-height: 20vw;
+    height: 20vw;
     background-size: cover;
     background-position: center;
-    z-index: 1;
   }
 
-  .content {
-    color: var(--grey);
-    padding: 3vw;
-    border-right: 2px solid var(--primary);
-    border-left: unset;
-    margin: -7vh 5vh;
-    text-align-last: start;
-    background-color: var(--black);
-    z-index: 2;
-    box-shadow: 0px 0px 13px -8px var(--primary);
+  .description {
+    background-color: var(--grey);
+    padding: 1.5vw;
+    display: flex;
+    flex-flow: column;
+    font-size: 1.5rem;
+    height: -webkit-fill-available;
+    justify-content: space-between;
+    font-weight: bold;
 
-    &-name {
-      font-weight: bold;
-      color: var(--primary);
-      padding-bottom: 1vh;
-    }
-
-    &-description {
-      line-height: 2.5vh;
-      padding-bottom: 1vh;
-      font-size: 12px;
+    a {
+      margin-top: 1.5rem;
+      align-self: end;
+      color: var(--black);
     }
 
     &-languages {
@@ -87,56 +64,20 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .app-project {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    margin: 1vh 0;
-    width: 80vw;
-
-    &.left {
-      flex-direction: row-reverse;
-
-      .content {
-        border-left: 2px solid var(--primary);
-        border-right: unset;
-        margin: 4vh -7vw 4vh 0;
-      }
-    }
-
+@media screen and (min-width: 650px) {
+  .app-article {
     .image {
-      height: 40vh;
-      width: 60vw;
-    }
-
-    .content {
-      flex-flow: column;
-      width: 50%;
-      min-width: 50%;
-      color: var(--grey);
-      padding: 3vh 3vw;
-      border-right: 2px solid var(--primary);
-      border-left: unset;
-      margin: 4vh 0 4vh -7vw;
-      text-align-last: start;
-      background-color: var(--black);
-      z-index: 2;
+      min-height: 20vw;
+      height: 20vw;
     }
   }
 }
 
-@media screen and (min-width: 992px) {
-  .app-project {
-    .content {
-      &-name {
-        font-size: 18px;
-      }
-
-      &-description,
-      &-languages {
-        font-size: 14px;
-      }
+@media screen and (min-width: 840px) {
+  .app-article {
+    .image {
+      min-height: 15vw;
+      height: 15vw;
     }
   }
 }

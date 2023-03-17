@@ -1,5 +1,5 @@
 .app-article {
-  color: var(--black);
+  color: var(--theme-black);
   margin: 5px;
   justify-self: stretch;
   margin: 5px;
@@ -18,22 +18,19 @@
 
   .description {
     background-color: var(--grey);
-    padding: 2.5vw 3vw;
+    padding: 1.5vw;
     display: flex;
     flex-flow: column;
     align-items: center;
-    font-size: 12px;
+    font-size: 1.5rem;
     height: -webkit-fill-available;
     justify-content: space-between;
+    font-weight: bold;
 
-    &-name {
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    button {
-      margin-top: 1.5vh;
+    a {
+      margin-top: 1.5rem;
       align-self: end;
+      color: var(--black);
     }
   }
 }
@@ -44,10 +41,6 @@
       min-height: 20vw;
       height: 20vw;
     }
-
-    .description-name {
-      font-size: 12px;
-    }
   }
 }
 
@@ -56,10 +49,6 @@
     .image {
       min-height: 15vw;
       height: 15vw;
-    }
-
-    .description-name {
-      font-size: 16px;
     }
   }
 }

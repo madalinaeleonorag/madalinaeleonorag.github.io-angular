@@ -33,12 +33,12 @@
     input,
     textarea {
       font-family: "HindMadurai";
-      margin-bottom: 10px;
-      background-color: var(--black);
+      margin-bottom: 1rem;
+      background-color: var(--theme-black);
       border: none;
       border-bottom: 1px solid var(--primary);
       padding: 1vh 0.5vw;
-      color: var(--white);
+      color: var(--theme-white);
     }
 
     button {
@@ -58,7 +58,7 @@
 
     .error {
       color: var(--warning);
-      font-size: 12px;
+      font-size: 1rem;
       margin-bottom: 1vh;
     }
 

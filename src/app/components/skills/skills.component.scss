@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-auto-flow: dense;
-  grid-gap: 10px;
+  grid-gap: 1rem;
   margin-top: 2vw;
 
   img {
@@ -34,18 +34,6 @@
     img {
       padding: 1.2vh 1.2vw;
       height: 100%;
-
-      &.principal {
-        width: 70px;
-      }
-
-      &.frequent {
-        width: 45px;
-      }
-
-      &.others {
-        width: 25px;
-      }
     }
   }
 }

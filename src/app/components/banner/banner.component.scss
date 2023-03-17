@@ -1,40 +1,40 @@
 .app-banner {
   height: calc(100vh - 2vw);
-  width: 100%;
-  background-image: linear-gradient(
-      45deg,
-      var(--primary-opacity-50),
-      var(--secondary-opacity-50)
-    ),
-    url(../../../assets/profile.png);
+  background-image: var(--gradient-opacity-50), url(../../../assets/profile.png);
   background-position: center;
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  position: relative;
 
   .banner-content {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: max-content;
+    color: var(--white);
+    text-transform: uppercase;
 
     .title {
       font-size: 7vw;
-      padding-top: 1vh;
-      font-weight: bold;
-      text-transform: uppercase;
+      animation-name: moveInLeft;
+      animation-duration: 2s;
+      animation-timing-function: ease-out;
+      backface-visibility: hidden;
     }
+
+    // .subtitle {
+    //   font-size: 3vw;
+    //   animation-name: moveInRight;
+    //   animation-duration: 3s;
+    //   animation-timing-function: ease-out;
+    // }
 
     .cv-link {
       padding-top: 3vh;
     }
   }
-}
-
-::ng-deep .particles-js-canvas-el {
-  position: absolute;
-  top: 0;
-  z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
@@ -48,3 +48,35 @@
     }
   }
 }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(0.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// @keyframes moveInRight {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(+10rem);
+//   }
+
+//   80% {
+//     transform: translateX(-0.5rem);
+//   }
+
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }

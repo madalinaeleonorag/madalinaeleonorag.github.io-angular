@@ -2,12 +2,18 @@
   display: flex;
   flex-flow: column;
   text-align: center;
-  padding: 5vw;
+  font-size: 2rem;
+  line-height: 3rem;
 
   .description {
-    line-height: 3vh;
     place-self: center;
     flex: 1 1 50%;
+
+    a {
+      &::before {
+        z-index: -1;
+      }
+    }
   }
 
   app-skills {
@@ -16,20 +22,12 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .app-summary {
-    .description {
-      font-size: 18px;
-    }
-  }
-}
-
 @media screen and (min-width: 992px) {
   .app-summary {
     flex-flow: row;
-
-    .description {
-      line-height: 3vh;
-    }
   }
+}
+
+ng-deep a:before {
+  z-index: -1;
 }

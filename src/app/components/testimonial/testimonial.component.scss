@@ -1,6 +1,6 @@
 .app-testimonial {
   background-color: var(--grey);
-  color: var(--black);
+  color: var(--theme-black);
   justify-self: stretch;
   margin: 5px;
   height: 100%;
@@ -8,22 +8,25 @@
   display: flex;
   flex-flow: column;
   justify-content: space-between;
+  font-size: 1.5rem;
 
   .description {
-    line-height: 2.7vh;
     place-self: center;
-    padding: 5vw;
-    background-color: var(--white);
+    padding: 1.5vw;
+    background: var(--theme-white);
     height: -webkit-fill-available;
 
     .quotes {
-      font-size: x-large;
       color: var(--primary);
+    }
+
+    a {
+      color: var(--theme-black);
     }
   }
 
   .author {
-    padding: 5vw;
+    padding: 1.5vw;
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -35,54 +38,22 @@
       background-size: cover;
       background-position: center;
       border-radius: 50%;
+      filter: grayscale(1);
     }
 
     &-details {
-      padding-left: 5vw;
-      line-height: normal;
-      font-size: 12px;
+      padding-left: 1.5vw;
 
       &-name {
         font-weight: bold;
-        font-size: 14px;
         padding-bottom: 0.7vh;
+        line-height: 1;
       }
 
       &-role {
+        font-size: 1.2rem;
         color: var(--primary);
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 576px) {
-  .app-testimonial {
-    .description {
-      padding: 3vw;
-    }
-
-    .author {
-      padding: 3vw;
-      min-height: 10vh;
-
-      &-details {
-        padding-left: 3vw;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .app-testimonial {
-    .description {
-      padding: 2vw;
-    }
-
-    .author {
-      padding: 2vw;
-
-      &-details {
-        padding-left: 2vw;
+        line-height: 1;
       }
     }
   }

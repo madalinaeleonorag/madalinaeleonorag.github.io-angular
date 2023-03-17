@@ -1,25 +1,37 @@
 .app-certificate {
   margin: 1vw;
+  border-radius: 3px;
+  padding: 1vw;
+  text-align: center;
+  height: 100%;
+  max-height: -webkit-fill-available;
+  font-size: 1.5rem;
+  color: var(--white);
+
+  &:hover {
+    img {
+      filter: none;
+    }
+  }
+
+  .name {
+    font-weight: bold;
+    padding-bottom: 1vh;
+  }
 
   img {
-    width: 23vw;
+    max-height: 18vw;
+    filter: grayscale(1);
+    width: auto;
     height: auto;
-    cursor: pointer;
-  }
-}
-
-@media screen and (min-width: 560px) {
-  .app-certificate {
-    img {
-      width: 18vw;
-    }
+    padding-bottom: 1vh;
   }
 }
 
 @media screen and (min-width: 800px) {
   .app-certificate {
     img {
-      width: 13vw;
+      max-height: 13vw;
     }
   }
 }
@@ -27,7 +39,7 @@
 @media screen and (min-width: 950px) {
   .app-certificate {
     img {
-      width: 9vw;
+      max-height: 9vw;
     }
   }
 }
