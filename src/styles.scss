@@ -44,8 +44,16 @@ body {
   overflow-x: hidden;
 }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
 
 body {
@@ -55,6 +63,7 @@ body {
   color: var(--theme-white);
   letter-spacing: 0.1rem;
   line-height: 2.2rem;
+  box-sizing: border-box;
 }
 
 @mixin shine {

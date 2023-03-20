@@ -8,6 +8,11 @@
   img {
     max-width: 100%;
     align-self: center;
+
+    &:hover {
+      transform: scale(1.2);
+      z-index: 2;
+    }
   }
 
   .big {
