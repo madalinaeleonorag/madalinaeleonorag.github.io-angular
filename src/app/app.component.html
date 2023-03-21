@@ -35,7 +35,6 @@
     <app-project
       *ngFor="let project of gitHubProjects; let i = index"
       [project]="project"
-      [position]="i % 2 === 0 ? 'right' : 'left'"
     ></app-project>
   </div>
   <div class="centered-button">

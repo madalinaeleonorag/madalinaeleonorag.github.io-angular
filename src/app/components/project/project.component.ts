@@ -10,7 +10,6 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class ProjectComponent {
   @Input() project: IGitHubProject;
-  @Input() position: string;
 
   public imageUrl: string = './../../../assets/image-not-found.png';
   public languagesPercentage: any = {};
