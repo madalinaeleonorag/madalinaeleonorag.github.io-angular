@@ -1,84 +1,129 @@
 .app-project {
-  color: var(--theme-black);
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 40rem;
   margin: 5px;
-  justify-self: stretch;
-  margin: 5px;
-  max-height: -webkit-fill-available;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  height: 100%;
-  background-color: var(--white);
 
-  .image {
-    min-height: 20vw;
-    height: 20vw;
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  }
+  .card {
+    height: 40rem;
+    transition: all 0.7s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(var(--black), 0.15);
 
-  .description {
-    padding: 1.5vw;
-    display: flex;
-    flex-flow: column;
-    font-size: 1.5rem;
-    height: -webkit-fill-available;
-    justify-content: space-between;
-    font-weight: bold;
+    &-front {
+      background: var(--white);
 
-    a {
-      margin-top: 1.5rem;
-      align-self: end;
-      color: var(--black);
-    }
+      .image {
+        background-size: cover;
+        height: 33rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      }
 
-    &-languages {
-      display: flex;
-      flex-flow: wrap;
-      padding-bottom: 2vh;
-      font-size: 12px;
-      line-height: 2.2vh;
+      .name {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        text-align: right;
+        color: var(--white);
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        width: 80%;
 
-      &-language {
-        display: flex;
-        flex-flow: row;
-
-        &-title {
-          color: var(--primary);
-        }
-
-        &-percentage {
-          opacity: 0.5;
-          padding: 0 1vw 0 0.5vw;
-
-          &::before {
-            content: "- ";
-          }
-
-          &::after {
-            content: "%";
-          }
+        span {
+          padding: 1rem 1.5rem;
+          line-height: 3.5rem;
+          background-image: var(--gradient-opacity-50);
         }
       }
     }
-  }
-}
 
-@media screen and (min-width: 650px) {
-  .app-article {
-    .image {
-      min-height: 20vw;
-      height: 20vw;
+    &-back {
+      background: var(--gradient);
+      transform: rotateY(180deg);
+      padding: 2rem;
+      font-size: 1.5rem;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+
+      & > * {
+        margin: 1rem 0px;
+      }
+
+      &-name {
+        font-size: 2.8rem;
+      }
+
+      &-languages {
+        display: flex;
+        flex-flow: wrap;
+        padding-bottom: 2vh;
+        font-size: 12px;
+        line-height: 2.2vh;
+
+        &-language {
+          display: flex;
+          flex-flow: row;
+
+          &-percentage {
+            opacity: 0.5;
+            padding: 0 1vw 0 0.5vw;
+
+            &::before {
+              content: "- ";
+            }
+
+            &::after {
+              content: "%";
+            }
+          }
+        }
+      }
+
+      button {
+        width: fit-content;
+        align-self: center;
+      }
     }
   }
-}
 
-@media screen and (min-width: 840px) {
-  .app-article {
-    .image {
-      min-height: 15vw;
-      height: 15vw;
+  &:hover .card {
+    &-front {
+      transform: rotateY(-180deg);
+    }
+
+    &-back {
+      transform: rotateY(0);
+    }
+  }
+
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    background-color: var(--white);
+
+    .card {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &-back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        padding: 7rem 4rem 4rem 4rem;
+      }
+    }
+
+    &:hover .card {
+      transform: unset;
     }
   }
 }

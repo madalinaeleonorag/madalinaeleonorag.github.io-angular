@@ -78,7 +78,7 @@ export class AppComponent {
             (a: IGitHubProject, b: IGitHubProject) =>
               b.created.getTime() - a.created.getTime()
           )
-          .slice(0, 4);
+          .slice(0, 3);
       });
 
     this.mediumArticlesSubscription = this.externalService
