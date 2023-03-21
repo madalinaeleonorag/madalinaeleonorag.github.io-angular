@@ -8,16 +8,17 @@
   flex-flow: column;
   justify-content: space-between;
   height: 100%;
+  background-color: var(--white);
 
   .image {
     min-height: 20vw;
     height: 20vw;
     background-size: cover;
     background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
 
   .description {
-    background-color: var(--grey);
     padding: 1.5vw;
     display: flex;
     flex-flow: column;

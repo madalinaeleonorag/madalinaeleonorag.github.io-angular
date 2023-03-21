@@ -1,19 +1,33 @@
 .app-testimonial {
-  background-color: var(--grey);
-  color: var(--theme-black);
-  justify-self: stretch;
-  margin: 5px;
+  margin: 1vw;
+  border-radius: 3px;
+  padding: 1vw;
+  text-align: center;
   height: 100%;
   max-height: -webkit-fill-available;
+  font-size: 1.5rem;
+  color: var(--white);
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
-  font-size: 1.5rem;
+  align-items: center;
+
+  &:hover {
+    img {
+      filter: unset;
+    }
+  }
+
+  img {
+    filter: grayscale(1);
+    width: auto;
+    height: auto;
+    padding-bottom: 1vh;
+    max-height: 15rem;
+    max-width: -webkit-fill-available;
+  }
 
   .description {
     place-self: center;
-    padding: 1.5vw;
-    background: var(--theme-white);
     height: -webkit-fill-available;
 
     .quotes {
@@ -26,32 +40,22 @@
   }
 
   .author {
-    padding: 1.5vw;
+    padding: 2rem 0;
     display: flex;
     flex-flow: row;
     align-items: center;
-
-    &-company {
-      width: 60px;
-      min-width: 60px;
-      height: 60px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      filter: grayscale(1);
-    }
 
     &-details {
       padding-left: 1.5vw;
 
       &-name {
-        font-weight: bold;
+        font-size: 2rem;
         padding-bottom: 0.7vh;
         line-height: 1;
       }
 
       &-role {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: var(--primary);
         line-height: 1;
       }

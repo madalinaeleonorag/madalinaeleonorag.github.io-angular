@@ -1,16 +1,10 @@
-<div class="app-testimonial">
-  <div class="description">
-    <span class="quotes">"&nbsp;</span>{{ testimonialText()
-    }}<span class="quotes">&nbsp;"</span>
-    <a *ngIf="isSeeMoreVisible()" (click)="switchSeeMore()">
-      &nbsp; {{ seeMore ? "See less" : "See more" }}</a
-    >
-  </div>
+<div class="app-testimonial shine button light">
+  <img
+    loading="lazy"
+    [src]="mapImageLogo()"
+    [alt]="'Logo for certification ' + testimonial.author"
+  />
   <div class="author">
-    <div
-      class="author-company"
-      [ngStyle]="{ 'background-image': mapImageLogo() }"
-    ></div>
     <div class="author-details">
       <div class="author-details-name">
         {{ testimonial.author }}
@@ -19,5 +13,10 @@
         {{ testimonial.role }}
       </div>
     </div>
+  </div>
+
+  <div class="description">
+    <span class="quotes">"&nbsp;</span>{{ testimonial.text
+    }}<span class="quotes">&nbsp;"</span>
   </div>
 </div>
