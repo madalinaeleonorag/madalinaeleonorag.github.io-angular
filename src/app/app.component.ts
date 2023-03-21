@@ -60,6 +60,13 @@ export class AppComponent {
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 0,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
 
