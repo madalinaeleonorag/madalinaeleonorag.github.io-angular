@@ -24,27 +24,8 @@
       backface-visibility: hidden;
     }
 
-    // .subtitle {
-    //   font-size: 3vw;
-    //   animation-name: moveInRight;
-    //   animation-duration: 3s;
-    //   animation-timing-function: ease-out;
-    // }
-
     .cv-link {
       padding-top: 3vh;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .app-banner {
-    .banner-content {
-      .social-links {
-        a {
-          margin: 0 15px;
-        }
-      }
     }
   }
 }
@@ -64,19 +45,3 @@
     transform: translateX(0);
   }
 }
-
-// @keyframes moveInRight {
-//   0% {
-//     opacity: 0;
-//     transform: translateX(+10rem);
-//   }
-
-//   80% {
-//     transform: translateX(-0.5rem);
-//   }
-
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }

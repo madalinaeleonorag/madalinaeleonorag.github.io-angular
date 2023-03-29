@@ -1,3 +1,5 @@
+@import "../../styles/mixin-breakpoint.scss";
+
 .app-article {
   color: var(--theme-black);
   margin: 5px;
@@ -33,7 +35,7 @@
     }
   }
 
-  @media screen and (min-width: 56.25em) {
+  @include getBreakpoint(tab-land) {
     height: 40rem;
 
     .image {

@@ -1,3 +1,5 @@
+@import "../../styles/mixin-breakpoint.scss";
+
 .app-contact {
   .social-links {
     padding: 5vh 2vw 1vh;
@@ -28,6 +30,11 @@
       max-width: 90vw;
       width: 80vw;
       margin: 0 4vw;
+
+      @include getBreakpoint(tab-port) {
+        max-width: 50vw;
+        width: 50vw;
+      }
     }
 
     input,
@@ -70,17 +77,6 @@
     .success-text {
       align-self: center;
       color: var(--secondary);
-    }
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .app-contact {
-    .form-wrapper {
-      form.contact {
-        max-width: 50vw;
-        width: 50vw;
-      }
     }
   }
 }

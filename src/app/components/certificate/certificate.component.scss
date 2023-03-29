@@ -1,3 +1,5 @@
+@import "../../styles/mixin-breakpoint.scss";
+
 .app-certificate {
   margin: 1vw;
   border-radius: 3px;
@@ -25,20 +27,12 @@
     width: auto;
     height: auto;
     padding-bottom: 1vh;
-  }
-}
 
-@media screen and (min-width: 800px) {
-  .app-certificate {
-    img {
+    @include getBreakpoint(tab-port) {
       max-height: 13vw;
     }
-  }
-}
 
-@media screen and (min-width: 950px) {
-  .app-certificate {
-    img {
+    @include getBreakpoint(tab-land) {
       max-height: 9vw;
     }
   }

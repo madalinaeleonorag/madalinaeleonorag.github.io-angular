@@ -1,0 +1,22 @@
+@mixin getBreakpoint($breakpoint) {
+  // 768px
+  @if $breakpoint==tab-port {
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+
+  // 992px
+  @if $breakpoint==tab-land {
+    @media (min-width: 62em) {
+      @content;
+    }
+  }
+
+  // 1200px
+  @if $breakpoint==desktop {
+    @media (min-width: 75em) {
+      @content;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import "../../styles/mixin-breakpoint.scss";
+
 .app-skills {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
@@ -42,36 +44,18 @@
       height: 100%;
     }
   }
-}
 
-@media screen and (min-width: 560px) {
-  .app-skills {
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-
-@media screen and (min-width: 650px) {
-  .app-skills {
+  @include getBreakpoint(tab-port) {
     grid-template-columns: repeat(13, 1fr);
   }
-}
 
-@media screen and (min-width: 768px) {
-  .app-skills {
-    grid-template-columns: repeat(13, 1fr);
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .app-skills {
+  @include getBreakpoint(tab-land) {
     margin-left: 2vw;
     margin-top: unset;
     grid-template-columns: repeat(12, 1fr);
   }
-}
 
-@media screen and (min-width: 1200px) {
-  .app-skills {
+  @include getBreakpoint(desktop) {
     grid-template-columns: repeat(12, 1fr);
   }
 }

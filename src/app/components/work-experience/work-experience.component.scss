@@ -1,3 +1,5 @@
+@import "../../styles/mixin-breakpoint.scss";
+
 .app-work-experience {
   display: flex;
   flex-flow: column;
@@ -8,12 +10,8 @@
   .image {
     width: 35vw;
     height: auto;
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .app-work-experience {
-    .image {
+    @include getBreakpoint(tab-port) {
       width: 15vw;
     }
   }
