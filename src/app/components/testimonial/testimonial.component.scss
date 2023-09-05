@@ -29,6 +29,7 @@
   .description {
     place-self: center;
     height: -webkit-fill-available;
+    text-wrap: balance;
 
     .quotes {
       color: var(--primary);
