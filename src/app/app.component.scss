@@ -1,4 +1,6 @@
 @import "./styles/mixin-breakpoint.scss";
+@import "./styles/fixed-variables.scss";
+@import "./styles/theme.scss";
 
 .category-wrapper {
   display: flex;
@@ -11,9 +13,9 @@
   margin: 5vh 12vw;
   font-size: 3rem;
   text-transform: uppercase;
-  background: var(--gradient);
+  background: $gradient;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: $transparent;
   font-weight: bold;
   width: max-content;
   align-self: center;
@@ -71,7 +73,7 @@
   }
 
   &-certifications {
-    background-image: var(--gradient-opacity-50), url(../assets/background.png);
+    background-image: $gradient;
     background-position: center;
     background-size: cover;
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);

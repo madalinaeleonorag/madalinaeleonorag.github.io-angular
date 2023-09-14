@@ -1,14 +1,15 @@
 @import "../../styles/mixin-breakpoint.scss";
+@import "../../styles/theme.scss";
 
 .app-article {
-  color: var(--theme-black);
+  color: $theme-black;
   margin: 5px;
   justify-self: stretch;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   height: 25rem;
-  background-color: var(--white);
+  background-color: $white;
 
   .image {
     min-height: 40%;
@@ -32,7 +33,7 @@
     a {
       margin-top: 1.5rem;
       align-self: end;
-      color: var(--black);
+      color: $black;
     }
   }
 

@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
-  ngOnInit(): void {}
-
   public openCV(): void {
     window.open('./../../../assets/CV.pdf', '_blank');
   }

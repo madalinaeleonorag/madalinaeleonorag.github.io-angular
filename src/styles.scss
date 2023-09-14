@@ -1,34 +1,5 @@
-:root {
-  --primary: #aa1974;
-  --primary-opacity-50: #aa1974d6;
-  --secondary: #0287a0;
-  --secondary-opacity-50: #0287a0d6;
-  --white: #feffff;
-  --white-opacity-50: #feffff1f;
-  --black: #0e0f14;
-  --black-opacity-50: #0e0f141f;
-  --theme-white: #feffff;
-  --theme-black: #0e0f14;
-  // --theme-white: #0e0f14;
-  // --theme-black: #feffff;
-  --grey: #f9f9f9;
-  --error: #e11a1a;
-  --warning: #ff5733;
-  --info: #ffc300;
-  --transparent: transparent;
-  --gradient: linear-gradient(45deg, var(--primary), var(--secondary));
-  --gradient-opacity-50: linear-gradient(
-    45deg,
-    var(--primary-opacity-50),
-    var(--secondary-opacity-50)
-  );
-  --gradient-glow: linear-gradient(
-    to right,
-    transparent 50%,
-    var(--white-opacity-50) 100%
-  );
-  --transition: all 0.2s ease-in-out;
-}
+@import "../src/app/styles/theme.scss";
+@import "../src/app/styles/fixed-variables.scss";
 
 @font-face {
   font-family: "HindMadurai";
@@ -59,8 +30,8 @@ html {
 body {
   margin: 0;
   font-family: "HindMadurai", Roboto, "Helvetica Neue", sans-serif;
-  background-color: var(--theme-black);
-  color: var(--theme-white);
+  background-color: $theme-black;
+  color: $theme-white;
   letter-spacing: 0.1rem;
   line-height: 2.2rem;
   box-sizing: border-box;
@@ -82,9 +53,9 @@ body {
     left: -140%;
     bottom: 0;
     width: 100%;
-    background: var(--gradient-glow);
+    background: $gradient-glow;
     transform: skewX(-25deg);
-    transition: var(--transition);
+    transition: $transition;
     z-index: 1;
   }
 
@@ -109,12 +80,12 @@ body {
 
 @mixin button {
   box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
-  border: 1px solid var(--white-opacity-50);
+  border: 1px solid $white-opacity-50;
   cursor: pointer;
-  color: var(--primary);
+  color: $primary;
 
   &:hover {
-    border: 1px solid var(--secondary);
+    border: 1px solid $secondary;
   }
 
   &:active {
@@ -128,7 +99,7 @@ button {
   @include shine;
 
   overflow: hidden;
-  transition: var(--transition);
+  transition: $transition;
   padding: 0.5rem 1rem;
   position: relative;
   text-transform: uppercase;
@@ -140,11 +111,11 @@ button {
   font-size: 2rem;
 
   &.light {
-    background: var(--white-opacity-50);
+    background: $white-opacity-50;
   }
 
   &.dark {
-    background: var(--black-opacity-50);
+    background: $black-opacity-50;
   }
 }
 
@@ -152,9 +123,7 @@ a {
   display: inline-block;
   position: relative;
   text-decoration: none;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $primary;
   padding: 0 0.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -164,9 +133,7 @@ a {
   }
 
   &:hover {
-    background: var(--gradient-opacity-50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: $secondary;
   }
 }
 
@@ -206,8 +173,8 @@ a {
     line-height: 0;
     font-size: 0;
     cursor: pointer;
-    background: transparent;
-    color: transparent;
+    background: $transparent;
+    color: $transparent;
     top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -218,9 +185,9 @@ a {
     &:hover,
     &:focus {
       outline: none;
-      background: transparent;
+      background: $transparent;
       &:before {
-        color: var(--secondary);
+        color: $secondary;
         opacity: 1;
       }
     }
@@ -231,7 +198,7 @@ a {
       font-family: "slick";
       font-size: 2rem;
       line-height: 1;
-      color: var(--primary);
+      color: $primary;
       opacity: 0.75;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -271,11 +238,11 @@ a {
   @include shine;
 
   &.light {
-    background: var(--white-opacity-50);
+    background: $white-opacity-50;
   }
 
   &.dark {
-    background: var(--black-opacity-50);
+    background: $black-opacity-50;
   }
 }
 

@@ -1,8 +1,8 @@
+@import "../../styles/theme.scss";
+
 .app-banner {
   height: calc(100vh - 2vw);
-  background-image: var(--gradient-opacity-50), url(../../../assets/profile.png);
-  background-position: center;
-  background-size: cover;
+  background: $gradient;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   position: relative;
 
@@ -13,7 +13,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     width: max-content;
-    color: var(--white);
+    color: $white;
     text-transform: uppercase;
 
     .title {

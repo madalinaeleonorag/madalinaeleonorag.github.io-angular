@@ -1,3 +1,16 @@
+<div>
+  Choose your theme:
+  <select [(ngModel)]="selectedTheme" (change)="setTheme(selectedTheme)">
+    <option
+      *ngFor="let theme of themes"
+      [value]="theme.value"
+      [selected]="theme.value === selectedTheme"
+    >
+      {{ theme.name }}
+    </option>
+  </select>
+</div>
+
 <app-banner></app-banner>
 
 <div class="wrapper wrapper-summary">

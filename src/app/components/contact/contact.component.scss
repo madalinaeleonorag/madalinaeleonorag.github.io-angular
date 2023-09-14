@@ -1,4 +1,6 @@
 @import "../../styles/mixin-breakpoint.scss";
+@import "../../styles/fixed-variables.scss";
+@import "../../styles/theme.scss";
 
 .app-contact {
   .social-links {
@@ -11,10 +13,10 @@
       margin-right: 2vw;
 
       svg {
-        fill: var(--primary);
+        fill: $primary;
 
         &:hover {
-          fill: var(--secondary);
+          fill: $secondary;
         }
       }
     }
@@ -41,11 +43,11 @@
     textarea {
       font-family: "HindMadurai";
       margin-bottom: 1rem;
-      background-color: var(--theme-black);
+      background-color: $theme-black;
       border: none;
-      border-bottom: 1px solid var(--primary);
+      border-bottom: 1px solid $primary;
       padding: 1vh 0.5vw;
-      color: var(--theme-white);
+      color: $theme-white;
     }
 
     button {
@@ -64,19 +66,19 @@
     }
 
     .error {
-      color: var(--warning);
+      color: $warning;
       font-size: 1rem;
       margin-bottom: 1vh;
     }
 
     .error-text {
       align-self: center;
-      color: var(--error);
+      color: $error;
     }
 
     .success-text {
       align-self: center;
-      color: var(--secondary);
+      color: $secondary;
     }
   }
 }

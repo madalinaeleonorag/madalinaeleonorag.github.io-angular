@@ -1,0 +1,18 @@
+$primary: #aa1974;
+$primary-opacity-50: rgba($primary, 0.5);
+$secondary: #0287a0;
+$secondary-opacity-50: rgba($secondary, 0.5);
+$white: #feffff;
+$white-opacity-50: rgba($white, 0.5);
+$black: #1f2025;
+$black-opacity-50: rgba($black, 0.5);
+$theme-white: #feffff;
+$theme-black: #0e0f14;
+$primary-light: lighten($primary, 90%);
+$primary-dark: darken($primary, 90%);
+$gradient: linear-gradient(45deg, $primary, $secondary);
+$gradient-glow: linear-gradient(
+  to right,
+  transparent 50%,
+  $white-opacity-50 100%
+);

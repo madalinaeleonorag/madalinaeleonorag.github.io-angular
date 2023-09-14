@@ -1,3 +1,5 @@
+@import "../../styles/theme.scss";
+
 .app-social-links {
   padding: 5rem 0 0;
   display: flex;
@@ -12,10 +14,10 @@
     }
 
     svg {
-      fill: var(--primary);
+      fill: $primary;
 
       &:hover {
-        fill: var(--secondary);
+        fill: $secondary;
       }
     }
   }

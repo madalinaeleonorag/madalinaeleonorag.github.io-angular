@@ -1,4 +1,6 @@
 @import "../../styles/mixin-breakpoint.scss";
+@import "../../styles/fixed-variables.scss";
+@import "../../styles/theme.scss";
 
 .app-skills {
   display: grid;
@@ -14,7 +16,7 @@
     &:hover {
       transform: scale(1.2);
       z-index: 2;
-      transition: var(--transition);
+      transition: $transition;
     }
   }
 
