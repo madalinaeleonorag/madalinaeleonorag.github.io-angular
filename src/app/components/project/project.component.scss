@@ -1,5 +1,6 @@
 @import "../../styles/mixin-breakpoint.scss";
 @import "../../styles/theme.scss";
+@import "../../styles/fixed-variables.scss";
 
 .app-project {
   perspective: 150rem;
@@ -44,15 +45,14 @@
       }
 
       &-name {
-        font-size: 2.5rem;
+        margin: 5vh 12vw;
         text-transform: uppercase;
-        color: #f3f5f1;
-
-        span {
-          padding: 1rem 1.5rem;
-          line-height: 3.5rem;
-          background-image: $gradient;
-        }
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: $transparent;
+        font-weight: bold;
+        width: max-content;
+        line-height: normal;
       }
 
       &-languages {

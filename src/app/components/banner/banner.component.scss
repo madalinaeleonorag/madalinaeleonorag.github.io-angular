@@ -2,7 +2,7 @@
 
 .app-banner {
   height: calc(100vh - 2vw);
-  background: $gradient;
+  background-image: $gradient;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   position: relative;
 
