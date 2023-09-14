@@ -30,8 +30,8 @@ html {
 body {
   margin: 0;
   font-family: "HindMadurai", Roboto, "Helvetica Neue", sans-serif;
-  background-color: $theme-black;
-  color: $theme-white;
+  background-color: $black;
+  color: $white;
   letter-spacing: 0.1rem;
   line-height: 2.2rem;
   box-sizing: border-box;
@@ -79,10 +79,10 @@ body {
 }
 
 @mixin button {
-  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
-  border: 1px solid $white-opacity-50;
+  border: 1px solid $white-opacity-10;
   cursor: pointer;
   color: $primary;
+  border-radius: 3px;
 
   &:hover {
     border: 1px solid $secondary;
@@ -105,17 +105,16 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.2vw;
-  border-radius: 10rem;
   font-family: "HindMadurai";
   cursor: pointer;
   font-size: 2rem;
 
   &.light {
-    background: $white-opacity-50;
+    background: $white-opacity-10;
   }
 
   &.dark {
-    background: $black-opacity-50;
+    background: $black-opacity-10;
   }
 }
 
@@ -238,11 +237,11 @@ a {
   @include shine;
 
   &.light {
-    background: $white-opacity-50;
+    background: $white-opacity-10;
   }
 
   &.dark {
-    background: $black-opacity-50;
+    background: $black-opacity-10;
   }
 }
 

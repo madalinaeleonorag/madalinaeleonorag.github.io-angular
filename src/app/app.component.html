@@ -1,16 +1,3 @@
-<div>
-  Choose your theme:
-  <select [(ngModel)]="selectedTheme" (change)="setTheme(selectedTheme)">
-    <option
-      *ngFor="let theme of themes"
-      [value]="theme.value"
-      [selected]="theme.value === selectedTheme"
-    >
-      {{ theme.name }}
-    </option>
-  </select>
-</div>
-
 <app-banner></app-banner>
 
 <div class="wrapper wrapper-summary">
@@ -20,20 +7,7 @@
   </div>
 </div>
 
-<!-- <div class="wrapper wrapper-experiences">
-  <div class="centered-category-title">Companies I worked for</div>
-  <div class="category-wrapper">
-    <app-work-experience
-      *ngFor="let work of WORK_EXPERIENCE"
-      [work]="work"
-    ></app-work-experience>
-  </div>
-</div> -->
-
 <div class="wrapper wrapper-certifications">
-  <!-- <div class="centered-category-title">
-    Certificates, Diplomas, Degrees, Awards
-  </div> -->
   <div class="category-wrapper">
     <app-certificate
       *ngFor="let certificate of CERTIFICATIONS"

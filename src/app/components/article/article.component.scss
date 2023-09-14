@@ -2,7 +2,7 @@
 @import "../../styles/theme.scss";
 
 .app-article {
-  color: $theme-black;
+  color: $black;
   margin: 5px;
   justify-self: stretch;
   display: flex;
@@ -33,7 +33,6 @@
     a {
       margin-top: 1.5rem;
       align-self: end;
-      color: $black;
     }
   }
 

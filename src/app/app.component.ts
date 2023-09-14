@@ -69,17 +69,8 @@ export class AppComponent {
       },
     ],
   };
-  public selectedTheme = 'magenta';
-  public themes = [
-    { name: '2022 Light', value: 'light' },
-    { name: '2023 Magenta', value: 'magenta' },
-    { name: '2024 Paprika', value: 'paprika' },
-  ];
 
-  constructor(
-    private externalService: ExternalService,
-    private elementRef: ElementRef
-  ) {}
+  constructor(private externalService: ExternalService) {}
 
   ngOnInit() {
     this.gitHubProjectsSubscription = this.externalService
@@ -124,29 +115,6 @@ export class AppComponent {
 
   public scroll(el: HTMLElement) {
     el.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  public setTheme(event: any) {
-    if (event === 'magenta') {
-      this.elementRef.nativeElement.style.setProperty(
-        '--color-primary',
-        '170, 25, 116'
-      );
-      this.elementRef.nativeElement.style.setProperty(
-        '--color-secondary',
-        '2, 135, 160'
-      );
-    } else {
-      this.elementRef.nativeElement.style.setProperty(
-        '--color-primary',
-        '151, 80, 60'
-      );
-      this.elementRef.nativeElement.style.setProperty(
-        '--color-secondary',
-        '214, 96, 86'
-      );
-    }
-    console.log(event);
   }
 
   ngOnDestroy() {

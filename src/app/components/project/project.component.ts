@@ -23,10 +23,6 @@ export class ProjectComponent {
     this.getRepoLanguagePercentage();
   }
 
-  public openProject(): void {
-    window.open(this.project.url, '_blank');
-  }
-
   public projectDescription(): string {
     return this.project?.description?.length > 90
       ? (

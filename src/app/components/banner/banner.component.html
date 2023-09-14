@@ -1,10 +1,21 @@
 <div class="app-banner">
   <div class="banner-content">
     <div class="title">Madalina-Eleonora</div>
-    <!-- <div class="subtitle">Fullstack Web Developer</div> -->
     <app-social-links />
     <div class="cv-link">
       <button (click)="openCV()" class="shine light">Download CV</button>
     </div>
   </div>
+  <!-- <div>
+    Choose your theme:
+    <select [(ngModel)]="selectedTheme" (change)="setTheme(selectedTheme)">
+      <option
+        *ngFor="let theme of themes"
+        [value]="theme.value"
+        [selected]="theme.value === selectedTheme"
+      >
+        {{ theme.name }}
+      </option>
+    </select>
+  </div> -->
 </div>

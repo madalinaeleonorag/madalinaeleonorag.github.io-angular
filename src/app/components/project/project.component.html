@@ -4,15 +4,12 @@
       class="image"
       [ngStyle]="{ 'background-image': 'url(' + project.imageUrl + ')' }"
     ></div>
-    <div class="name">
-      <span>
-        {{ project.name }}
-      </span>
-    </div>
   </div>
   <div class="card card-back">
     <div class="card-back-name">
-      {{ project.name }}
+      <span>
+        {{ project.name }}
+      </span>
     </div>
     <div class="card-back-description">
       {{ project.description }}
@@ -29,6 +26,6 @@
         </span>
       </div>
     </div>
-    <button target="_blank" (click)="openProject()">See code</button>
+    <a target="_blank" [href]="project.url">See code</a>
   </div>
 </div>
