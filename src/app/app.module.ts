@@ -19,6 +19,7 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestimonialDialogComponent } from './components/testimonial/testimonial-dialog/testimonial-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     SlickCarouselModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
