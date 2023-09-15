@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IGitHubProject } from 'src/app/interfaces/git-hub-project';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -8,10 +8,10 @@ import { CommonService } from 'src/app/services/common.service';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss'],
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit {
   @Input() project: IGitHubProject;
 
-  public imageUrl: string = './../../../assets/image-not-found.png';
+  public imageUrl = './../../../assets/image-not-found.png';
   public languagesPercentage: any = {};
 
   constructor(private commonService: CommonService, private http: HttpClient) {}

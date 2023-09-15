@@ -1,17 +1,23 @@
+import { Certification } from 'src/app/interfaces/certification';
+import { Testimonial } from 'src/app/interfaces/testimonial';
+
 // Summary
-const EMAIL = 'madalinaeleonora.gheorghe@gmail.com';
-const LINKEDIN = 'https://www.linkedin.com/in/madalinaeleonorag/';
-const MEDIUM = 'https://madalinaeleonorag.medium.com/';
-const GITHUB = 'https://github.com/madalinaeleonorag';
-const INSTAGRAM = 'https://www.instagram.com/madalinaeleonorag/';
-const FACEBOOK = 'https://www.facebook.com/mdx.madalinaeleonora/';
-const PAYPAL = 'https://www.paypal.com/paypalme/madalinaeleonorag';
-const PX500 = 'https://500px.com/p/madalinaeleonorag?view=galleries';
-const SHUTTERSTOCK = 'https://www.shutterstock.com/g/Madalina-Eleonora';
-const COPYRIGHT = '© Madalina-Eleonora Gheorghe 2023';
+export const SOCIAL_LINKS = {
+  EMAIL: 'madalinaeleonora.gheorghe@gmail.com',
+  LINKEDIN: 'https://www.linkedin.com/in/madalinaeleonorag/',
+  MEDIUM: 'https://madalinaeleonorag.medium.com/',
+  GITHUB: 'https://github.com/madalinaeleonorag',
+  INSTAGRAM: 'https://www.instagram.com/madalinaeleonorag/',
+  FACEBOOK: 'https://www.facebook.com/mdx.madalinaeleonora/',
+  PAYPAL: 'https://www.paypal.com/paypalme/madalinaeleonorag',
+  PX500: 'https://500px.com/p/madalinaeleonorag?view=galleries',
+  SHUTTERSTOCK: 'https://www.shutterstock.com/g/Madalina-Eleonora',
+};
+
+export const COPYRIGHT = '© Madalina-Eleonora Gheorghe 2023';
 
 // Descriptions
-const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs.
+export const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs.
   Additional, I have experience working with React.js, Sass, AWS Services and Azure.
   Currently working for <a target="_blank" href="https://www.cognizantsoftvision.com/">Cognizant Softvision</a>, former Frontend Application Developer at <a target="_blank" href="https://ro.deloittedigital.com/">Deloitte Digital</a>, Frontend Developer at <a target="_blank" href="https://www.ibm.com/services/ibmix">IBM iX</a> and Database Administrator at <a target="_blank" href="https://www.renaultgroup.com/en/">Groupe Renault</a>.
   I delivered unique features in the past projects, improving user experience, contributing actively in meetings with suggestions and helping other colleagues, maintaining a good communication with the client.
@@ -19,7 +25,7 @@ const SUMMARY = `I am a senior Frontend Developer with a long experience working
   My studies were based in Information Technology Administration and Management, having a bachelor and a master degree from <a target="_blank" href="https://www.rau.ro/">Romanian-American University</a>.`;
 
 // TESTIOMNIALS
-const TESTIOMNIALS = [
+export const TESTIOMNIALS: Testimonial[] = [
   {
     text: `Madalina is really valuable member,
       more of self-initiative in areas which are visibly not covered well on project will help her to present herself with higher seniority,
@@ -157,7 +163,7 @@ const TESTIOMNIALS = [
   },
 ];
 
-const WORK_EXPERIENCE = [
+export const WORK_EXPERIENCE = [
   {
     company: 'Cognizant Softvision',
     role: 'Frontend Developer',
@@ -382,7 +388,7 @@ const WORK_EXPERIENCE = [
   },
 ];
 
-const CERTIFICATIONS = [
+export const CERTIFICATIONS: Certification[] = [
   {
     logo: 'Udemy',
     name: 'Agile Fundamentals: Including Scrum & Kanban',
@@ -489,20 +495,3 @@ const CERTIFICATIONS = [
   //   url: 'https://www.rau.ro',
   // },
 ];
-
-export {
-  EMAIL,
-  LINKEDIN,
-  MEDIUM,
-  GITHUB,
-  INSTAGRAM,
-  FACEBOOK,
-  PAYPAL,
-  PX500,
-  SHUTTERSTOCK,
-  SUMMARY,
-  TESTIOMNIALS,
-  WORK_EXPERIENCE,
-  CERTIFICATIONS,
-  COPYRIGHT,
-};

@@ -1,12 +1,10 @@
-import { Component, ElementRef } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {
   TESTIOMNIALS,
   WORK_EXPERIENCE,
   CERTIFICATIONS,
-  GITHUB,
-  MEDIUM,
+  SOCIAL_LINKS,
 } from 'src/assets/CONSTANTS';
 import { IGitHubProject } from './interfaces/git-hub-project';
 import { IMediumArticle } from './interfaces/medium-article';
@@ -17,7 +15,7 @@ import { ExternalService } from './services/external.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   private gitHubProjectsSubscription: Subscription = new Subscription();
   private mediumArticlesSubscription: Subscription = new Subscription();
 
@@ -26,8 +24,6 @@ export class AppComponent {
   public TESTIMONIALS = TESTIOMNIALS;
   public WORK_EXPERIENCE = WORK_EXPERIENCE;
   public CERTIFICATIONS = CERTIFICATIONS;
-  public GITHUB = GITHUB;
-  public MEDIUM = MEDIUM;
   public slideConfig = {
     lazyLoad: 'ondemand',
     slidesToShow: 3,
@@ -95,11 +91,11 @@ export class AppComponent {
   }
 
   public goToGithub(): void {
-    window.open(this.GITHUB, '_blank');
+    window.open(SOCIAL_LINKS.GITHUB, '_blank');
   }
 
   public goToMedium(): void {
-    window.open(this.MEDIUM, '_blank');
+    window.open(SOCIAL_LINKS.MEDIUM, '_blank');
   }
 
   public scroll(el: HTMLElement) {

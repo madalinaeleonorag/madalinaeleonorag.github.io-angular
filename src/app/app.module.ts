@@ -18,7 +18,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestimonialDialogComponent } from './components/testimonial/testimonial-dialog/testimonial-dialog.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

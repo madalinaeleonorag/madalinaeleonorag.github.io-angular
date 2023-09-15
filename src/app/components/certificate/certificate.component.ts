@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Certification } from 'src/app/interfaces/certification';
 
 @Component({
   selector: 'app-certificate',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./certificate.component.scss'],
 })
 export class CertificateComponent {
-  @Input() certificate: any;
+  @Input() certificate: Certification;
 
   public open(): void {
     window.open(this.certificate.url, '_blank');

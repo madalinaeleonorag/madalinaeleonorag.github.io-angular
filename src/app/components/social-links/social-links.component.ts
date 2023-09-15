@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as CONSTANTS from 'src/assets/CONSTANTS';
+import { SOCIAL_LINKS } from 'src/assets/CONSTANTS';
 
 @Component({
   selector: 'app-social-links',
@@ -7,7 +7,7 @@ import * as CONSTANTS from 'src/assets/CONSTANTS';
   styleUrls: ['./social-links.component.scss'],
 })
 export class SocialLinksComponent {
-  public CONSTANTS: any = CONSTANTS;
+  public links: any = SOCIAL_LINKS;
 
   public openLink(link: string): void {
     window.open(link, '_blank');
