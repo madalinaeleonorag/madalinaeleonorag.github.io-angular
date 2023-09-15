@@ -55,10 +55,6 @@
         margin: 0 1vw;
       }
     }
-
-    &.hide-mobile {
-      display: none;
-    }
   }
 }
 
@@ -115,6 +111,8 @@
   }
 
   &-testimonials {
+    background-image: $gradient;
+
     .testimonials {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

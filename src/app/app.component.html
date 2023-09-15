@@ -43,34 +43,17 @@
 </div>
 
 <div class="wrapper wrapper-testimonials">
-  <div class="centered-category-title">Testimonials</div>
   <ngx-slick-carousel
     class="carousel category-wrapper"
     #slickModal="slick-carousel"
     [config]="slideConfig"
-    *ngIf="isSeeLessTestimonials"
   >
     <app-testimonial
       ngxSlickItem
-      *ngFor="let testimonial of filteredTestimonials()"
+      *ngFor="let testimonial of TESTIMONIALS"
       [testimonial]="testimonial"
     ></app-testimonial>
   </ngx-slick-carousel>
-  <div class="category-wrapper testimonials" *ngIf="!isSeeLessTestimonials">
-    <app-testimonial
-      *ngFor="let testimonial of filteredTestimonials()"
-      [testimonial]="testimonial"
-    ></app-testimonial>
-  </div>
-  <div class="centered-button hide-mobile">
-    <button (click)="switchSeeLessTestimonials()" class="dark">
-      {{
-        isSeeLessTestimonials
-          ? "See more testimonials"
-          : "See less testimonials"
-      }}
-    </button>
-  </div>
 </div>
 
 <div class="wrapper wrapper-contact">

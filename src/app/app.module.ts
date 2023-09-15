@@ -16,6 +16,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestimonialDialogComponent } from './components/testimonial/testimonial-dialog/testimonial-dialog.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
     CopyrightComponent,
     ContactComponent,
     SocialLinksComponent,
+    TestimonialDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ import { SocialLinksComponent } from './components/social-links/social-links.com
     ReactiveFormsModule,
     FormsModule,
     SlickCarouselModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

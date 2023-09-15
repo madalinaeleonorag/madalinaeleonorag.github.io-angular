@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { TestimonialDialogComponent } from './testimonial-dialog/testimonial-dialog.component';
+import { Testimonial } from 'src/app/interfaces/testimonial';
 
 @Component({
   selector: 'app-testimonial',
@@ -6,7 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./testimonial.component.scss'],
 })
 export class TestimonialComponent {
-  @Input() testimonial: any;
+  @Input() testimonial: Testimonial;
+
+  constructor(public dialog: MatDialog) {}
 
   public mapImageLogo(): string {
     const images: any = {
@@ -20,5 +25,12 @@ export class TestimonialComponent {
     return `../../../../../assets/icons/companies/${
       images[this.testimonial.from]
     }`;
+  }
+
+  openDialog() {
+    this.dialog.open(TestimonialDialogComponent, {
+      data: { ...this.testimonial },
+      maxWidth: '70vw',
+    });
   }
 }

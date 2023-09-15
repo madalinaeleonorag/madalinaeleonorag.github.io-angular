@@ -11,10 +11,10 @@ const SHUTTERSTOCK = 'https://www.shutterstock.com/g/Madalina-Eleonora';
 const COPYRIGHT = '© Madalina-Eleonora Gheorghe 2023';
 
 // Descriptions
-const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs. 
-  Additional, I have experience working with React.js, Sass, AWS Services and Azure. 
+const SUMMARY = `I am a senior Frontend Developer with a long experience working with Angular and RxJs.
+  Additional, I have experience working with React.js, Sass, AWS Services and Azure.
   Currently working for <a target="_blank" href="https://www.cognizantsoftvision.com/">Cognizant Softvision</a>, former Frontend Application Developer at <a target="_blank" href="https://ro.deloittedigital.com/">Deloitte Digital</a>, Frontend Developer at <a target="_blank" href="https://www.ibm.com/services/ibmix">IBM iX</a> and Database Administrator at <a target="_blank" href="https://www.renaultgroup.com/en/">Groupe Renault</a>.
-  I delivered unique features in the past projects, improving user experience, contributing actively in meetings with suggestions and helping other colleagues, maintaining a good communication with the client. 
+  I delivered unique features in the past projects, improving user experience, contributing actively in meetings with suggestions and helping other colleagues, maintaining a good communication with the client.
   I worked with large companies, in industries like banking, insurance, retail and e-commerce.
   My studies were based in Information Technology Administration and Management, having a bachelor and a master degree from <a target="_blank" href="https://www.rau.ro/">Romanian-American University</a>.`;
 
@@ -28,7 +28,6 @@ const TESTIOMNIALS = [
     role: 'Project Manager / Scrum Master',
     date: 'Nov 10, 2022',
     from: 'Deloitte Digital',
-    featured: true,
   },
   {
     text: `She proves her great technical expertise and collaboration skills with every task that is assigned to her, and is supporting the project teams with business and technical information for successful integrations.`,
@@ -36,7 +35,6 @@ const TESTIOMNIALS = [
     role: 'Senior Consultant',
     date: 'Nov 7, 2022',
     from: 'Deloitte Digital',
-    featured: false,
   },
   {
     text: `She tackled new features with ease, always on time and with the highest possible quality. She’s a vocal team member and she’s alway deeply involved in discovering all the requirements of what she needs to implement. Madalina’s strong commitment to having all the details in has been helping the team get a better understanding of the tasks. I’m confident that she can provide people with the support needed to get the job done.`,
@@ -44,7 +42,6 @@ const TESTIOMNIALS = [
     role: 'Team Lead',
     date: 'Oct 19, 2022',
     from: 'Deloitte Digital',
-    featured: true,
   },
   {
     text: `Feedback from both team and local technical lead is positive as Madalina started working on the project near stabilization phase, but managed to get familiar in a short timeframe with the complexity of the project.`,
@@ -52,7 +49,6 @@ const TESTIOMNIALS = [
     role: 'Senior Manager',
     date: 'May 2, 2022',
     from: 'Deloitte Digital',
-    featured: true,
   },
   {
     text: `Madalina could quickly take over the tasks assigned to her and she could deliver them with a very good quality on the agreed time. Madalina is also a team player and she knows when she need to raise the hand when and issue appears. I suggest Madalina to continue working on this way and not stop learning not only frontend technical things but also Cloud and Devops tools to increase the value of her profile.`,
@@ -60,7 +56,6 @@ const TESTIOMNIALS = [
     role: 'Solution Lead',
     date: 'Apr 20, 2022',
     from: 'Deloitte Digital',
-    featured: false,
   },
   {
     text: `From early on, she was fully independent from a tech perspective, requiring assistance only for understanding the feature she needed to implement. Even though she is a less experienced frontend developer than the former one, seeing her work I can confirm that she managed to surpass everyone’s expectations. She communicates the blockers & issues clearly, she developed complex features faster and with increased quality than before.She handled cloud configuration & installs for the applications that she developed with ease, even though this is out of her area of expertise. She is asking everyone for information when she needs it, she is efficiently communicating her concerns and thus, every story that she implemented was easily integrated with the backend components and the platform. Moreover, I appreciate the fact that during refinements and clarifications, she challenges the approach and the input data, and, thus we managed to increase the quality of the features’ description resulting in better structured stories and acceptance criteria. I’m happy that I got the chance to work with her and I would definitely like to continue doing this in the future.`,
@@ -68,7 +63,6 @@ const TESTIOMNIALS = [
     role: 'Team Lead',
     date: 'Apr 20, 2022',
     from: 'Deloitte Digital',
-    featured: false,
   },
   {
     text: `Overnight she became the expert and point of contact for front-end applications. She has delivered all her tasks with great speed and took on several topics instantly. The entire project is happy to have her onboard.`,
@@ -76,7 +70,6 @@ const TESTIOMNIALS = [
     role: 'Business Analyst',
     date: 'Apr 20, 2022',
     from: 'Deloitte Digital',
-    featured: false,
   },
   {
     text: `Madalina instantly collaborated with the team and importantly understood our objectives quickly. The repeated feedback from the development lead was how quickly our production increased – thanks to Madalina. Madalina clearly has a strong skillset which benefited our FE team significantly. Madalina worked hard to develop her colleagues and ensured they were implementing best practice techniques.`,
@@ -84,7 +77,6 @@ const TESTIOMNIALS = [
     role: 'Manager',
     date: 'Apr 6, 2022',
     from: 'Deloitte Digital',
-    featured: true,
   },
   {
     text: `During her time spent on Alpha space, Madalina has shown a lot of flexibility and maturity. Even though she had to change teams and industries, from banking to insurance, her experience has been extremely appreciate by our main stakeholders and there have been multiple requests to keep her on Alpha. From a technical perspective, she delivers extremely fast and at a high quality. For example, she managed to bring visible improvements on the web app in just a couple of weeks, as well as mentioning more junior team members. If given the opportunity (to match her expertise and role desired), she has the ability to make a huge difference, she has the skills and determination needed.`,
@@ -92,7 +84,6 @@ const TESTIOMNIALS = [
     role: 'Project Manager',
     date: 'Feb 7, 2022',
     from: 'Deloitte Digital',
-    featured: false,
   },
   {
     text: `She gave a huge boost to our Web app development, she came with a very long list of improvements to our existing app and managed to implement a lot of those items in just a couple of weeks. The quality of the code she has been writing and the overall work quality has been impressive. I would always want her in my team, given the opportunity.`,
@@ -100,7 +91,6 @@ const TESTIOMNIALS = [
     role: 'Technical Lead',
     date: 'Ian 28, 2022',
     from: 'Deloitte Digital',
-    featured: true,
   },
   {
     text: "She's ambitious, enjoys learning new things all the time, she takes action whenever the situation requires it.She never stepped back from a challenge, but rather is determined to figure out how we overcome it.Madalina was there when anyone from the team needed support on any level: if it's a coding problem, providing some information, investigating an issue, giving an advice non-work related or just for a simple talk. She always encourages everyone to push their limits and become a better version on themselves. Her patient and professional attitude makes it really easy to talk to. She's not just about work, she's also about being human and having a good time while trying to grow as much as possible.",
@@ -108,7 +98,6 @@ const TESTIOMNIALS = [
     role: 'Frontend Developer',
     date: 'Nov 27, 2021',
     from: 'IBM',
-    featured: false,
   },
   {
     text: "Madalina is a very practical person. Working on various projects with her I was able to see how flexible she can be, especially with the help of her vast knowledge in the IT field. In addition to intelligence, I noticed that she also has leadership qualities that have been very helpful in any project. Attention to detail characterizes her, so it's hard not to get things going almost perfectly with her. She is a charismatic, dynamic person with a very precise decision-making power. Nothing remains unresolved with Madalina!",
@@ -116,7 +105,6 @@ const TESTIOMNIALS = [
     role: 'System Support Engineer',
     date: 'Nov 25, 2021',
     from: 'Vodafone',
-    featured: false,
   },
   {
     text: "For the past years I had the opportunity to work along Madalina on multiple personal & comercial projects. She was able to develop features in an extremely elegant and creative way all the time. Her ability to develop high quality products while being under extreme pressure is something that I look up to, not only that she's able to stay calm and professional in difficult situations.She's also able to make everyone in the team feel that they are also capable of doing more than they expect from themselves.",
@@ -124,7 +112,6 @@ const TESTIOMNIALS = [
     role: 'Full-Stack Developer',
     date: 'Sep 24, 2021',
     from: 'Wooter Apparel',
-    featured: false,
   },
   {
     text: 'Madalina is always reliable and helping her team members, able to understand the requirements and come up with a solution. It was a joy and always had confidence while working with her. I am strongly recommend her in any new opportunity and challenge.',
@@ -132,7 +119,6 @@ const TESTIOMNIALS = [
     role: 'Project Manager',
     date: 'Sep 13, 2021',
     from: 'IBM',
-    featured: true,
   },
   {
     text: 'Madalina was my mentor during my internship period at IBM iX. She was friendly and open from the start and rapidly developed a learning plan for me. We had a great mentor-mentee relationship during that time and she was always eager to show me new front-end tricks and quirks. The proactivity which she possesses inspired me a lot throught my internship period.',
@@ -140,7 +126,6 @@ const TESTIOMNIALS = [
     role: 'Frontend Developer',
     date: 'Sep 2, 2021',
     from: 'IBM',
-    featured: false,
   },
   {
     text: 'Appreciate your guidance and helping bring new talent to our wider iX IBM team and also constant strong contribution to our project delivery. Keep up the good work!',
@@ -148,7 +133,6 @@ const TESTIOMNIALS = [
     role: 'Project Manager',
     date: 'Aug 6, 2021',
     from: 'IBM',
-    featured: false,
   },
   {
     text: "She quickly managed to learn and acquire quite an extensive set of skills.Her determination to never give up and always learn and improve, is what sets her apart from many other developers out there.It's been a pleasure working with her. She is currently riding the proverbial wave and I am sure she will achieve great things in the future.I highly recommend her to anyone looking to expand their team(s).",
@@ -156,7 +140,6 @@ const TESTIOMNIALS = [
     role: 'Frontend Developer',
     date: 'Jun 22, 2021',
     from: 'IBM',
-    featured: false,
   },
   {
     text: 'Great job on the project Madalina, the feedback received for the project is very good. Also I like your drive and attitude and I hope you will continue to invest in your skills as you did until now, and more.',
@@ -164,7 +147,6 @@ const TESTIOMNIALS = [
     role: 'People Manager',
     date: 'Dec 16, 2020',
     from: 'IBM',
-    featured: false,
   },
   {
     text: 'Madalina had a very good start and path in the project, having in charge a very hard project and client on a team, being in front of the client for direct communication and problem solving. I am very satisfied with her abilities to create and maintain a good working relationship both with the client and her team members,to adapt quickly to change and to help any time need it.',
@@ -172,15 +154,6 @@ const TESTIOMNIALS = [
     role: 'Project Manager',
     date: '15 Feb, 2019',
     from: 'IBM',
-    featured: false,
-  },
-  {
-    text: 'If you have had the opportunity to work with me or know me, you can leave a testimonial. Lorem ipsum dolor sit amet.',
-    author: 'Your name',
-    role: 'Your role in company',
-    date: 'today',
-    from: 'company-not-found',
-    featured: true,
   },
 ];
 

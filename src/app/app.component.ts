@@ -23,17 +23,16 @@ export class AppComponent {
 
   public gitHubProjects: Array<IGitHubProject> = [];
   public mediumArticles: Array<IMediumArticle> = [];
-  public TESTIMONIALS: any;
-  public isSeeLessTestimonials: boolean = true;
-  public WORK_EXPERIENCE: any = WORK_EXPERIENCE;
-  public CERTIFICATIONS: any = CERTIFICATIONS;
-  public GITHUB: any = GITHUB;
-  public MEDIUM: any = MEDIUM;
-  public slideConfig: any = {
+  public TESTIMONIALS = TESTIOMNIALS;
+  public WORK_EXPERIENCE = WORK_EXPERIENCE;
+  public CERTIFICATIONS = CERTIFICATIONS;
+  public GITHUB = GITHUB;
+  public MEDIUM = MEDIUM;
+  public slideConfig = {
     lazyLoad: 'ondemand',
     slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
@@ -49,7 +48,7 @@ export class AppComponent {
       {
         breakpoint: 850,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
@@ -93,16 +92,6 @@ export class AppComponent {
       .subscribe((res: IMediumArticle[]) => {
         this.mediumArticles = res.slice(0, 4);
       });
-  }
-
-  public filteredTestimonials(): any {
-    return this.isSeeLessTestimonials
-      ? TESTIOMNIALS.filter((testimonial: any) => testimonial.featured)
-      : TESTIOMNIALS;
-  }
-
-  public switchSeeLessTestimonials(): void {
-    this.isSeeLessTestimonials = !this.isSeeLessTestimonials;
   }
 
   public goToGithub(): void {

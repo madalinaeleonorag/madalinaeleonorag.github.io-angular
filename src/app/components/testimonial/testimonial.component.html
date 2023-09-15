@@ -1,4 +1,4 @@
-<div class="app-testimonial shine button light">
+<div class="app-testimonial shine button light" (click)="openDialog()">
   <img
     loading="lazy"
     [src]="mapImageLogo()"
@@ -10,13 +10,14 @@
         {{ testimonial.author }}
       </div>
       <div class="author-details-role">
-        {{ testimonial.role }}
+        {{ testimonial.role }} <span>@ {{ testimonial.from }}</span>
       </div>
     </div>
   </div>
 
   <div class="description">
-    <span class="quotes">"&nbsp;</span>{{ testimonial.text
+    <span class="quotes">"&nbsp;</span
+    >{{ testimonial.text.slice(0, 200) + "..."
     }}<span class="quotes">&nbsp;"</span>
   </div>
 </div>

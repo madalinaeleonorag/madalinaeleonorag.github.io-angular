@@ -1,0 +1,24 @@
+<div class="app-testimonial-dialog">
+  <div class="author">
+    <img
+      loading="lazy"
+      [src]="mapImageLogo()"
+      [alt]="'Logo for certification ' + data.author"
+    />
+    <div class="author-details">
+      <div class="author-details-name">
+        {{ data.author }}
+      </div>
+      <div class="author-details-role">
+        {{ data.role }} <span>@ {{ data.from }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <span class="quotes">"&nbsp;</span>{{ data.text
+    }}<span class="quotes">&nbsp;"</span>
+  </div>
+
+  <a target="_blank" mat-dialog-close>Go back</a>
+</div>

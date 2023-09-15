@@ -1,9 +1,8 @@
 @import "../../styles/theme.scss";
 
 .app-banner {
-  height: calc(100vh - 2vw);
+  height: 100vh;
   background-image: $gradient;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   position: relative;
 
   .banner-content {
@@ -28,20 +27,82 @@
       padding-top: 3vh;
     }
   }
-}
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
+  .arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+
+    path {
+      stroke: $white;
+      fill: transparent;
+      stroke-width: 1px;
+      animation: arrow 2s infinite;
+      -webkit-animation: arrow 2s infinite;
+
+      &.a1 {
+        animation-delay: -1s;
+        -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+      }
+
+      &.a2 {
+        animation-delay: -0.5s;
+        -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+      }
+
+      &.a3 {
+        animation-delay: 0s;
+        -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+      }
+    }
+
+    @keyframes arrow {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes arrow /*Safari and Chrome*/ {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   }
 
-  80% {
-    transform: translateX(0.5rem);
-  }
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+    80% {
+      transform: translateX(0.5rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
