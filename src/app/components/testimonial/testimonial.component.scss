@@ -23,6 +23,10 @@
         color: $secondary;
       }
     }
+
+    a {
+      color: $secondary;
+    }
   }
 
   img {
@@ -31,16 +35,6 @@
     height: auto;
     max-height: 5rem;
     max-width: -webkit-fill-available;
-  }
-
-  .description {
-    place-self: center;
-    height: -webkit-fill-available;
-    text-wrap: balance;
-
-    .quotes {
-      color: $primary;
-    }
   }
 
   .author {
@@ -59,7 +53,7 @@
       }
 
       &-role {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: $primary;
         line-height: 1;
 
@@ -68,5 +62,20 @@
         }
       }
     }
+  }
+
+  .description {
+    place-self: center;
+    height: -webkit-fill-available;
+    text-wrap: balance;
+
+    .quotes {
+      color: $primary;
+    }
+  }
+
+  a {
+    margin-top: 1.5rem;
+    align-self: end;
   }
 }

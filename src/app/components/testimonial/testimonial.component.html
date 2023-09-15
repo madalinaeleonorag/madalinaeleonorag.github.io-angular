@@ -2,7 +2,7 @@
   <img
     loading="lazy"
     [src]="mapImageLogo()"
-    [alt]="'Logo for certification ' + testimonial.author"
+    [alt]="'Logo for company ' + testimonial.author"
   />
   <div class="author">
     <div class="author-details">
@@ -20,4 +20,6 @@
     >{{ testimonial.text.slice(0, 200) + "..."
     }}<span class="quotes">&nbsp;"</span>
   </div>
+
+  <a target="_blank">Read more</a>
 </div>
