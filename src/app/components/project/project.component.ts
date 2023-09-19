@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { IGitHubProject } from 'src/app/interfaces/git-hub-project';
+import { GitHubProject } from 'src/app/interfaces/github-project';
 import { CommonService } from 'src/app/services/common.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CommonService } from 'src/app/services/common.service';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent implements OnInit {
-  @Input() project: IGitHubProject;
+  @Input() project: GitHubProject;
 
   public imageUrl = './../../../assets/image-not-found.png';
   public languagesPercentage: any = {};
@@ -43,7 +43,7 @@ export class ProjectComponent implements OnInit {
       )
       .subscribe((responseObj: any) => {
         const totalPtsArr = Object.values(responseObj);
-        var sumTotalPts = 0;
+        let sumTotalPts = 0;
         totalPtsArr.forEach((pts: any) => {
           sumTotalPts += pts;
         });

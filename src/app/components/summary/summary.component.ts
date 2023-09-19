@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SUMMARY } from 'src/assets/CONSTANTS';
+import { SUMMARY } from 'src/app/constants/CONSTANTS';
 
 @Component({
   selector: 'app-summary',
@@ -7,5 +7,5 @@ import { SUMMARY } from 'src/assets/CONSTANTS';
   styleUrls: ['./summary.component.scss'],
 })
 export class SummaryComponent {
-  public SUMMARY: any = SUMMARY;
+  public SUMMARY = SUMMARY;
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Certification } from 'src/app/interfaces/certification';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-certificate',
@@ -9,7 +10,9 @@ import { Certification } from 'src/app/interfaces/certification';
 export class CertificateComponent {
   @Input() certificate: Certification;
 
+  constructor(private readonly commonService: CommonService) {}
+
   public open(): void {
-    window.open(this.certificate.url, '_blank');
+    this.commonService.openLink(this.certificate.url);
   }
 }

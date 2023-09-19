@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WORK_EXPERIENCE } from 'src/assets/CONSTANTS';
+import { WORK_EXPERIENCE } from 'src/app/constants/work-experience';
 
 export class Skill {
   name: string;
@@ -19,8 +19,8 @@ export class SkillsComponent {
   }
 
   public sortSkills() {
-    let sortedSkills: Skill[] = [];
-    let allSkills: any[] = [];
+    const sortedSkills: Skill[] = [];
+    const allSkills: any[] = [];
 
     WORK_EXPERIENCE.forEach((experience) => {
       experience.projects?.forEach((project) =>
@@ -33,7 +33,7 @@ export class SkillsComponent {
       return prev;
     }, {});
 
-    for (var skill in reduced) {
+    for (const skill in reduced) {
       if (reduced[skill] > 1) {
         sortedSkills.push({ name: skill, count: reduced[skill] });
       }

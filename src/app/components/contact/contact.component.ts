@@ -6,7 +6,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import * as CONSTANTS from 'src/assets/CONSTANTS';
+import * as CONSTANTS from 'src/app/constants/CONSTANTS';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +15,7 @@ import * as CONSTANTS from 'src/assets/CONSTANTS';
 })
 export class ContactComponent {
   public CONSTANTS: any = CONSTANTS;
-  public isError: boolean = false;
+  public isError = false;
   public form: FormGroup;
   public name: FormControl = new FormControl('', [Validators.required]);
   public email: FormControl = new FormControl('', [
@@ -23,8 +23,8 @@ export class ContactComponent {
     Validators.email,
   ]);
   public message: FormControl = new FormControl('', [Validators.required]);
-  public submitted: boolean = false;
-  public isLoading: boolean = false;
+  public submitted = false;
+  public isLoading = false;
   public responseMessage: string;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
@@ -47,7 +47,7 @@ export class ContactComponent {
   public onSubmit(): void {
     if (this.form.status == 'VALID') {
       this.form.disable();
-      var formData: any = new FormData();
+      const formData: any = new FormData();
       formData.append('name', this.form.value.name);
       formData.append('email', this.form.value.email);
       formData.append('message', this.form.value.message);

@@ -1,4 +1,4 @@
-export interface IGitHubProject {
+export interface GitHubProject {
   name: string;
   description: string;
   fullName: string;

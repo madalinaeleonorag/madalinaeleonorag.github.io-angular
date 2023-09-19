@@ -1,4 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
+import { THEMES } from 'src/app/constants/themes';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-banner',
@@ -6,21 +8,20 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
-  public selectedTheme = 'magenta';
-  public themes = [
-    { name: '2022 Light', value: 'light' },
-    { name: '2023 Viva Magenta', value: 'magenta' },
-    { name: '2024 Paprika', value: 'paprika' },
-  ];
+  public selectedTheme = THEMES[1].value;
+  public themes = THEMES;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private readonly commonService: CommonService
+  ) {}
 
   public openCV(): void {
-    window.open('./../../../assets/CV.pdf', '_blank');
+    this.commonService.openLink('./../../../assets/CV.pdf');
   }
 
   public setTheme(event: any) {
-    if (event === 'magenta') {
+    if (event === THEMES[1].value) {
       this.elementRef.nativeElement.style.setProperty(
         '--color-primary',
         '170, 25, 116'

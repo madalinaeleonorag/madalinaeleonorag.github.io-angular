@@ -1,14 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import {
-  TESTIOMNIALS,
-  WORK_EXPERIENCE,
-  CERTIFICATIONS,
-  SOCIAL_LINKS,
-} from 'src/assets/CONSTANTS';
-import { IGitHubProject } from './interfaces/git-hub-project';
-import { IMediumArticle } from './interfaces/medium-article';
+import { GitHubProject } from './interfaces/github-project';
+import { MediumArticle } from './interfaces/medium-article';
 import { ExternalService } from './services/external.service';
+import { slideConfig } from './constants/slide-config';
+import { CommonService } from './services/common.service';
+import { TESTIOMNIALS } from './constants/testimonials';
+import { WORK_EXPERIENCE } from './constants/work-experience';
+import { CERTIFICATIONS } from './constants/certifications';
+import { SOCIAL_LINKS } from './constants/social-links';
 
 @Component({
   selector: 'app-root',
@@ -19,87 +19,36 @@ export class AppComponent implements OnInit, OnDestroy {
   private gitHubProjectsSubscription: Subscription = new Subscription();
   private mediumArticlesSubscription: Subscription = new Subscription();
 
-  public gitHubProjects: Array<IGitHubProject> = [];
-  public mediumArticles: Array<IMediumArticle> = [];
+  public gitHubProjects: Array<GitHubProject> = [];
+  public mediumArticles: Array<MediumArticle> = [];
   public TESTIMONIALS = TESTIOMNIALS;
   public WORK_EXPERIENCE = WORK_EXPERIENCE;
   public CERTIFICATIONS = CERTIFICATIONS;
-  public slideConfig = {
-    lazyLoad: 'ondemand',
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    infinite: false,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: true,
-    mobileFirst: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 850,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 0,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  public slideConfig = slideConfig;
 
-  constructor(private externalService: ExternalService) {}
+  constructor(
+    private readonly externalService: ExternalService,
+    private readonly commonService: CommonService
+  ) {}
 
   ngOnInit() {
     this.gitHubProjectsSubscription = this.externalService
       .getGitHubProjects()
-      .subscribe((res: IGitHubProject[]) => {
-        this.gitHubProjects = res
-          .filter(
-            (item: IGitHubProject) =>
-              item.name !== 'madalinaeleonorag.github.io'
-          )
-          .sort(
-            (a: IGitHubProject, b: IGitHubProject) =>
-              b.created.getTime() - a.created.getTime()
-          )
-          .slice(0, 3);
+      .subscribe((res: GitHubProject[]) => {
+        this.gitHubProjects = res;
       });
 
     this.mediumArticlesSubscription = this.externalService
       .getMediumArticles()
-      .subscribe((res: IMediumArticle[]) => {
-        this.mediumArticles = res.slice(0, 4);
+      .subscribe((res: MediumArticle[]) => {
+        this.mediumArticles = res;
       });
   }
 
-  public goToGithub(): void {
-    window.open(SOCIAL_LINKS.GITHUB, '_blank');
-  }
-
-  public goToMedium(): void {
-    window.open(SOCIAL_LINKS.MEDIUM, '_blank');
-  }
-
-  public scroll(el: HTMLElement) {
-    el.scrollIntoView({ behavior: 'smooth' });
+  public openLink(type: string): void {
+    this.commonService.openLink(
+      SOCIAL_LINKS[type as keyof typeof SOCIAL_LINKS]
+    );
   }
 
   ngOnDestroy() {

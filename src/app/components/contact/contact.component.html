@@ -40,7 +40,7 @@
         <span>{{ responseMessage }}</span>
       </div>
       <button
-        [disabled]="isLoading || form.status != 'VALID'"
+        [disabled]="isLoading || form.status !== 'VALID'"
         class="submit dark"
         (click)="onSubmit()"
       >
@@ -49,5 +49,5 @@
     </form>
   </div>
 
-<app-social-links />
+  <app-social-links />
 </div>

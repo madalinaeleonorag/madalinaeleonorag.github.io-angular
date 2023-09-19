@@ -1,29 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { IGitHubProject } from '../interfaces/git-hub-project';
-import { IMediumArticle } from '../interfaces/medium-article';
+import { GitHubProject } from '../interfaces/github-project';
+import { MediumArticle } from '../interfaces/medium-article';
+import { GITHUB_API_URL, MEDIUM_API_URL } from '../constants/CONSTANTS';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExternalService {
-  private MEDIUM_URL: string =
-    'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@madalinaeleonorag';
-  private GITHUB_URL: string =
-    'https://api.github.com/users/madalinaeleonorag/repos?type=public&sort=pushed&per_page=100';
-
   constructor(private http: HttpClient) {}
 
   /**
    * Get GitHub projects
-   * @returns an observable with IGitHubProject items
+   * @returns an observable with GitHubProject items
    */
-  public getGitHubProjects(): Observable<IGitHubProject[]> {
-    return this.http.get<any>(this.GITHUB_URL).pipe(
+  public getGitHubProjects(): Observable<GitHubProject[]> {
+    return this.http.get<any>(GITHUB_API_URL).pipe(
       map((objectItem: any) =>
         objectItem.map(
-          (item: any): IGitHubProject => ({
+          (item: any): GitHubProject => ({
             name: item.name,
             description: item.description,
             fullName: item.full_name,
@@ -34,28 +30,40 @@ export class ExternalService {
             created: new Date(item.created_at),
           })
         )
+      ),
+      map((projects) =>
+        projects
+          .filter(
+            (item: GitHubProject) => item.name !== 'madalinaeleonorag.github.io'
+          )
+          .sort(
+            (a: GitHubProject, b: GitHubProject) =>
+              b.created.getTime() - a.created.getTime()
+          )
+          .slice(0, 3)
       )
     );
   }
 
   /**
    * Get Medium articles
-   * @returns an observable with IMediumArticle items
+   * @returns an observable with MediumArticle items
    */
   public getMediumArticles() {
     return this.http
-      .get<any>(this.MEDIUM_URL)
+      .get<any>(MEDIUM_API_URL)
       .pipe(map((response: any) => response.items))
       .pipe(
         map((objectItem: any) =>
           objectItem.map(
-            (item: any): IMediumArticle => ({
+            (item: any): MediumArticle => ({
               thumbnail: item.thumbnail,
               link: item.link,
               title: item.title,
             })
           )
-        )
+        ),
+        map((response) => response.slice(0, 4))
       );
   }
 }

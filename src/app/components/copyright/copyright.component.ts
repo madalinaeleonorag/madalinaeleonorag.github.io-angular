@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { COPYRIGHT } from 'src/assets/CONSTANTS';
+import { COPYRIGHT } from 'src/app/constants/CONSTANTS';
 
 @Component({
   selector: 'app-copyright',
@@ -7,5 +7,5 @@ import { COPYRIGHT } from 'src/assets/CONSTANTS';
   styleUrls: ['./copyright.component.scss'],
 })
 export class CopyrightComponent {
-  public COPYRIGHT: any = COPYRIGHT;
+  public COPYRIGHT = COPYRIGHT;
 }

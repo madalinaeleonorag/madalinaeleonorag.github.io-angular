@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IMediumArticle } from 'src/app/interfaces/medium-article';
+import { MediumArticle } from 'src/app/interfaces/medium-article';
 
 @Component({
   selector: 'app-article',
@@ -7,5 +7,5 @@ import { IMediumArticle } from 'src/app/interfaces/medium-article';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent {
-  @Input() article: IMediumArticle;
+  @Input() article: MediumArticle;
 }
