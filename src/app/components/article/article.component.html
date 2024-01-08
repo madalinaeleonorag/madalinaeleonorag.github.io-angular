@@ -1,7 +1,7 @@
 <div class="app-article shine">
   <div
     class="image"
-    [ngStyle]="{ 'background-image': 'url(' + article.thumbnail + ')' }"
+    [ngStyle]="{ 'background-image': 'url(' + getImage() + ')' }"
   ></div>
   <div class="description">
     {{ article.title }}

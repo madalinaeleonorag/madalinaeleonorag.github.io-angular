@@ -8,4 +8,10 @@ import { MediumArticle } from 'src/app/interfaces/medium-article';
 })
 export class ArticleComponent {
   @Input() article: MediumArticle;
+
+  public getImage(): string {
+    return this.article.thumbnail
+      ? this.article.thumbnail
+      : '../../../assets/article.png';
+  }
 }

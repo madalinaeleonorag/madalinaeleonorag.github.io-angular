@@ -12,7 +12,6 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
 import { CertificateComponent } from './components/certificate/certificate.component';
 import { ArticleComponent } from './components/article/article.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SocialLinksComponent } from './components/social-links/social-links.component';
@@ -33,7 +32,6 @@ import { CommonModule } from '@angular/common';
     CertificateComponent,
     ArticleComponent,
     CopyrightComponent,
-    ContactComponent,
     SocialLinksComponent,
     TestimonialDialogComponent,
   ],
