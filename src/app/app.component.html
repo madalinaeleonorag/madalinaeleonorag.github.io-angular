@@ -9,20 +9,22 @@
 
 <div class="wrapper wrapper-certifications">
   <div class="category-wrapper">
-    <app-certificate
-      *ngFor="let certificate of CERTIFICATIONS"
-      [certificate]="certificate"
-    ></app-certificate>
+    @for (certificate of CERTIFICATIONS; track certificate) {
+      <app-certificate
+        [certificate]="certificate"
+      ></app-certificate>
+    }
   </div>
 </div>
 
 <div class="wrapper wrapper-projects">
   <div class="centered-category-title">Latest projects</div>
   <div class="category-wrapper projects">
-    <app-project
-      *ngFor="let project of gitHubProjects; let i = index"
-      [project]="project"
-    ></app-project>
+    @for (project of gitHubProjects; track project) {
+      <app-project
+        [project]="project"
+      ></app-project>
+    }
   </div>
   <div class="centered-button">
     <button (click)="openLink('GITHUB')" class="dark">Go to GitHub</button>
@@ -32,10 +34,11 @@
 <div class="wrapper wrapper-articles">
   <div class="centered-category-title" #publications>I like to write</div>
   <div class="category-wrapper articles">
-    <app-article
-      *ngFor="let article of mediumArticles"
-      [article]="article"
-    ></app-article>
+    @for (article of mediumArticles; track article) {
+      <app-article
+        [article]="article"
+      ></app-article>
+    }
   </div>
   <div class="centered-button">
     <button (click)="openLink('MEDIUM')" class="dark">Go to Medium</button>
@@ -48,11 +51,12 @@
     #slickModal="slick-carousel"
     [config]="slideConfig"
   >
+  @for (testimonial of TESTIMONIALS; track testimonial) {
     <app-testimonial
       ngxSlickItem
-      *ngFor="let testimonial of TESTIMONIALS"
       [testimonial]="testimonial"
     ></app-testimonial>
+  }
   </ngx-slick-carousel>
 </div>
 

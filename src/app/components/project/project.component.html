@@ -13,16 +13,17 @@
       {{ project.description }}
     </div>
     <div class="card-back-languages">
-      <div
-        class="card-back-languages-language"
-        *ngFor="let item of languagesPercentage | keyvalue"
-      >
-        {{ item.key }}
-
-        <span class="card-back-languages-language-percentage">
-          {{ item.value }}
-        </span>
-      </div>
+      @for (item of  languagesPercentage | keyvalue; track item) {
+        <div
+          class="card-back-languages-language"
+        >
+          {{ item.key }}
+  
+          <span class="card-back-languages-language-percentage">
+            {{ item.value }}
+          </span>
+        </div>
+      }
     </div>
     <a target="_blank" [href]="project.url">See code</a>
   </div>

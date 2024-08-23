@@ -1,9 +1,10 @@
 <div class="app-skills">
-  <img
-    loading="lazy"
-    *ngFor="let skill of skills"
-    [src]="getLogoUrl(skill.name)"
-    [ngClass]="switchClases(skill)"
-    [alt]="'Skill ' + skill.name"
-  />
+  @for (skill of skills; track skill) {
+    <img
+      loading="lazy"
+      [src]="getLogoUrl(skill.name)"
+      [ngClass]="switchClases(skill)"
+      [alt]="'Skill ' + skill.name"
+    />
+  }
 </div>
