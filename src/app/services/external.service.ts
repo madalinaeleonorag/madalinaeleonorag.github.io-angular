@@ -63,7 +63,7 @@ export class ExternalService {
             })
           )
         ),
-        map((response) => response.slice(0, 4))
+        map((response) => response.slice(0, 8))
       );
   }
 }
