@@ -1,10 +1,9 @@
-<div class="app-article shine">
-  <div
-    class="image"
-    [ngStyle]="{ 'background-image': 'url(' + getImage() + ')' }"
-  ></div>
-  <div class="description">
-    {{ article.title }}
-    <a target="_blank" [href]="article.link">Read</a>
+<div class="app-article">
+  {{ article.title }}
+  <div class="app-article__tags">
+    @for (category of article.categories; track category) {
+    <div class="app-article__tags__tag">{{category}}</div>
+    }
   </div>
+  <a target="_blank" [href]="article.link">Read</a>
 </div>

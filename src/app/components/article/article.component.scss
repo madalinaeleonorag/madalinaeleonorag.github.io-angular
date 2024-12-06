@@ -1,47 +1,37 @@
-@import "../../styles/mixin-breakpoint.scss";
 @import "../../styles/theme.scss";
 
 .app-article {
+  border-radius: 5%;
+  height: 100%;
   color: $black;
-  margin: 5px;
-  justify-self: stretch;
+  background-color: $white;
+  padding: 1.5vw;
   display: flex;
   flex-flow: column;
+  align-items: center;
+  font-size: 1.5rem;
   justify-content: space-between;
-  height: 25rem;
-  background-color: $white;
+  font-weight: bold;
+  text-wrap: balance;
 
-  .image {
-    min-height: 40%;
-    height: 40%;
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  }
-
-  .description {
-    padding: 1.5vw;
+  &__tags {
     display: flex;
-    flex-flow: column;
-    align-items: center;
-    font-size: 1.5rem;
-    height: -webkit-fill-available;
-    justify-content: space-between;
-    font-weight: bold;
-    text-wrap: balance;
+    flex-flow: wrap;
 
-    a {
-      margin-top: 1.5rem;
-      align-self: end;
+    &__tag {
+      background-color: $primary-opacity-10;
+      color: $primary;
+      border-radius: 3px;
+      font-weight: normal;
+      font-size: 1rem;
+      margin: 5px;
+      padding: 0 5px;
+      white-space: nowrap;
     }
   }
 
-  @include getBreakpoint(tab-land) {
-    height: 40rem;
-
-    .image {
-      min-height: 60%;
-      height: 60%;
-    }
+  a {
+    margin-top: 1.5rem;
+    align-self: end;
   }
 }

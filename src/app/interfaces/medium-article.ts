@@ -1,5 +1,5 @@
 export interface MediumArticle {
-  thumbnail: string;
+  categories: string[];
   link: string;
   title: string;
 }

@@ -9,7 +9,7 @@ import { GITHUB_API_URL, MEDIUM_API_URL } from '../constants/CONSTANTS';
   providedIn: 'root',
 })
 export class ExternalService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /**
    * Get GitHub projects
@@ -57,7 +57,7 @@ export class ExternalService {
         map((objectItem: any) =>
           objectItem.map(
             (item: any): MediumArticle => ({
-              thumbnail: item.thumbnail,
+              categories: item.categories,
               link: item.link,
               title: item.title,
             })
