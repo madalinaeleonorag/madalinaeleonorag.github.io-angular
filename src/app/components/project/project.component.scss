@@ -1,127 +1,72 @@
-@import "../../styles/mixin-breakpoint.scss";
 @import "../../styles/theme.scss";
-@import "../../styles/fixed-variables.scss";
 
 .app-project {
-  perspective: 150rem;
-  -moz-perspective: 150rem;
-  position: relative;
-  height: 40rem;
-  margin: 5px;
+  border-radius: 5%;
+  height: 100%;
+  color: $black;
+  background-color: $white;
+  padding: 1.5vw;
+  display: flex;
+  flex-flow: column;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  text-wrap: balance;
 
-  .card {
-    height: 40rem;
-    transition: all 0.7s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba($black, 0.15);
+  &__title {
+    font-weight: bold;
+    align-items: center;
+    padding-bottom: 2vh;
+  }
 
-    &-front {
-      .image {
-        background-size: cover;
-        background-blend-mode: screen;
-        height: 100%;
-      }
-    }
+  &__image {
+    height: 150px;
+    width: auto;
+  }
 
-    &-back {
-      background: $white;
-      color: $black;
-      transform: rotateY(180deg);
-      padding: 2rem;
-      font-size: 1.5rem;
+  &__languages {
+    display: flex;
+    flex-flow: wrap;
+    padding: 2vh 0;
+    font-size: 12px;
+    line-height: 2.2vh;
+
+    &__language {
       display: flex;
-      flex-flow: column;
-      justify-content: space-between;
+      flex-flow: row;
 
-      & > * {
-        margin: 1rem 0px;
-        text-wrap: balance;
-      }
+      &__percentage {
+        opacity: 0.5;
+        padding: 0 1vw 0 0.5vw;
 
-      &-name {
-        margin: 5vh 12vw;
-        text-transform: uppercase;
-        background: $gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: $transparent;
-        font-weight: bold;
-        width: max-content;
-        line-height: normal;
-      }
-
-      &-languages {
-        display: flex;
-        flex-flow: wrap;
-        padding-bottom: 2vh;
-        font-size: 12px;
-        line-height: 2.2vh;
-
-        &-language {
-          display: flex;
-          flex-flow: row;
-
-          &-percentage {
-            opacity: 0.5;
-            padding: 0 1vw 0 0.5vw;
-
-            &::before {
-              content: "- ";
-            }
-
-            &::after {
-              content: "%";
-            }
-          }
+        &::before {
+          content: "- ";
         }
-      }
 
-      a {
-        margin-top: 1.5rem;
-        align-self: end;
+        &::after {
+          content: "%";
+        }
       }
     }
   }
 
-  &:hover .card {
-    &-front {
-      transform: rotateY(-180deg);
-    }
+  &__tags {
+    display: flex;
+    flex-flow: wrap;
 
-    &-back {
-      transform: rotateY(0);
+    &__tag {
+      background-color: $primary-opacity-10;
+      color: $primary;
+      border-radius: 3px;
+      font-weight: normal;
+      font-size: 1rem;
+      margin: 5px;
+      padding: 0 5px;
+      white-space: nowrap;
     }
   }
 
-  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
-    height: auto;
-    background-color: $white;
-
-    .card {
-      height: auto;
-      position: relative;
-      box-shadow: none;
-
-      &-front {
-        height: 20rem;
-
-        .name {
-          display: none;
-        }
-      }
-
-      &-back {
-        transform: rotateY(0);
-      }
-    }
-
-    &:hover .card {
-      transform: unset;
-    }
+  a {
+    margin-top: 1.5rem;
+    align-self: end;
   }
 }
