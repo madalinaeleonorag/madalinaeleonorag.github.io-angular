@@ -2,6 +2,20 @@ import { Certification } from '../interfaces/certification';
 
 export const CERTIFICATIONS: Certification[] = [
   {
+    logo: 'Cognizant',
+    name: 'GitHub Copilot - Angular developers knowledge based assessment',
+    organization: 'Cognizant',
+    issueDate: 'May 2024',
+    url: 'https://www.linkedin.com/in/madalinaeleonorag/details/certifications/1717160635838/single-media-viewer/?profileId=ACoAAB_DQGcBXVHwN-mZVSXz5qc1eTGlcwIJ9kI',
+  },
+  {
+    logo: 'Udemy',
+    name: 'TypeScript Complete Course - Beginner To Advanced',
+    organization: 'Udemy',
+    issueDate: 'May 2024',
+    url: 'https://udemy.com/certificate/UC-e3bd5476-c20c-4459-ab8c-fb15c0a49d18',
+  },
+  {
     logo: 'Udemy',
     name: 'Agile Fundamentals: Including Scrum & Kanban',
     organization: 'Udemy',

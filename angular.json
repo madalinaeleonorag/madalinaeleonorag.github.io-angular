@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "madalinaeleonorag.github.io-angular:build:production"
+              "buildTarget": "madalinaeleonorag.github.io-angular:build:production"
             },
             "development": {
-              "browserTarget": "madalinaeleonorag.github.io-angular:build:development"
+              "buildTarget": "madalinaeleonorag.github.io-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "madalinaeleonorag.github.io-angular:build"
+            "buildTarget": "madalinaeleonorag.github.io-angular:build"
           }
         },
         "test": {
