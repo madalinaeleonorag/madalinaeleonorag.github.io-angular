@@ -1,9 +1,4 @@
 <div class="app-testimonial shine button light" (click)="openDialog()">
-  <img
-    loading="lazy"
-    [src]="mapImageLogo()"
-    [alt]="'Logo for company ' + testimonial.author"
-  />
   <div class="author">
     <div class="author-details">
       <div class="author-details-name">
@@ -16,8 +11,7 @@
   </div>
 
   <div class="description">
-    <span class="quotes">"&nbsp;</span
-    >{{ testimonial.text.slice(0, 200) + "..."
+    <span class="quotes">"&nbsp;</span>{{ testimonial.text.slice(0, 200) + "..."
     }}<span class="quotes">&nbsp;"</span>
   </div>
 

@@ -11,21 +11,7 @@ import { Testimonial } from 'src/app/interfaces/testimonial';
 export class TestimonialComponent {
   @Input() testimonial: Testimonial;
 
-  constructor(public dialog: MatDialog) {}
-
-  public mapImageLogo(): string {
-    const images: any = {
-      'Deloitte Digital': 'deloitte-digital.png',
-      IBM: 'ibm.png',
-      Vodafone: 'vodafone.png',
-      'Wooter Apparel': 'wooter-apparel.png',
-      'company-not-found': 'company-not-found.png',
-    };
-
-    return `../../../../../assets/icons/companies/${
-      images[this.testimonial.from]
-    }`;
-  }
+  constructor(public dialog: MatDialog) { }
 
   openDialog() {
     this.dialog.open(TestimonialDialogComponent, {

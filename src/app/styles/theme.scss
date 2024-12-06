@@ -1,8 +1,8 @@
-@mixin themable($primary, $secondary, $white, $black) {
-}
-$primary: #896555;
+@mixin themable($primary, $secondary, $white, $black) {}
+
+$primary: #A47764;
 $primary-opacity-10: rgba($primary, 0.1);
-$secondary: #A89A8F;
+$secondary: #D19C97;
 $secondary-opacity-10: rgba($secondary, 0.1);
 $white: #f3f5f1;
 $white-opacity-10: rgba($white, 0.1);
@@ -15,8 +15,6 @@ $gradient: radial-gradient(70% 53% at 36% 76%, $primary 0%, transparent 100%),
   radial-gradient(42% 53% at 34% 72%, $white 7%, transparent 100%),
   radial-gradient(74% 86% at 67% 38%, $secondary 24%, transparent 100%),
   linear-gradient(125deg, lighten($primary, 30%) 1%, darken($primary, 70%) 100%);
-$gradient-glow: linear-gradient(
-  to right,
-  transparent 50%,
-  $white-opacity-10 100%
-);
+$gradient-glow: linear-gradient(to right,
+    transparent 50%,
+    $white-opacity-10 100%);
