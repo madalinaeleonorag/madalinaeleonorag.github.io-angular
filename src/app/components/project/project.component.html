@@ -1,5 +1,4 @@
 <div class="app-project">
-  <img [src]="project.imageUrl" class="app-project__image">
   <div class="app-project__title">
     {{ project.name }}
   </div>
@@ -14,5 +13,8 @@
     </div>
     }
   </div>
-  <a target="_blank" [href]="project.url">See code</a>
+  <div class="actions">
+    <img [src]="project.imageUrl" (click)="openImage()">
+    <a target="_blank" [href]="project.url">See code</a>
+  </div>
 </div>
