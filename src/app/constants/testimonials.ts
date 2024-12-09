@@ -2,6 +2,27 @@ import { Testimonial } from '../interfaces/testimonial';
 
 export const TESTIOMNIALS: Testimonial[] = [
   {
+    text: `You are my favorite developer. I don’t think you can further improve 😊
+          I’m not kidding, you are very quick in picking up new stories, you ask good questions so we as application manager can in fill in the blanks we haven’t thought about.
+          The work is excellent as well. It’s a very difficult topic to work on, we have created a whole new application. You have taken much initiative, also in the kendo UI part. 
+          There aren’t many bugs and the ones we have are quickly resolved. 
+          You are always thinking along in finding good customer solutions, so I’m very very happy with you.
+          I can’t see any improvements that you can make.  We are so happy with the way things are handled.`,
+    author: 'Iris Vanstraelen',
+    role: 'Application Manager',
+    date: 'Nov 14, 2024',
+    from: 'Cognizant',
+  },
+  {
+    text: `Here some feedback about your involvement in our team. Overall we are very happy with your contribution to our project and your role in the team.
+          This feedback is based on input from Iris, Geert, Etienne and myself. If you would like some more clarification, please do not hesitate to ask. No real learning points could be found, which is very good 😊.
+          We appreciate: your ownership, your involvement, your E2E view, testing of your changes, the extra tasks you picked up outside of your role: UX design, use of new Kendo table component, you being open for feedback and improvements, how you take initiative, your efficient & fast way of working, you to be a fast learner, how you take up a key position after replacing Diana Barbu, you to think along with business about problems and solutions, you being a teamplayer`,
+    author: 'Kathleen Renard',
+    role: 'Process   Manager',
+    date: 'Nov 15, 2024',
+    from: 'Cognizant',
+  },
+  {
     text: `Madalina is really valuable member,
       more of self-initiative in areas which are visibly not covered well on project will help her to present herself with higher seniority,
       she is currently operating at the next level.`,

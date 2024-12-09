@@ -8,7 +8,7 @@ import { Testimonial } from 'src/app/interfaces/testimonial';
   styleUrls: ['./testimonial-dialog.component.scss'],
 })
 export class TestimonialDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Testimonial) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Testimonial) { }
 
   public mapImageLogo(): string {
     const images: any = {
@@ -17,6 +17,7 @@ export class TestimonialDialogComponent {
       Vodafone: 'vodafone.png',
       'Wooter Apparel': 'wooter-apparel.png',
       'company-not-found': 'company-not-found.png',
+      Cognizant: 'cognizant.png'
     };
 
     return `../../../../../assets/icons/companies/${images[this.data.from]}`;
